@@ -1,11 +1,6 @@
 /* Reset & Base */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html, body {
-    /* Verhindert das "Gummiband"-Ziehen oben und unten */
-    overscroll-behavior-y: none;
-}
-
 body {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
     background-color: var(--bg-color);
