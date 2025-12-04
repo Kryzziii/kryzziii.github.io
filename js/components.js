@@ -111,6 +111,7 @@ class AppNavbar extends HTMLElement {
             localStorage.setItem('theme', newTheme);
 
             updateThemeVisuals();
+            setTimeout(updateMobileStatusBar, 100);
         });
     }
 }
