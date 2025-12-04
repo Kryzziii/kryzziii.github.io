@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F5F5F7">
+    <title>Projects & Research | Chris Jemming</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('preload');
+            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
+        });
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
+    </script>
+</head>
+<body class="preload">
+
+<div class="background-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+</div>
+
+<app-navbar></app-navbar>
+
+<main class="container">
+    <h1 class="section-title fade-in">Projects & Papers</h1>
+
+    <h3 class="fade-in" style="margin-bottom: 20px; color: var(--text-secondary);">Academic Research</h3>
+    <div class="bento-grid" style="margin-bottom: 60px;">
+
+        <!--
+        <div class="glass-card span-2 fade-in">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <span class="paper-tag">Bachelor Thesis</span>
+                <span class="date-pill" style="background:var(--text-secondary); font-size:0.7rem;">WIP</span>
+            </div>
+            <h3 style="margin-top: 15px; font-size: 1.5rem;">Titel</h3>
+            <p>Description</p>
+            <div style="margin-top: 20px;">
+                <a href="project-seminar.html" style="margin-top:auto; font-size:0.9rem; color:var(--accent); text-decoration:none; font-weight:600;">
+                    Details <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        -->
+
+        <div class="glass-card fade-in">
+            <span class="paper-tag">Seminar Paper</span>
+            <h3 style="font-size: 1.2rem;">Tor Network</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 10px;">This paper analyzes Tor’s technical architecture and its dual role in enabling both digital self-defense and cybercrime</p>
+
+            <a href="project-seminar.html" style="margin-top:auto; font-size:0.9rem; color:var(--accent); text-decoration:none; font-weight:600;">
+                Details <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+
+    <h3 class="fade-in" style="margin-bottom: 20px; color: var(--text-secondary);">Development</h3>
+    <div class="bento-grid">
+
+        <div class="glass-card fade-in" style="padding:0; display:flex; flex-direction:column;">
+            <div style="height:180px; background: linear-gradient(135deg, #1A2980 0%, #26D0CE 100%); display:flex; align-items:center; justify-content:center; color:white; font-size:2rem;">
+                <i class="fa-regular fa-address-card"></i>
+            </div>
+            <div style="padding:24px; flex-grow:1; display:flex; flex-direction:column;">
+                <h3>Portfolio</h3>
+                <p style="margin-bottom:20px;">You are currently looking at it.</p>
+
+                <a href="#" class="btn-action" style="margin-top:auto;">
+                    GitHub Repo <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="glass-card fade-in" style="padding:0; display:flex; flex-direction:column;">
+            <div style="height:180px; background: linear-gradient(135deg, #FF512F 0%, #9D50BB 100%); display:flex; align-items:center; justify-content:center; color:white; font-size:2rem;">
+                <i class="fa-solid fa-microphone-lines"></i>
+            </div>
+            <div style="padding:24px; flex-grow:1; display:flex; flex-direction:column;">
+                <h3>Studio Database - IFEN</h3>
+                <p style="margin-bottom:20px;">Project completed during internships at IFEN.</p>
+
+                <a href="project-ifen-studio-db.html" class="btn-action" style="margin-top:auto;">
+                    Details <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="glass-card fade-in" style="padding:0; display:flex; flex-direction:column;">
+            <div style="height:180px; background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); display:flex; align-items:center; justify-content:center; color:white; font-size:2rem;">                <i class="fa-solid fa-file-pen"></i>
+            </div>
+            <div style="padding:24px; flex-grow:1; display:flex; flex-direction:column;">
+                <h3>Online Form - IFEN</h3>
+                <p style="margin-bottom:20px;">Project completed during internships at IFEN.</p>
+
+                <a href="project-ifen-form.html" class="btn-action" style="margin-top:auto;">
+                    Details <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<app-footer></app-footer>
+</body>
+</html>

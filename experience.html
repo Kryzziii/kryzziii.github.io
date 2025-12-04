@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F5F5F7">
+    <title>Experience | Chris Jemming</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('preload');
+            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
+        });
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
+    </script>
+</head>
+<body class="preload">
+
+<div class="background-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+</div>
+
+<app-navbar></app-navbar>
+
+<main class="container" style="padding-top: 120px;">
+    <h1 class="section-title fade-in">Professional Experience</h1>
+
+    <div class="timeline-item fade-in">
+        <div class="job-header">
+            <div>
+                <h3 style="margin:0;">Working Student</h3>
+                <span style="color:var(--accent); font-weight: 500;">Nitrado - marbisGmbH (Karlsruhe)</span>
+            </div>
+            <span class="date-pill">08/2024 - present</span>
+        </div>
+        <p>After my internship I was given the opportunity to continue working at Nitrado as a working student to gain valuable experience and develop my skills even further.</p>
+    </div>
+
+    <div class="timeline-item fade-in">
+        <div class="job-header">
+            <div>
+                <h3 style="margin:0;">Internship</h3>
+                <span style="color:var(--text-secondary); font-weight: 500;">Nitrado - marbisGmbH (Karlsruhe)</span>
+            </div>
+            <span class="date-pill" style="background:var(--text-secondary);">03/2024 - 08/2024</span>
+        </div>
+        <p style="margin-bottom: 10px;">Mandatory internship as part of my studies.</p>
+        <ul style="margin-left:20px; color:var(--text-secondary);">
+            <li>Conception and initial setup of an automation solution.</li>
+            <li>Creation of programs to carry out daily tasks.</li>
+            <li>Creation of evaluations.</li>
+            <li>Participation in internal projects.</li>
+        </ul>
+    </div>
+
+    <div class="timeline-item fade-in">
+        <div class="job-header">
+            <div>
+                <h3 style="margin:0;">Web App Development</h3>
+                <span style="color:var(--text-secondary); font-weight: 500;">IFEN (Luxemburg)</span>
+            </div>
+            <span class="date-pill" style="background:var(--text-secondary);">06/2022 - 07/2022</span>
+        </div>
+        <p style="margin-bottom:10px;">(Local) application for the management of IFEN's audiovisual productions</p>
+        <p style="color:var(--text-secondary);">Analysis:</p>
+        <ul style="margin-left:20px; color:var(--text-secondary);">
+            <li>Established functional and technical analyses based on the requirements specification collected.</li>
+            <li>Test the applications according to the defined test plans and deal with malfunctions.</li>
+        </ul>
+        <p style="margin-top:10px; color:var(--text-secondary);">Development:</p>
+        <ul style="margin-left:20px; color:var(--text-secondary);">
+            <li>UML modeling of the database</li>
+            <li>Creation, implementation and interfacing of the database in MySQL</li>
+            <li>Realization of the functional models of the website</li>
+            <li>Development of the visual built dynamically in HTML, CSS and PHP</li>
+            <li>Programming of scripts in JavaScript</li>
+            <li>Connection of the back-end and the front-end via PHP</li>
+        </ul>
+        <p style="margin-top:10px; color:var(--text-secondary);">Assurance of second level application support</p>
+        <!--<div style="margin-top:15px; display:flex; gap:8px; flex-wrap:wrap;">
+            <span class="date-pill" style="background:rgba(128,128,128,0.2); color:var(--text-main);">MySQL</span>
+            <span class="date-pill" style="background:rgba(128,128,128,0.2); color:var(--text-main);">PHP</span>
+            <span class="date-pill" style="background:rgba(128,128,128,0.2); color:var(--text-main);">JS</span>
+            <span class="date-pill" style="background:rgba(128,128,128,0.2); color:var(--text-main);">HTML/CSS</span>
+        </div>-->
+    </div>
+
+    <div class="timeline-item fade-in">
+        <div class="job-header">
+            <div>
+                <h3 style="margin:0;">Promotional Campaign</h3>
+                <span style="color:var(--text-secondary); font-weight: 500;">IFEN (Luxemburg)</span>
+            </div>
+            <span class="date-pill" style="background:var(--text-secondary);">11/2021</span>
+        </div>
+        <p style="color:var(--text-secondary);">Promotional campaign "internships/holiday jobs"</p>
+        <ul style="margin-left:20px; color:var(--text-secondary);">
+            <li>Creation of a "responsive" Newsletter according to the graphic charter.</li>
+            <li>Sending and follow-up strategy of the promotional campaign.</li>
+        </ul>
+        <p style="margin-top:10px; color:var(--text-secondary);">Creation of a form</p>
+        <ul style="margin-left:20px; color:var(--text-secondary);">
+            <li> Contact form "student" in accordance with the GDPR law</li>
+        </ul>
+    </div>
+
+    <div class="timeline-item fade-in">
+        <div class="job-header">
+            <div>
+                <h3 style="margin:0;">IT & Digitalisierung</h3>
+                <span style="color:var(--text-secondary); font-weight: 500;">IFEN (Luxemburg)</span>
+            </div>
+            <span class="date-pill" style="background:var(--text-secondary);">07/2021 - 08/2021</span>
+        </div>
+        <p style="color:var(--text-secondary);">Digitization Project</p>
+        <ul style="margin-left:20px; color:var(--text-secondary);">
+            <li>Programming on ACCESS & Visual Basic of forms available throughout the MENJE with specific permissions per user</li>
+        </ul>
+        <p style="margin-top:10px; color:var(--text-secondary);">Project Management</p>
+        <ul style="margin-left:20px; color:var(--text-secondary);">
+            <li>  Needs analysis, modeling and documentation of procedures related to the project "inventory management at IFEN" as well as issues related to the projects (impact analysis)</li>
+        </ul>
+        <p style="margin-top:10px; color:var(--text-secondary);">Staff training (Creation of a flipped classroom course on Moodle)</p>
+        <ul style="margin-left:20px; color:var(--text-secondary);">
+            <li>Multimedia support (videos tutorials)</li>
+            <li>Evaluation (quizzes)</li>
+            <li>Face-to-face training using the PBL method (Project Based Learning)</li>
+        </ul>
+    </div>
+
+    <div class="timeline-item fade-in">
+        <div class="job-header">
+            <div>
+                <h3 style="margin:0;">Logistics</h3>
+                <span style="color:var(--text-secondary); font-weight: 500;">Centre de Tri - Post Luxembourg</span>
+            </div>
+            <span class="date-pill" style="background:var(--text-secondary);">2019 & 2020</span>
+        </div>
+        <ul style="margin-left:20px; color:var(--text-secondary);">
+            <li>Resignation of emergency roads</li>
+            <li>Elaboration of the signposting</li>
+            <li>Assistance to the service "retour et envoie réponse"</li>
+            <li>Assistance to the technical department</li>
+        </ul>
+        <br>
+        <ul style="margin-left:20px; color:var(--text-secondary);">
+            <li>Filling in and evaluating data from an Excel file (analysis)</li>
+            <li>Setting up the service "avant tri"</li>
+            <li>Processing of periodic pots</li>
+        </ul>
+    </div>
+
+</main>
+
+<app-footer></app-footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+:root {
+    /* --- Core Palette --- */
+    --accent: #0071E3;
+    --accent-gradient: linear-gradient(135deg, #0071E3, #42A5F5);
+
+    /* Orbs Colors */
+    --orb-1-light: #A1C4FD;
+    --orb-2-light: #C2E9FB;
+    --orb-1-dark: #1A2980;
+    --orb-2-dark: #26D0CE;
+
+    /* Animation Curve */
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- 1. Light Mode (Standard Basis) --- */
+:root {
+    --bg-color: #F5F5F7;
+    --text-main: #1D1D1F;
+    --text-secondary: #86868B;
+
+    /* Glas: Hell */
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    --nav-bg: rgba(255, 255, 255, 0.5);
+
+    --orb-1: var(--orb-1-light);
+    --orb-2: var(--orb-2-light);
+}
+
+/* --- 2. Dark Mode (System-Einstellung) --- */
+/* Greift nur, wenn KEIN data-theme gesetzt ist */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --bg-color: #000000;
+        --text-main: #F5F5F7;
+        --text-secondary: #A1A1A6;
+
+        --glass-bg: rgba(30, 30, 35, 0.3);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        --nav-bg: rgba(30, 30, 35, 0.5);
+
+        --accent: #2997FF;
+        --accent-gradient: linear-gradient(135deg, #2997FF, #7BB9FF);
+        --orb-1: var(--orb-1-dark);
+        --orb-2: var(--orb-2-dark);
+    }
+}
+
+/* --- 3. Dark Mode (Manueller Override) --- */
+/* WICHTIG: 'html' davor macht die Regel stärker! */
+html[data-theme="dark"] {
+    --bg-color: #000000;
+    --text-main: #F5F5F7;
+    --text-secondary: #A1A1A6;
+
+    --glass-bg: rgba(30, 30, 35, 0.3);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --nav-bg: rgba(30, 30, 35, 0.5);
+
+    --accent: #2997FF;
+    --accent-gradient: linear-gradient(135deg, #2997FF, #7BB9FF);
+    --orb-1: var(--orb-1-dark);
+    --orb-2: var(--orb-2-dark);
+}
+
+/* --- 4. Light Mode (Manueller Override) --- */
+html[data-theme="light"] {
+    --bg-color: #F5F5F7;
+    --text-main: #1D1D1F;
+    --text-secondary: #86868B;
+
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    --nav-bg: rgba(255, 255, 255, 0.5);
+
+    --orb-1: var(--orb-1-light);
+    --orb-2: var(--orb-2-light);
+}

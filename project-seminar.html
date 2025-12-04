@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminararbeit: KI Analyse | Chris Jemming</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('preload');
+            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
+        });
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
+    </script>
+</head>
+<body class="preload">
+
+<div class="background-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+</div>
+
+<app-navbar></app-navbar>
+
+<main class="container">
+
+    <div class="back-nav fade-in">
+        <a href="projects.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+    </div>
+
+    <section class="fade-in" style="margin-bottom: 30px;">
+        <div style="display:flex; gap:10px; align-items:center; margin-bottom:10px;">
+            <span class="paper-tag">Seminararbeit</span>
+            <span class="date-pill" style="background:var(--text-secondary);">2025</span>
+        </div>
+        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Tor-Network</h1>
+        <p style="color: var(--text-secondary); font-size: 1.2rem;">Analysis of the technical architecture and its features</p>
+    </section>
+
+    <div class="bento-grid">
+
+        <div class="glass-card fade-in" style="padding: 32px; align-self: start;">
+            <h3 style="margin-bottom: 20px;"><i class="fa-solid fa-university"></i> Context</h3>
+
+            <ul class="meta-list">
+                <li class="meta-item">
+                    <span class="meta-label">University</span>
+                    <span class="meta-value">HKA</span>
+                </li>
+                <li class="meta-item">
+                    <span class="meta-label">Module</span>
+                    <span class="meta-value">Seminar</span>
+                </li>
+                <li class="meta-item">
+                    <span class="meta-label">Language</span>
+                    <span class="meta-value">Deutsch</span>
+                </li>
+                <li class="meta-item">
+                    <span class="meta-label">Grade</span>
+                    <span class="meta-value" style="color: var(--accent);">1.0</span>
+                </li>
+            </ul>
+
+            <div style="margin-top: 30px; padding: 15px; background: rgba(128,128,128,0.05); border-radius: 12px; font-size: 0.85rem; color: var(--text-secondary);">
+                <i class="fa-solid fa-lock" style="margin-right: 5px;"></i>
+                Not publicly available.
+            </div>
+        </div>
+
+        <div class="glass-card span-2 fade-in" style="padding-right: 40px; padding-left: 40px;">
+            <h3 style="margin-bottom: 20px;"><i class="fa-solid fa-book-open"></i> Abstract</h3>
+
+            <div class="rich-text academic">
+                <p>
+                    This paper explores the technical architecture and societal significance of the Tor network as a central tool for digital anonymity. Particular focus is placed on the mechanics of Onion Routing and Onion Services, which distinguish the system from alternatives like VPNs or I2P through its decentralized design. The analysis further evaluates security limitations, such as traffic correlation attacks, identifying them as a deliberate compromise between latency and protection. Ultimately, the study highlights the network's dualistic nature, balancing its misuse for criminal activities against its indispensable value for freedom of expression and censorship circumvention.
+                </p>
+                <h4 style="margin-top: 30px; color: var(--text-main);">Result & conclusion</h4>
+                <p>
+                    The analysis confirms that Tor provides superior anonymity compared to VPNs through its decentralized architecture, despite inherent vulnerabilities to high-level traffic analysis. These limitations represent a deliberate design trade-off to balance security with network speed and usability. Ultimately, the paper concludes that Tor is a neutral but essential tool, indispensable for digital self-defense and free speech despite its concurrent misuse for criminal activities.
+                </p>
+            </div>
+        </div>
+
+        <div class="glass-card span-3 fade-in" style="padding: 32px;">
+            <h3><i class="fa-solid fa-network-wired"></i> Key Concepts & Architecture</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                The following technical components and theoretical concepts were central to the analysis.
+            </p>
+
+            <div class="tech-grid">
+
+                <div class="tech-category">
+                    <h4>Network Architecture</h4>
+                    <div class="skill-list">
+                        <div class="skill-pill">Relays / Nodes</div>
+                        <div class="skill-pill">Onion Routing</div>
+                        <div class="skill-pill">Directory Authorities</div>
+                        <div class="skill-pill">Onion Services</div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h4>Cryptography</h4>
+                    <div class="skill-list">
+                        <div class="skill-pill">Circuits</div>
+                        <div class="skill-pill">Diffie-Hellman Key Exchange</div>
+                        <div class="skill-pill">Perfect Forward Secrecy</div>
+                        <div class="skill-pill">TLS / SSL Encryption</div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h4>Security & Risks</h4>
+                    <div class="skill-list">
+                        <div class="skill-pill">Security concepts</div>
+                        <div class="skill-pill">Decentralization</div>
+                        <div class="skill-pill">Traffic Correlation Attacks</div>
+                        <div class="skill-pill">DoS-Attacks</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<app-footer></app-footer>
+</body>
+</html>

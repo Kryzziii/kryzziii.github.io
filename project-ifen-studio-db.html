@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F5F5F7">
+    <title>Projektdetails | Chris Jemming</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('preload');
+            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
+        });
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
+    </script>
+</head>
+<body class="preload">
+
+<div class="background-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+</div>
+
+<app-navbar></app-navbar>
+
+<main class="container">
+
+    <div class="back-nav fade-in">
+        <a href="projects.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+    </div>
+
+    <section class="fade-in" style="margin-bottom: 30px;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Studio Database - IFEN</h1>
+        <p style="color: var(--text-secondary); font-size: 1.2rem;">Management software for IFEN's audiovisual productions</p>
+    </section>
+
+    <div class="project-hero-frame fade-in">
+        <img src="assets/projects/ifen-studio-db-cover.png" alt="Project preview" class="project-hero-img">
+    </div>
+
+    <div class="bento-grid">
+
+        <div class="glass-card fade-in" style="padding: 32px; align-self: start;">
+            <h3 style="margin-bottom: 20px;"><i class="fa-solid fa-circle-info"></i> Key Facts</h3>
+
+            <ul class="meta-list">
+                <li class="meta-item">
+                    <span class="meta-label">Company</span>
+                    <span class="meta-value">IFEN</span>
+                </li>
+                <li class="meta-item">
+                    <span class="meta-label">Year</span>
+                    <span class="meta-value">2022</span>
+                </li>
+                <li class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Full Stack Dev</span>
+                </li>
+                <li class="meta-item">
+                    <span class="meta-label">Context</span>
+                    <span class="meta-value">Internship Project</span>
+                </li>
+            </ul>
+
+            <h4 style="margin-top: 30px; margin-bottom: 15px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary);">Tech Stack</h4>
+            <div class="skill-cloud">
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">JavaScript</span>
+            </div>
+        </div>
+
+        <div class="glass-card span-2 fade-in" style="padding: 40px;">
+            <h3 style="margin-bottom: 20px;"><i class="fa-solid fa-pen-nib"></i> Project description</h3>
+
+            <div class="rich-text">
+                <p>
+                    It is a local web application I developed during one of my work placements. It is used to manage IFEN's audiovisual productions.
+                </p>
+
+                <h3>Architecture</h3>
+                <p>
+                    The application features a responsive, dynamic web interface constructed with semantic HTML5, custom CSS3, and JavaScript to ensure smooth client-side interactivity. Server-side processing is handled by robust PHP scripts that facilitate secure data transmission.
+                </p>
+                <p>
+                    The architecture relies on a relational MySQL database, which is fully integrated into the UI, allowing users to perform comprehensive data operations directly through the interface.
+                </p>
+
+                <h3>Scope of use</h3>
+                <p>
+                    Functionally, the platform provides a robust CRUD interface for the manual indexing of media assets. Users can populate the database with granular tags regarding effects, transitions, and sound design, enabling complex search queries across all asset types. Crucially, the system supports the manual association of featured individuals with specific video entries. This metadata is continuously monitored by an alert system that notifies administrators when data retention dates are reached, ensuring strict adherence to statutory archiving timelines.
+                </p>
+            </div>
+        </div>
+
+        <div class="glass-card span-3 fade-in" style="padding: 32px;">
+            <h3><i class="fa-solid fa-images"></i> Insights</h3>
+            <p style="color: var(--text-secondary);">Screenshots from the webinterface (without any data).</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/projects/ifen-studio-db-manage.png" alt="Manage section">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/projects/ifen-studio-db-edit.png" alt="Edit section">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/projects/ifen-studio-db-archive.png" alt="Archive section">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<app-footer></app-footer>
+</body>
+</html>

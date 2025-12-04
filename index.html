@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F5F5F7">
+    <title>Chris Jemming | Portfolio</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('preload');
+            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
+        });
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
+    </script>
+</head>
+<body class="preload">
+
+<div class="background-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+</div>
+
+<app-navbar></app-navbar>
+
+<main class="container">
+
+    <section class="hero fade-in">
+        <div class="profile-frame">
+            <img src="assets/me.png" alt="Chris Jemming" class="profile-img">
+        </div>
+        <h1>Chris Jemming</h1>
+        <p>Computer Science Student & Software Developer</p>
+        <p class="hero-quote">#CodingWhileTrue</p>
+    </section>
+
+    <h2 class="section-title fade-in">About me</h2>
+
+    <div class="bento-grid">
+        <div class="card span-2 fade-in">
+            <h3><i class="fa-solid fa-fingerprint"></i>Who am I?</h3>
+            <p>Hi, my name is <strong>Chris</strong> and I am <strong>22</strong> years old.</p>
+            </br>
+            <p>Alongside my academic pursuits, I work as a dedicated <strong>working student @Nitrado</strong>, where I actively apply and expand my skills in a real-world tech environment.</p>
+        </div>
+
+        <div class="card fade-in">
+            <h3><i class="fa-solid fa-globe"></i>Languages</h3>
+            <ul style="padding:0; list-style:none;">
+                <li style="display:flex; justify-content:space-between; margin-bottom:5px;"><span>Luxemburgish</span> <span>🇱🇺</span></li>
+                <li style="display:flex; justify-content:space-between; margin-bottom:5px;"><span>English</span> <span>🇬🇧</span></li>
+                <li style="display:flex; justify-content:space-between; margin-bottom:5px;"><span>German</span> <span>🇩🇪</span></li>
+                <li style="display:flex; justify-content:space-between;"><span>French</span> <span>🇫🇷</span></li>
+            </ul>
+        </div>
+
+        <div class="card fade-in" style="display:flex; flex-direction:column; justify-content:space-between;">
+            <h3><i class="fa-solid fa-graduation-cap"></i>Studies</h3>
+
+            <div style="margin-bottom:auto;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                    <span style="font-weight:700; font-size:1.05rem; color:var(--text-main);">B.Sc. Computer Science</span>
+                    <span class="date-pill" style="font-size:0.7rem; padding:2px 8px;">now</span>
+                </div>
+                <span style="color:var(--accent); font-weight:500; display:block;">University of Applied Sciences</span>
+                <span style="font-size:0.85rem; color:var(--text-secondary);">Germany • Karlsruhe</span>
+            </div>
+
+            <div style="height:1px; background:var(--glass-border); width:100%; margin:20px 0;"></div>
+
+            <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                    <span style="font-weight:700; font-size:1.05rem; color:var(--text-main);">Diploma (A-Level)</span>
+                    <span class="date-pill" style="background:var(--text-secondary); font-size:0.7rem; padding:2px 8px;">2022</span>
+                </div>
+                <span style="color:var(--text-main); font-weight:500; display:block;">Lycée des Arts et Métiers</span>
+                <span style="font-size:0.85rem; display:block; color:var(--text-secondary);">Informatik & Mathematik</span>
+                <span style="font-size:0.85rem; color:var(--text-secondary);">Luxemburg</span>
+            </div>
+        </div>
+
+        <div class="card span-2 fade-in" style="padding: 32px;">
+            <h3><i class="fa-solid fa-microchip"></i>Tech Stack</h3>
+
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h4>Languages</h4>
+                    <div class="skill-list">
+                        <div class="skill-pill">Java</div>
+                        <div class="skill-pill">PHP</div>
+                        <div class="skill-pill">C / C++ (Basics)</div>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>Web & Data</h4>
+                    <div class="skill-list">
+                        <div class="skill-pill">HTML5 & CSS3</div>
+                        <div class="skill-pill">MySQL / SQL</div>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>Tools</h4>
+                    <div class="skill-list">
+                        <div class="skill-pill">Git & GitHub</div>
+                        <div class="skill-pill">Docker</div>
+                        <div class="skill-pill">Linux / Bash</div>
+                        <div class="skill-pill">Agile (Scrum)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card span-3 fade-in">
+            <h3><i class="fa-solid fa-hand-holding-heart"></i>Social Engagement</h3>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:30px;">
+                <div>
+                    <strong style="display:block; margin-bottom:10px; color:var(--accent); font-size:1.1rem;">University</strong>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="margin-bottom:8px; padding-left:15px; border-left:2px solid var(--text-secondary);">Representative of the student parliament (StuPa) @HKA</li>
+                        <li style="margin-bottom:8px; padding-left:15px; border-left:2px solid var(--text-secondary);">Deputy Chair @Förderverein der Fachschaft IWI e.V.</li>
+                        <li style="margin-bottom:8px; padding-left:15px; border-left:2px solid var(--text-secondary);">Deputy Chair @IWI student council</li>
+                        <li style="margin-bottom:8px; padding-left:15px; border-left:2px solid var(--text-secondary);">Member of IWI student council (Infrastructure)</li>
+                    </ul>
+                </div>
+                <div>
+                    <strong style="display:block; margin-bottom:10px; color:var(--accent); font-size:1.1rem;">Privat</strong>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="margin-bottom:8px; padding-left:15px; border-left:2px solid var(--text-secondary);">Event helper for the voluntary fire brigade Hesperange</li>
+                        <li style="margin-bottom:8px; padding-left:15px; border-left:2px solid var(--text-secondary);">Event helper for the Agility Bettembourg</li>
+                        <li style="margin-bottom:8px; padding-left:15px; border-left:2px solid var(--text-secondary);">Volunteer commitment to the extracurricular accompaniment program "E=MJC2" (2021)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-title fade-in" style="display:block; text-align: center; margin-top: 60px;">Contact</div>
+
+    <div class="social-container fade-in">
+        <a href="mailto:contact@chrisjemming.lu" class="social-btn"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://linkedin.com/in/chris-jemming" target="_blank" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/Kryzziii" target="_blank" class="social-btn"><i class="fa-brands fa-github"></i></a>
+    </div>
+
+    <p style="text-align: center; color: var(--text-secondary); margin-bottom: 20px;" class="fade-in">
+        📍 Luxemburg / Germany
+    </p>
+
+</main>
+
+<app-footer></app-footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

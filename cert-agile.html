@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F5F5F7">
+    <title>Agile Project Management | Chris Jemming</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('preload');
+            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
+        });
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
+    </script>
+</head>
+<body class="preload">
+
+<div class="background-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+</div>
+
+<app-navbar></app-navbar>
+
+<main class="container">
+    <div class="back-nav fade-in">
+        <a href="certifications.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Overview</a>
+    </div>
+
+    <section class="fade-in" style="margin-bottom: 40px;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Agile Project Management</h1>
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <span class="date-pill" style="font-size: 0.9rem;">Professional Certificate</span>
+            <span style="color: var(--text-secondary);">University of Maryland (USMx)</span>
+        </div>
+    </section>
+
+    <div class="bento-grid">
+
+        <div class="glass-card span-2 fade-in" style="padding: 24px; display: flex; flex-direction: column;">
+            <h3><i class="fa-solid fa-circle-info"></i>Description</h3>
+
+            <ul class="description-list" style="color: var(--text-secondary);">
+                <li>Learn Scrum mechanics and how to translate other Agile frameworks such as SAFe, Disciplined, and LeSS</li>
+                <li>Gain a deep understanding of Agile principles and how to apply them in any industry, with case studies in Software, Aerospace, Finance, and Construction</li>
+                <li>Reduce risk of project failure by adopting agile results-based controls to close projects more effectively</li>
+                <li>Increase speed using lean / agile work management techniques proven to deliver faster</li>
+                <li>Improve project benefits with innovation and leadership approaches that unlock your team’s potential</li>
+            </ul>
+
+            <a href="https://www.edx.org/professional-certificate/umd-usmx-agile-project-management" target="_blank" class="btn-action" style="margin-top: auto; align-self: flex-start;">
+                View program on edX <i class="fa-solid fa-external-link-alt"></i>
+            </a>
+        </div>
+
+        <div class="glass-card fade-in" style="padding: 0px; display: flex; flex-direction: column;">
+            <div style="height: 200px; background: linear-gradient(135deg, #E91E63 0%, #D93025 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
+                <i class="fa-solid fa-award"></i>
+            </div>
+            <div style="padding: 24px; flex-grow: 1; display: flex; flex-direction: column;">
+                <h3 style="margin-bottom: 5px;">Professional Certificate</h3>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6;">
+                    Verifies mastery of Agile principles, Scrum mechanics, and leadership strategies applied through five comprehensive modules.
+                </p>
+                <a href="https://credentials.edx.org/credentials/8570c88616aa4318913af94dde4f7294/" target="_blank" class="btn-action" style="margin-top: 2em;">Open certificate<i class="fa-solid fa-file-pdf"></i></a>
+            </div>
+        </div>
+
+        <div class="span-3 fade-in">
+            <h3 style="margin: 40px 0 20px; font-size: 1.5rem;">Absolvierte Module</h3>
+            <div class="bento-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+
+                <div class="glass-card" style="padding: 24px;">
+                    <h4 style="color: var(--accent); margin-bottom: 5px;">Modul 1</h4>
+                    <strong>Applied Scrum for Agile Project Management</strong>
+                    <a href="https://courses.edx.org/certificates/7db48a2c7e6749779b2ec228b6e3384b" target="_blank" style="display: block; margin-top: 15px; font-size: 0.85rem; color: var(--text-secondary); text-decoration: none;">Zertifikat ansehen →</a>
+                </div>
+
+                <div class="glass-card" style="padding: 24px;">
+                    <h4 style="color: var(--accent); margin-bottom: 5px;">Modul 2</h4>
+                    <strong>Sprint Planning for Faster Agile Team Delivery</strong>
+                    <a href="https://courses.edx.org/certificates/1045532d92554420953f7684d07ee3c0" target="_blank" style="display: block; margin-top: 15px; font-size: 0.85rem; color: var(--text-secondary); text-decoration: none;">Zertifikat ansehen →</a>
+                </div>
+
+                <div class="glass-card" style="padding: 24px;">
+                    <h4 style="color: var(--accent); margin-bottom: 5px;">Modul 3</h4>
+                    <strong>Agile Innovation and Problem Solving Skills</strong>
+                    <a href="https://courses.edx.org/certificates/92f1d6eddce3424cad13ef45e0bfb099" target="_blank" style="display: block; margin-top: 15px; font-size: 0.85rem; color: var(--text-secondary); text-decoration: none;">Zertifikat ansehen →</a>
+                </div>
+
+                <div class="glass-card" style="padding: 24px;">
+                    <h4 style="color: var(--accent); margin-bottom: 5px;">Modul 4</h4>
+                    <strong>Agile Leadership Principles and Practices</strong>
+                    <a href="https://courses.edx.org/certificates/1045532d92554420953f7684d07ee3c0" target="_blank" style="display: block; margin-top: 15px; font-size: 0.85rem; color: var(--text-secondary); text-decoration: none;">Zertifikat ansehen →</a>
+                </div>
+
+                <div class="glass-card" style="padding: 24px;">
+                    <h4 style="color: var(--accent); margin-bottom: 5px;">Modul 5</h4>
+                    <strong>Agile Process, Project, and Program Controls</strong>
+                    <a href="https://courses.edx.org/certificates/5e120429f0aa48c6b3787d748691d674" target="_blank" style="display: block; margin-top: 15px; font-size: 0.85rem; color: var(--text-secondary); text-decoration: none;">Zertifikat ansehen →</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<app-footer></app-footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
