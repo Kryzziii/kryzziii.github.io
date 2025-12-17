@@ -1,0 +1,6 @@
+### Intellij ###
+/.idea/
+.DS_Store
+
+### Project Files ###
+/project-detail.html
