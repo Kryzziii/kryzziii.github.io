@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F5F5F7">
+    <title>CSI Linux Certified Investigator | Chris Jemming</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('preload');
+            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
+        });
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
+    </script>
+</head>
+<body class="preload">
+
+<div class="background-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+</div>
+
+<app-navbar></app-navbar>
+
+<main class="container">
+    <div class="back-nav fade-in">
+        <a href="certifications.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Overview</a>
+    </div>
+
+    <section class="fade-in" style="margin-bottom: 40px;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">CSI Linux Certified Investigator</h1>
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <span class="date-pill" style="font-size: 0.9rem;">Certified Investigator</span>
+            <span style="color: var(--text-secondary);">Linux Academy</span>
+        </div>
+    </section>
+
+    <div class="bento-grid">
+
+        <div class="glass-card span-2 fade-in" style="padding: 24px; display: flex; flex-direction: column;">
+            <h3><i class="fa-solid fa-circle-info"></i>Description</h3>
+
+            <ul class="description-list" style="color: var(--text-secondary);">
+                <li>Downloading, installing, setting up CSI Linux, troubleshooting, and case management.</li>
+                <li>OSINT, connecting to Tor, website/video collection, geolocation, and importance of anonymity.</li>
+                <li>Computer forensics, data recovery, encryption, and data hiding.</li>
+                <li>Incident response, memory forensics, malware analysis, threat intelligence, and threat hunting.</li>
+                <li>SIGINT, SDR, wireless, and 3rd party commercial apps for online investigations.</li>
+            </ul>
+
+            <a href="https://echothislabs.com/csil-ci/csi_linux_certified_investigator" target="_blank" class="btn-action" style="margin-top: auto; align-self: flex-start;">
+                View training details <i class="fa-solid fa-external-link-alt"></i>
+            </a>
+        </div>
+
+        <div class="glass-card fade-in" style="padding: 0px; display: flex; flex-direction: column;">
+            <div style="height: 200px; background: linear-gradient(135deg, #000428 0%, #004e92 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
+                <i class="fa-solid fa-award"></i>
+            </div>
+            <div style="padding: 24px; flex-grow: 1; display: flex; flex-direction: column;">
+                <h3 style="margin-bottom: 5px;">Certified Investigator</h3>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6;">
+                    Certifies the ability to leverage CSI Linux tools for comprehensive computer forensics, OSINT gathering, and secure case management.
+                </p>
+
+                <a href="assets/docs/csi-linux-cert.pdf" target="_blank" class="btn-action" style="margin-top: 2em;">
+                    Open certificate<i class="fa-solid fa-file-pdf"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<app-footer></app-footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
