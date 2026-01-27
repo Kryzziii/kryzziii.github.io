@@ -215,6 +215,30 @@
     transform: translateX(4px);
 }
 
+/* --- Ghost Button --- */
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;       /* Etwas breiter für bessere Klickbarkeit */
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);  /* Oder --text-secondary, je nach Geschmack */
+}
+
+.btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(128, 128, 128, 0.05);
+    transform: translateY(-2px); /* Kleines Schweben beim Hover */
+}
+
 /* --- Pills (Tech & Date) --- */
 .date-pill {
     background: var(--accent-gradient);

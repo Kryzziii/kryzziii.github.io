@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F5F5F7">
+    <title>Projektdetails | Chris Jemming</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('preload');
+            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
+        });
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
+    </script>
+</head>
+<body class="preload">
+
+<div class="background-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+</div>
+
+<app-navbar></app-navbar>
+
+<main class="container">
+
+    <div class="back-nav fade-in">
+        <a href="projects.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+    </div>
+
+    <section class="fade-in" style="margin-bottom: 30px;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">WhistleDrop – Secure Reporting Platform</h1>
+        <p style="color: var(--text-secondary); font-size: 1.2rem;">A web-based whistleblower platform with a strong focus on confidentiality, anonymity, and cryptographic security.</p>
+    </section>
+
+    <div class="project-hero-frame fade-in">
+        <img src="assets/projects/whistedrop-startpage.png" alt="Project preview" class="project-hero-img">
+    </div>
+
+    <div class="bento-grid">
+
+        <div class="glass-card fade-in" style="padding: 32px; align-self: start;">
+            <h3 style="margin-bottom: 20px;"><i class="fa-solid fa-circle-info"></i> Key Facts</h3>
+
+            <ul class="meta-list">
+                <li class="meta-item">
+                    <span class="meta-label">Institution</span>
+                    <span class="meta-value">HKA</span>
+                </li>
+                <li class="meta-item">
+                    <span class="meta-label">Year</span>
+                    <span class="meta-value">2025</span>
+                </li>
+                <li class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Full Stack Dev</span>
+                </li>
+                <li class="meta-item">
+                    <span class="meta-label">Course</span>
+                    <span class="meta-value">Cyber Espionage</span>
+                </li>
+            </ul>
+
+            <h4 style="margin-top: 30px; margin-bottom: 15px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary);">Tech Stack</h4>
+            <div class="skill-cloud">
+                <span class="skill-tag">Flask</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Cryptography</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">Tor</span>
+            </div>
+        </div>
+
+        <div class="glass-card span-2 fade-in" style="padding: 40px;">
+            <h3 style="margin-bottom: 20px;"><i class="fa-solid fa-pen-nib"></i> Project description</h3>
+
+            <div class="rich-text">
+                <p style="margin-bottom: 15px;">
+                    WhistleDrop is a secure gateway for anonymous whistleblowing developed in <strong>Python</strong>. It utilizes advanced cryptographic methods to ensure that the identity of the user remains hidden from both the platform and the recipient. The architecture is designed to be resilient against traffic analysis and metadata leaks by operating exclusively as a <strong>Tor Hidden Service</strong>.
+                </p>
+
+                <h4 style="color: var(--text-main); margin-bottom: 10px;">Core Engineering Concepts:</h4>
+
+                <ul style="list-style-type: disc; padding-left: 20px; margin-bottom: 20px; color: var(--text-secondary);">
+                    <li style="margin-bottom: 8px;">
+                        <strong>Trustless Server Architecture:</strong>
+                        The server acts as a blind drop-box. It never possesses the private keys required to decrypt the data, ensuring that even a server seizure yields no readable intelligence.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <strong>Hybrid Encryption Scheme:</strong>
+                        Implemented a dual-layer cryptographic process where files are encrypted in-memory using ephemeral symmetric keys (AES), which are then immediately encapsulated using the journalist's public RSA 4096-bit key.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <strong>Mnemonic Identity Protection:</strong>
+                        Replaced traditional user accounts with an 8-word passphrase system, allowing whistleblowers to authenticate without leaving database traces or requiring physical documentation.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <strong>Anti-Forensic Data Handling:</strong>
+                        Designed strictly to prevent unencrypted data from ever touching the persistent storage (HDD/SSD). All sensitive operations occur in volatile memory (RAM).
+                    </li>
+                </ul>
+
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                    <em>Key Challenge:</em> Designing a "One-Time-Use" public key infrastructure to prevent key reuse attacks and ensure that each submission session is cryptographically isolated.
+                </p>
+            </div>
+        </div>
+
+        <div class="glass-card span-3 fade-in" style="padding: 32px;">
+            <h3><i class="fa-solid fa-images"></i> Insights</h3>
+            <p style="color: var(--text-secondary);">Screenshots from the WebUI.</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/projects/whistedrop-login.png" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/projects/whistedrop-newdrop.png" alt="">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/projects/whistedrop-journalistview.png" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<app-footer></app-footer>
+</body>
+</html>
