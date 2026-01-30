@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#F5F5F7">
+    <title>Social Engagement | Chris Jemming</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('preload');
+            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
+        });
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
+    </script>
+</head>
+<body class="preload">
+
+<div class="background-orbs">
+    <div class="orb orb-1" style="background: #a855f7; opacity: 0.2;"></div>
+    <div class="orb orb-2" style="background: #3b82f6; opacity: 0.2;"></div>
+</div>
+
+<app-navbar></app-navbar>
+
+<main class="container">
+
+    <div class="back-nav fade-in">
+        <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+    </div>
+
+    <section class="fade-in social-header">
+        <h1>University Commitment</h1>
+        <div class="social-header-meta">
+            <span class="date-pill">Since 2023</span>
+            <span style="color: var(--text-secondary);">Shaping the campus environment</span>
+        </div>
+    </section>
+
+    <div class="bento-grid">
+
+        <div class="glass-card span-3 fade-in social-card-layout">
+            <div class="bg-fs card-header-box">
+                <div class="card-header-flex align-start">
+                    <div>
+                        <h2 class="header-title">Student Council</h2>
+                        <span class="header-subtitle">Fachschaft Informatik & Wirtschaftsinformatik (IWI)</span>
+                    </div>
+                    <i class="fa-solid fa-users-rectangle header-icon"></i>
+                </div>
+            </div>
+
+            <div class="card-content">
+                <p class="text-desc">
+                    The Student Council represents the interests of the student body, bridging the gap between students and the university administration. Within this organization, I advanced from <b>community support</b> and <b>infrastructure</b> to a strategic role on the <b>Executive Board</b>.
+                </p>
+
+                <div class="role-list">
+                    <div class="role-item">
+                        <div class="role-icon" style="color: #f59e0b; background: rgba(245, 158, 11, 0.1);">
+                            <i class="fa-solid fa-gavel"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 5px;">Deputy Chairman (stv. Vorsitz)</h4>
+                            <span class="date-pill" style="font-size: 0.75rem; margin-bottom: 8px; display: inline-block;">2025 - Present</span>
+
+                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                                As Vice Chair, I guide the strategic vision of the council and represent the student body in negotiations with the faculty administration. My role involves coordinating the executive board and ensuring the successful execution of our long-term objectives.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="role-item">
+                        <div class="role-icon icon-blue">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 5px;">Infrastructure & Systems</h4>
+                            <span class="date-pill" style="font-size: 0.75rem; margin-bottom: 8px; display: inline-block;">2023 - Present</span>
+
+                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                                Taking ownership of the technical direction, I coordinated the team's workload and spearheaded the modernization of our systems, ensuring a robust digital foundation for the student body.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="role-item">
+                        <div class="role-icon icon-purple">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 5px;">Community Management</h4>
+                            <span class="date-pill" style="font-size: 0.75rem; margin-bottom: 8px; display: inline-block;">2023 - 2025</span>
+
+                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                                Responsible for curating and distributing vital updates to the student body. I ensure transparency regarding academic changes and faculty announcements.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card span-2 fade-in social-card-layout">
+            <div class="bg-stupa card-header-box compact">
+                <div class="card-header-flex">
+                    <div class="header-group-left">
+                        <i class="fa-solid fa-landmark header-icon" style="font-size: 2.2rem; opacity: 0.9;"></i>
+                        <div>
+                            <h3 class="header-title small">Student Parliament</h3>
+                            <span class="header-subtitle small">Legislative Body (StuPa)</span>
+                        </div>
+                    </div>
+                    <div class="header-date-right">
+                        Sep 2025 - Present
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-content compact">
+                <div style="margin-bottom: 15px;">
+                    <h4 style="margin: 0; font-size: 1.1rem; color: var(--text-main);">Elected Representative</h4>
+                </div>
+
+                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+                    As an elected member of the student community's <strong>legislative body</strong>, I participate in making university-wide decisions regarding the student body. A central responsibility is electing and overseeing the Executive Committee (AStA).
+                </p>
+
+                <div style="margin-top: auto; padding-top: 20px;">
+                    <strong style="display: block; font-size: 0.9rem; margin-bottom: 10px;">Key Initiatives:</strong>
+                    <div class="skill-cloud">
+                        <span class="skill-tag">Personnel Committee</span>
+                        <span class="skill-tag">Legal & Statutes</span>
+                        <span class="skill-tag">Election Oversight</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="span-1 fade-in" style="display: flex; flex-direction: column; gap: 15px;">
+            <div class="credentials-title">
+                <h3>Credentials</h3>
+            </div>
+
+            <a href="assets/docs/fs-cert.pdf" target="_blank" class="doc-link">
+                <div class="cred-icon-box red">
+                    <i class="fa-solid fa-file-pdf"></i>
+                </div>
+                <div>
+                    <div style="font-weight: 600; font-size: 0.85rem; color: var(--text-main);">Student Council Mandate</div>
+                    <div style="font-size: 0.7rem; color: var(--accent);">View Certificate <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.6rem;"></i></div>
+                </div>
+            </a>
+
+            <div class="doc-link placeholder">
+                <div class="cred-icon-box gray">
+                    <i class="fa-solid fa-file-shield"></i>
+                </div>
+                <div>
+                    <div style="font-weight: 600; font-size: 0.85rem; color: var(--text-secondary);">StuPa Election</div>
+                    <div style="font-size: 0.7rem; color: var(--text-secondary);">Available upon request</div>
+                </div>
+            </div>
+
+            <div class="doc-link placeholder">
+                <div class="cred-icon-box gray">
+                    <i class="fa-solid fa-file-shield"></i>
+                </div>
+                <div>
+                    <div style="font-weight: 600; font-size: 0.85rem; color: var(--text-secondary);">FFIWI Board Membership</div>
+                    <div style="font-size: 0.7rem; color: var(--text-secondary);">Available upon request</div>
+                </div>
+            </div>
+
+            <p class="cred-note">
+                * Additional (unredacted) documentation can be provided for background checks.
+            </p>
+        </div>
+
+        <div class="glass-card span-3 fade-in social-card-layout">
+            <div class="bg-fv card-header-box">
+                <div class="card-header-flex">
+                    <div>
+                        <h2 class="header-title">Förderverein der Fachschaft IWI e.V.</h2>
+                        <span class="header-subtitle">Association of Friends & Alumni</span>
+                    </div>
+                    <i class="fa-solid fa-handshake header-icon"></i>
+                </div>
+            </div>
+
+            <div class="card-content">
+                <p class="text-desc">
+                    Exclusively pursuing charitable purposes, the association focuses on the <strong>promotion of science, research, and vocational education</strong>, including direct <strong>student support</strong>. We bridge the gap between students, alumni, and the industry to foster academic and professional growth.
+                </p>
+
+                <div class="role-list">
+
+                    <div class="role-item">
+                        <div class="role-icon" style="color: #0f766e; background: rgba(15, 118, 110, 0.1);">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 5px;">Deputy Chairman (Board Member)</h4>
+                            <span class="date-pill" style="font-size: 0.75rem; margin-bottom: 8px; display: inline-block;">2025 - Present</span>
+
+                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                                Steering the strategic direction of the alumni network. My responsibilities include organizing networking events, maintaining relations with industry partners, and leading board meetings.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="role-item">
+                        <div class="role-icon" style="color: #0d9488; background: rgba(13, 148, 136, 0.1);">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 5px;">Deputy Treasurer (Board Member)</h4>
+                            <span class="date-pill" style="font-size: 0.75rem; margin-bottom: 8px; display: inline-block;">2024 - 2025</span>
+
+                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                                Managed the association's finances and accounting. This included preparing the annual tax report, and allocating sponsorship funds for student projects.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="span-3 fade-in social-divider"></div>
+
+        <div class="span-3 fade-in section-header-small">
+            <h2>Beyond Campus</h2>
+            <span style="font-size: 0.9rem; color: var(--text-secondary);">Civil Engagement & Volunteering</span>
+        </div>
+
+        <div class="glass-card span-2 fade-in social-card-layout horizontal">
+            <div class="bg-tutor" style="width: 40%; min-width: 200px; padding: 30px;">
+                <i class="fa-solid fa-graduation-cap" style="font-size: 2.5rem; margin-bottom: 15px; opacity: 0.9;"></i>
+                <h3 style="margin: 0; font-size: 1.4rem; line-height: 1.2;">Educational Mentor</h3>
+                <span style="font-size: 0.9rem; opacity: 0.9; margin-top: 5px; display: block;">Maison des Jeunes et de la Culture</span>
+            </div>
+
+            <div class="card-content">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 5px;">
+                    <h4 style="margin: 0; font-size: 1.1rem; color: var(--text-main);">Program "E=MJC²"</h4>
+                    <span style="font-size: 0.8rem; color: var(--text-secondary); text-align: right;">
+                        <i class="fa-solid fa-location-dot" style="margin-right: 4px;"></i> Bettembourg, LU
+                    </span>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <span class="date-pill" style="background: rgba(128,128,128,0.15); color: var(--text-main); font-size: 0.7rem;">2021</span>
+                    <span style="font-size: 0.8rem; color: var(--text-secondary); margin-left: 8px;">Extracurricular Accompaniment</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                    I volunteered as a tutor for the <i>E=MJC²</i> initiative. During this time, I provided academic support to students, helping them overcome learning hurdles and fostering a positive approach to education outside the classroom.
+                </p>
+            </div>
+        </div>
+
+        <div class="glass-card span-1 fade-in social-card-layout">
+            <div class="bg-volunteer" style="padding: 20px; flex-grow: 0;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3 style="margin: 0; font-size: 1.1rem;">Community Support</h3>
+                    <i class="fa-solid fa-hand-holding-heart" style="font-size: 1.2rem; opacity: 0.8;"></i>
+                </div>
+                <span style="font-size: 0.8rem; opacity: 0.8;">Active Helper & Organizer</span>
+            </div>
+
+            <div class="card-content" style="padding: 20px;">
+                <div class="vol-list">
+
+                    <div class="vol-item">
+                        <div class="vol-icon" style="background: rgba(220, 38, 38, 0.1); color: #dc2626;">
+                            <i class="fa-solid fa-fire-extinguisher"></i>
+                        </div>
+                        <div>
+                            <strong style="display: block; font-size: 0.85rem; color: var(--text-main);">Volunteer Fire Dept.</strong>
+                            <span style="font-size: 0.75rem; color: var(--text-secondary);">Hesperange • Event Support</span>
+                        </div>
+                    </div>
+
+                    <div class="vol-item">
+                        <div class="vol-icon" style="background: rgba(180, 83, 9, 0.1); color: #b45309;">
+                            <i class="fa-solid fa-paw"></i>
+                        </div>
+                        <div>
+                            <strong style="display: block; font-size: 0.85rem; color: var(--text-main);">Dog Sports Club</strong>
+                            <span style="font-size: 0.75rem; color: var(--text-secondary);">Bettembourg • Voluntary Helper</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</main>
+
+<app-footer></app-footer>
+
+</body>
+</html>
