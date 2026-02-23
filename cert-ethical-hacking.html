@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F5F5F7">
+    <title>CSI Linux Certified Investigator | Chris Jemming</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('preload');
+            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
+        });
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
+    </script>
+</head>
+<body class="preload">
+
+<div class="background-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+</div>
+
+<app-navbar></app-navbar>
+
+<main class="container">
+    <div class="back-nav fade-in">
+        <a href="certifications.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Overview</a>
+    </div>
+
+    <section class="fade-in" style="margin-bottom: 40px;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Ethical Hacking and Penetration Testing</h1>
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <span class="date-pill" style="font-size: 0.9rem;">University Level</span>
+            <span style="color: var(--text-secondary);">HKA (Florian Dalwigk)</span>
+        </div>
+    </section>
+
+    <div class="bento-grid">
+
+        <div class="glass-card span-2 fade-in" style="padding: 32px; display: flex; flex-direction: column;">
+            <h3 style="margin-bottom: 20px;"><i class="fa-solid fa-list-check" style="margin-right: 8px;"></i> Training Curriculum</h3>
+
+            <div class="rich-text" style="color: var(--text-secondary); margin-bottom: 25px; flex-grow: 1;">
+                <p style="margin-bottom: 10px;">
+                    Successfully completed the <strong>Ethical Hacking</strong> university module (4 ECTS, corresponding to a 120-hour workload), conducted in Summer 2025 by Florian Dalwigk.
+                </p>
+                <p style="margin-bottom: 15px;">
+                    The final examination rigorously tested these skills through a <strong>practical hacking challenge</strong>, the preparation of a professional penetration testing report, and a written exam (Final Grade: <strong>1.0</strong>).
+                </p>
+                <p>Key areas of expertise include:</p>
+                <ul style="list-style: none; padding-left: 0; margin: 0;">
+                    <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px;">
+                        <i class="fa-solid fa-angle-right" style="color: var(--accent, #3b82f6); margin-top: 4px;"></i>
+                        <span><strong>Frameworks & Methodology:</strong> Cyber Kill Chain, MITRE ATT&CK, CVE/CVSS, Operational Security, and Legal Foundations.</span>
+                    </li>
+                    <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px;">
+                        <i class="fa-solid fa-angle-right" style="color: var(--accent, #3b82f6); margin-top: 4px;"></i>
+                        <span><strong>Reconnaissance & Exploitation:</strong> Scanning, Enumeration, Privilege Escalation, and utilizing tools like Nmap, Shodan, Metasploit, BurpSuite, and sqlmap.</span>
+                    </li>
+                    <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px;">
+                        <i class="fa-solid fa-angle-right" style="color: var(--accent, #3b82f6); margin-top: 4px;"></i>
+                        <span><strong>Web & System Attacks:</strong> OWASP Top 10, SQL Injection, XSS, Buffer Overflows, Malware, and Password Hacking (Hashcat, Hydra).</span>
+                    </li>
+                    <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px;">
+                        <i class="fa-solid fa-angle-right" style="color: var(--accent, #3b82f6); margin-top: 4px;"></i>
+                        <span><strong>AI in Ethical Hacking:</strong> Exploring LLM vulnerabilities (OWASP Top 10 LLM) and utilizing AI-driven tools like ShellGPT and Ollama.</span>
+                    </li>
+                    <li style="display: flex; align-items: flex-start; gap: 10px;">
+                        <i class="fa-solid fa-angle-right" style="color: var(--accent, #3b82f6); margin-top: 4px;"></i>
+                        <span><strong>Professional Execution:</strong> Understanding Social Engineering tactics and creating professional Pentest Reports.</span>
+                    </li>
+                </ul>
+            </div>
+
+
+            <a href="https://www.florian-dalwigk.de/vorlesungen-kurse/" target="_blank" class="btn-action" style="margin-top: auto; align-self: flex-start;">
+                Course details <i class="fa-solid fa-external-link-alt"></i>
+            </a>
+        </div>
+
+        <div class="glass-card fade-in" style="padding: 0px; display: flex; flex-direction: column; align-self: start;">
+            <div style="height: 200px; background: linear-gradient(135deg, #111827 0%, #450a0a 50%, #991b1b 100%); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.9); font-size: 4.5rem; text-shadow: 0 8px 20px rgba(0,0,0,0.5);">
+                <i class="fa-solid fa-award"></i>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column;">
+                <h3 style="margin-bottom: 5px;">Certificate</h3>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6;">
+                    Certifies practical and theoretical knowledge in Ethical Hacking and Penetration Testing at university level.
+                </p>
+
+                <a href="assets/docs/ethical-hacking-cert.pdf" target="_blank" class="btn-action" style="margin-top: 2em;">
+                    Open certificate<i class="fa-solid fa-file-pdf"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<app-footer></app-footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
