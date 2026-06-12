@@ -641,6 +641,17 @@ footer {
     margin-top: auto;
 }
 
+.footer-credits-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-left: 12px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.footer-credits-link:hover {
+    opacity: 1;
+}
 /* --- Easter Egg Card --- */
 .easter-egg-grid {
     display: flex;
