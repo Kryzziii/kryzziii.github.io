@@ -10,6 +10,7 @@
     transition: var(--transition);
     overflow: hidden;
     padding: 32px;
+    position: relative;
 }
 
 .glass-card:hover, .card:hover, .timeline-item:hover, .cert-card:hover {
@@ -130,6 +131,113 @@
     transform: rotate(15deg);
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* --- Typewriter --- */
+.hero-typewriter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    min-height: 1.4em;
+}
+
+.typewriter-text {
+    display: inline-block;
+    min-width: var(--typewriter-width, 18ch);
+    text-align: left;
+}
+
+.typewriter-cursor {
+    color: var(--accent);
+    animation: blink 1s steps(2) infinite;
+}
+
+@keyframes blink {
+    0%, 49% {
+        opacity: 1;
+    }
+
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+/* --- Tilt Shine --- */
+.glass-card::after, .card::after, .cert-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.08), transparent 55%);
+    mix-blend-mode: overlay;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.glass-card.tilt-active::after, .card.tilt-active::after, .cert-card.tilt-active::after {
+    opacity: 1;
+}
+
+/* --- Route Map --- */
+.route-map-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.route-map-card p {
+    font-size: 0.95rem;
+}
+
+.route-map {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.route-map text {
+    fill: var(--text-main);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.route-map .route-map-caption {
+    fill: var(--text-secondary);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.route-map .route-path {
+    stroke: var(--accent);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 10 8;
+    fill: none;
+    animation: route-flow 8s linear infinite;
+}
+
+.route-map .route-trail {
+    stroke: var(--glass-border);
+    stroke-width: 2;
+    fill: none;
+}
+
+@keyframes route-flow {
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: -72;
+    }
+}
+
 /* --- Mobile Nav --- */
 @media (max-width: 768px) {
     .navbar {
@@ -162,6 +270,10 @@
         gap: 6px;
     }
 
+    .nav-actions {
+        gap: 6px;
+    }
+
     .nav-links a {
         padding: 0;
         width: 48px;
@@ -169,6 +281,22 @@
         border-radius: 50%;
         color: var(--text-secondary);
         background: transparent;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .typewriter-cursor {
+            display: none;
+            animation: none;
+        }
+
+        .route-map .route-path {
+            animation: none;
+        }
+
+        .route-map .route-map-pulse,
+        .route-map .route-traveler {
+            display: none;
+        }
     }
 
     .nav-links a.active {
