@@ -1,3 +1,58 @@
+// --- Console Easter Egg ---
+(function () {
+    if (window.__chrisConsoleBanner) return;
+    window.__chrisConsoleBanner = true;
+
+    if (sessionStorage.getItem('console_banner_shown') === '1') {
+        // Nur window.chris registrieren, Banner nicht nochmal drucken
+    } else {
+        const banner = [
+            ' ██████╗██╗  ██╗██████╗ ██╗███████╗',
+            '██╔════╝██║  ██║██╔══██╗██║██╔════╝',
+            '██║     ███████║██████╔╝██║███████╗',
+            '██║     ██╔══██║██╔══██╗██║╚════██║',
+            '╚██████╗██║  ██║██║  ██║██║███████║',
+            ' ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝',
+            '',
+            '     ██╗███████╗███╗   ███╗███╗   ███╗██╗███╗   ██╗ ██████╗',
+            '     ██║██╔════╝████╗ ████║████╗ ████║██║████╗  ██║██╔════╝',
+            '     ██║█████╗  ██╔████╔██║██╔████╔██║██║██╔██╗ ██║██║  ███╗',
+            '██   ██║██╔══╝  ██║╚██╔╝██║██║╚██╔╝██║██║██║╚██╗██║██║   ██║',
+            '╚█████╔╝███████╗██║ ╚═╝ ██║██║ ╚═╝ ██║██║██║ ╚████║╚██████╔╝',
+            ' ╚════╝ ╚══════╝╚═╝     ╚═╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ '
+        ].join('\n');
+
+        console.log('%c' + banner, 'color:#00ff9c;font-family:monospace;font-size:14px;line-height:1;');
+        console.log(
+            '%cHey dev 👋  if you\'re peeking at the console, you might also like hiring me → contact@chrisjemming.lu',
+            'color:#58a6ff;font-size:13px;font-family:monospace;'
+        );
+        console.log(
+            '%cPages: 10+  ·  GitHub: https://github.com/Kryzziii  ·  Current page: ' + window.location.pathname,
+            'color:#a8b3c0;font-size:11px;font-family:monospace;'
+        );
+        console.log(
+            '%cTip: try chris.about(), chris.contact() or chris.hire() in the console.\nAlso: visit /credits.html 👀',
+            'color:#58a6ff;font-size:11px;font-family:monospace;'
+        );
+
+        sessionStorage.setItem('console_banner_shown', '1');
+    }
+
+    // window.chris Helfer-Objekt
+    window.chris = {
+        about: function () {
+            console.log('%cChris Jemming — B.Sc. CS Student at HKA · Working Student @Nitrado · Luxembourg/Karlsruhe\n#CodingWhileTrue', 'color:#00ff9c;font-family:monospace;');
+        },
+        contact: function () {
+            console.log('%c📧 contact@chrisjemming.lu\n🔗 linkedin.com/in/chris-jemming\n🐙 github.com/Kryzziii', 'color:#58a6ff;font-family:monospace;');
+        },
+        hire: function () {
+            window.location.href = 'mailto:contact@chrisjemming.lu';
+        }
+    };
+}());
+
 const isTouchHoverNone = window.matchMedia('(hover: none)');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -57,6 +112,11 @@ if (!window.portfolioMainInitialized) {
         initHeroTypewriter();
         initOrbParallax();
         initCardTilt();
+    });
+
+    // Aurora: Tab-Sichtbarkeit pausiert die Animation
+    document.addEventListener('visibilitychange', () => {
+        document.documentElement.classList.toggle('aurora-paused', document.hidden);
     });
 
     // Initial beim Laden ausführen
@@ -213,7 +273,6 @@ function initOrbParallax() {
 
         start();
     });
-
     start();
 }
 

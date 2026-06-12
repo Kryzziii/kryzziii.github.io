@@ -1,0 +1,123 @@
+/* Terminal Mode — css/9-terminal-mode.css */
+
+/* --- CSS-Variablen überschreiben --- */
+html.terminal-mode {
+    --bg-color: #0d1117;
+    --text-main: #00ff9c;       /* phosphor green */
+    --text-secondary: #2ea043;
+    --accent: #58a6ff;
+    --accent-gradient: linear-gradient(135deg, #58a6ff, #79c0ff);
+    --glass-bg: rgba(13, 17, 23, 0.85);
+    --glass-border: rgba(0, 255, 156, 0.25);
+    --glass-shadow: 0 0 30px rgba(0, 255, 156, 0.15);
+    --nav-bg: rgba(13, 17, 23, 0.95);
+}
+
+/* --- Monospace font stack --- */
+html.terminal-mode body {
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* --- Sharp/tty look: reduce border-radius on cards and buttons --- */
+html.terminal-mode .glass-card,
+html.terminal-mode .card,
+html.terminal-mode .timeline-item,
+html.terminal-mode .cert-card,
+html.terminal-mode .award-card,
+html.terminal-mode .btn-action,
+html.terminal-mode .btn-ghost,
+html.terminal-mode .skill-pill,
+html.terminal-mode .date-pill {
+    border-radius: 4px;
+}
+
+html.terminal-mode .nav-container {
+    border-radius: 4px;
+}
+
+/* --- Kill backdrop-filter blur for performance/aesthetic --- */
+html.terminal-mode .glass-card,
+html.terminal-mode .card,
+html.terminal-mode .timeline-item,
+html.terminal-mode .cert-card,
+html.terminal-mode .award-card,
+html.terminal-mode footer,
+html.terminal-mode .nav-container {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+/* --- Scanline overlay via fixed ::before on body --- */
+html.terminal-mode body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 1px,
+        rgba(0, 0, 0, 0.04) 1px,
+        rgba(0, 0, 0, 0.04) 2px
+    );
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.terminal-mode body::before {
+        display: none;
+    }
+}
+
+/* --- CRT flicker --- */
+@keyframes terminal-flicker {
+    0%, 100%  { opacity: 1; }
+    92%       { opacity: 0.97; }
+    94%       { opacity: 1; }
+    96%       { opacity: 0.98; }
+}
+
+html.terminal-mode body {
+    animation: terminal-flicker 6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.terminal-mode body {
+        animation: none;
+    }
+}
+
+/* --- Headings prefix "> " --- */
+html.terminal-mode main.container h1::before,
+html.terminal-mode main.container h2::before,
+html.terminal-mode main.container h3::before {
+    content: '> ';
+    color: var(--accent);
+}
+
+/* --- Nav logo prefix "~$ " --- */
+html.terminal-mode .nav-logo::before {
+    content: '~$ ';
+    color: var(--accent);
+}
+
+/* --- Mode transition: 400ms fade --- */
+html.terminal-mode-transitioning body {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* --- Visible focus indicators --- */
+html.terminal-mode :focus-visible {
+    outline: 1px solid var(--text-main);
+    outline-offset: 2px;
+}
+
+/* --- Aurora hide in terminal mode --- */
+html.terminal-mode .background-orbs::before {
+    display: none;
+}
+
+/* --- Orb tint override for terminal mode --- */
+html.terminal-mode .orb-1 { background: rgba(0, 255, 156, 0.12); }
+html.terminal-mode .orb-2 { background: rgba(88, 166, 255, 0.08); }

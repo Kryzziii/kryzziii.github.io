@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { section: 'Theme', label: 'Switch to Dark', icon: 'fa-solid fa-moon', keywords: 'dark theme', run: () => setTheme('dark') },
         { section: 'Theme', label: 'Switch to Light', icon: 'fa-solid fa-sun', keywords: 'light theme', run: () => setTheme('light') },
 
-        { section: 'Fun', label: 'Show Easter Egg', icon: 'fa-solid fa-wand-magic-sparkles', keywords: 'matrix konami fun', run: () => showMatrixFlash() }
+        { section: 'Fun', label: 'Show Easter Egg', icon: 'fa-solid fa-wand-magic-sparkles', keywords: 'matrix konami fun', run: () => showMatrixFlash() },
+        { section: 'Fun', label: 'Toggle Terminal Mode', icon: 'fa-solid fa-terminal', keywords: 'terminal tty green mode', run: () => { if (window.terminalMode) window.terminalMode.toggle(); } },
+        { section: 'Fun', label: 'View Credits', icon: 'fa-solid fa-heart', keywords: 'credits behind the scenes hidden', run: () => { window.location.href = 'credits.html'; } }
     ];
 
     const backdrop = document.createElement('div');

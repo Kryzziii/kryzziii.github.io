@@ -33,6 +33,14 @@ This portfolio serves as a digital showcase for my projects, skills, and profess
 * **📱 Fully Responsive:** Optimized for all viewports – from 4k desktops to mobile devices.
 * **🍏 iOS Optimized:** Includes specific WebKit fixes to handle `border-radius` clipping and `overflow` rendering issues on Safari (iPhone).
 * **⚡ High Performance:** Built with pure Vanilla JS and CSS to ensure maximum load speed.
+* **⌨️ Command Palette (`⌘K`):** Developer-style command palette with navigation, theme toggling, social shortcuts and more.
+* **🎹 Terminal Mode (`⌘⇧T`):** Full phosphor-green tty skin with CRT scanlines, monospace font, and localStorage persistence.
+* **🤖 Ask Me Anything:** Keyword-matched static FAQ chat widget on the homepage with suggestion chips and session history.
+* **🗺️ Lux → Karlsruhe Map:** Animated SVG map with pulsing city dots, flowing dashed route, and a moving plane emoji.
+* **🌌 Aurora Background:** Slow blurred conic-gradient aurora active in dark mode, paused when tab is hidden.
+* **🥚 Console Easter Egg:** ASCII banner + `window.chris` helpers for the curious developer visiting DevTools.
+* **📜 humans.txt:** Team credits at `/humans.txt`.
+* **🤫 Hidden Credits Page:** `/credits.html` — discoverable via footer link, command palette, or console tip.
 
 ---
 ## 🛠️ Built With

@@ -122,6 +122,7 @@ class AppFooter extends HTMLElement {
         this.innerHTML = `
             <footer>
                 &copy; ${year} Chris Jemming.
+                <a href="credits.html" class="footer-credits-link">credits</a>
             </footer>
         `;
     }

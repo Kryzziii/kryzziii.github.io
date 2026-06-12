@@ -491,6 +491,56 @@ footer {
     margin-top: auto;
 }
 
+.footer-credits-link {
+    display: inline-block;
+    margin-left: 12px;
+    color: var(--glass-border);
+    font-size: 0.75rem;
+    text-decoration: none;
+    transition: color 0.2s;
+    opacity: 0.6;
+}
+
+.footer-credits-link:hover {
+    color: var(--text-secondary);
+    opacity: 1;
+}
+
+/* --- credits- prefixed rules --- */
+.credits-hero-caption {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-top: 8px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.credits-stats-grid {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.credits-stat {
+    text-align: center;
+}
+
+.credits-stat-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--accent);
+    display: block;
+}
+
+.credits-stat-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
 .hero-typewriter {
     min-height: 1.6em;
 }

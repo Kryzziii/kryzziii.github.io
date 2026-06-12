@@ -1,0 +1,45 @@
+/* Lux → Karlsruhe Map Card — css/11-map-card.css */
+
+.map-card {
+    overflow: visible;
+}
+
+.map-card h3 {
+    margin-bottom: 12px;
+}
+
+.map-svg-wrap {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.map-svg-wrap svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Flowing route dash animation --- */
+@keyframes map-dash-flow {
+    from { stroke-dashoffset: 100; }
+    to   { stroke-dashoffset: 0; }
+}
+
+.map-route {
+    animation: map-dash-flow 3s linear infinite;
+}
+
+/* --- Plane motion (handled via animateMotion in SVG, CSS just guards reduced-motion) --- */
+@media (prefers-reduced-motion: reduce) {
+    .map-route {
+        animation: none;
+    }
+
+    /* SVG SMIL animations can't easily be stopped from CSS,
+       so we hide the plane + pulse rings in reduced-motion */
+    .map-plane,
+    .map-pulse-ring {
+        display: none;
+    }
+}
