@@ -89,31 +89,94 @@
         </div>
 
         <div class="card fade-in">
-            <h3><i class="fa-solid fa-triangle"></i>Vercel</h3>
-            <p style="color:var(--text-secondary);">Glassmorphism cards draw direct inspiration from Vercel's design system.</p>
-        </div>
-
-        <div class="card fade-in">
             <h3><i class="fa-solid fa-bolt"></i>Linear</h3>
             <p style="color:var(--text-secondary);">Speed, precision, keyboard-first UX inspired the interaction choices on this site.</p>
         </div>
+    </div>
 
-        <div class="card fade-in">
-            <h3><i class="fa-solid fa-magnifying-glass"></i>Raycast</h3>
-            <p style="color:var(--text-secondary);">Interaction details and snappy micro-feedback are inspired by Raycast's launcher UX.</p>
+    <h2 class="section-title fade-in" style="margin-top:60px;">Easter Eggs</h2>
+
+    <div class="card fade-in easter-egg-card" style="max-width:720px;margin:0 auto 40px;">
+        <h3><i class="fa-solid fa-egg"></i>Hidden Gems</h3>
+        <p style="color:var(--text-secondary);margin-bottom:24px;">A few little secrets scattered around this site — some you toggle, some you find.</p>
+
+        <div class="easter-egg-grid">
+
+            <div class="easter-egg-item">
+                <div class="easter-egg-icon"><i class="fa-solid fa-terminal"></i></div>
+                <div class="easter-egg-content">
+                    <strong>Terminal Mode</strong>
+                    <span>Switch to a retro hacker aesthetic</span>
+                    <code class="ee-shortcut">⌘ / Ctrl + Shift + T</code>
+                </div>
+                <button class="ee-action-btn" id="ee-terminal-toggle">Toggle</button>
+            </div>
+
+            <div class="easter-egg-item">
+                <div class="easter-egg-icon"><i class="fa-solid fa-file-lines"></i></div>
+                <div class="easter-egg-content">
+                    <strong>humans.txt</strong>
+                    <span>The humans behind this site</span>
+                </div>
+                <a href="humans.txt" target="_blank" class="ee-action-btn">Open</a>
+            </div>
+
+            <div class="easter-egg-item">
+                <div class="easter-egg-icon"><i class="fa-solid fa-house"></i></div>
+                <div class="easter-egg-content">
+                    <strong>Home</strong>
+                    <span>Who is Chris?</span>
+                </div>
+                <a href="index.html" class="ee-action-btn">Visit</a>
+            </div>
+
+            <div class="easter-egg-item">
+                <div class="easter-egg-icon"><i class="fa-solid fa-briefcase"></i></div>
+                <div class="easter-egg-content">
+                    <strong>Experience</strong>
+                    <span>Work & internship history</span>
+                </div>
+                <a href="experience.html" class="ee-action-btn">Visit</a>
+            </div>
+
+            <div class="easter-egg-item">
+                <div class="easter-egg-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <div class="easter-egg-content">
+                    <strong>Projects</strong>
+                    <span>Things I built</span>
+                </div>
+                <a href="projects.html" class="ee-action-btn">Visit</a>
+            </div>
+
+            <div class="easter-egg-item">
+                <div class="easter-egg-icon"><i class="fa-solid fa-award"></i></div>
+                <div class="easter-egg-content">
+                    <strong>Certifications</strong>
+                    <span>Courses & badges earned</span>
+                </div>
+                <a href="certifications.html" class="ee-action-btn">Visit</a>
+            </div>
+
         </div>
     </div>
 
-    <h2 class="section-title fade-in" style="margin-top:60px;">Easter Eggs Unlocked</h2>
-
-    <div class="card fade-in" style="max-width:680px;margin:0 auto 40px;">
-        <h3><i class="fa-solid fa-egg"></i>Found them all?</h3>
-        <div class="skill-list" style="margin-top:16px;">
-            <span class="skill-pill">Try <code>⌘ Shift + T</code></span>
-            <span class="skill-pill">Try <code>Ctrl + Shift + T</code></span>
-            <span class="skill-pill"><code>/humans.txt</code> exists</span>
-        </div>
-    </div>
+    <script>
+    (function () {
+        const btn = document.getElementById('ee-terminal-toggle');
+        if (!btn) return;
+        const html = document.documentElement;
+        const update = () => {
+            btn.textContent = html.classList.contains('terminal-mode') ? 'Disable' : 'Toggle';
+        };
+        update();
+        btn.addEventListener('click', () => {
+            const isOn = html.classList.toggle('terminal-mode');
+            localStorage.setItem('terminal_mode', isOn ? 'on' : 'off');
+            document.dispatchEvent(new CustomEvent('terminalmodechange', { detail: { active: isOn } }));
+            update();
+        });
+    }());
+    </script>
 
     <h2 class="section-title fade-in" style="margin-top:60px;">Live Stats</h2>
 

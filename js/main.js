@@ -123,8 +123,6 @@ function initCardTilt() {
 
         card.style.transition = 'var(--transition)';
         card.style.transform = '';
-        card.style.removeProperty('--mx');
-        card.style.removeProperty('--my');
         card.classList.remove('tilt-active');
         card._tiltEvent = null;
     };
@@ -159,8 +157,6 @@ function initCardTilt() {
                 const rotateY = (relativeX - 0.5) * (maxTilt * 2);
                 const rotateX = (0.5 - relativeY) * (maxTilt * 2);
 
-                card.style.setProperty('--mx', `${relativeX * 100}%`);
-                card.style.setProperty('--my', `${relativeY * 100}%`);
                 card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale(1.01) translateY(-5px)`;
                 card._tiltFrame = null;
             });

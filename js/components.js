@@ -131,6 +131,7 @@ class AppFooter extends HTMLElement {
         this.innerHTML = `
             <footer>
                 &copy; ${year} Chris Jemming.
+                <a href="credits.html" style="color:var(--text-secondary);text-decoration:none;margin-left:12px;opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">Credits</a>
             </footer>
         `;
     }
