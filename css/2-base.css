@@ -46,7 +46,6 @@ a > *, button > * { pointer-events: none; }
     100% { transform: translate(0, 0) rotate(360deg); }
 }
 
-html[data-theme="dark"] .background-orbs::before,
 html[data-theme="dark"] .background-orbs::before {
     content: '';
     position: fixed;

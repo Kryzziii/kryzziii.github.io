@@ -41,7 +41,7 @@
             answer: "I speak **Luxembourgish 🇱🇺**, **English 🇬🇧**, **German 🇩🇪**, and **French 🇫🇷**."
         },
         {
-            keywords: ['project', 'projects', 'built', 'portfolio', 'showcase', 'code', 'built'],
+            keywords: ['project', 'projects', 'built', 'portfolio', 'showcase', 'code'],
             answer: "**Projects:** WhistleDrop (hidden service), IFEN Studio DB, IFEN Online Form, and this portfolio itself. 💻",
             cta: { label: 'View projects', href: 'projects.html' }
         },
