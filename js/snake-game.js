@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const MS_PER_FRAME = 16.6667;
     const MAX_DELTA_MULTIPLIER = 2.2;
     const MAX_FRAME_GAP = 250;
+    const TALL_OBSTACLE_PROBABILITY = 0.58;
 
     let viewportWidth = 0;
     let viewportHeight = 0;
@@ -280,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function spawnObstacle() {
-        const isTall = Math.random() > 0.58;
+        const isTall = Math.random() > TALL_OBSTACLE_PROBABILITY;
         const width = isTall ? randomBetween(24, 34) : randomBetween(34, 56);
         const height = isTall ? randomBetween(64, 94) : randomBetween(34, 54);
 
@@ -463,7 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function colorWithAlpha(color, alpha) {
         if (color.startsWith('rgba')) {
-            return color;
+            return color.replace(/rgba\(([^,]+),([^,]+),([^,]+),([^)]+)\)/, `rgba($1,$2,$3, ${alpha})`);
         }
         if (color.startsWith('rgb')) {
             return color.replace('rgb', 'rgba').replace(')', `, ${alpha})`);
