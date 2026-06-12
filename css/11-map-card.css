@@ -1,5 +1,31 @@
 /* Lux → Karlsruhe Map Card — css/11-map-card.css */
 
+/* Country fill colours — light mode */
+:root {
+    --map-land-a: rgba(180, 210, 180, 0.45);   /* France */
+    --map-land-b: rgba(180, 200, 230, 0.45);   /* Belgium */
+    --map-land-c: rgba(210, 200, 170, 0.45);   /* Germany */
+    --map-land-lux: rgba(0, 113, 227, 0.2);    /* Luxembourg */
+}
+
+/* Country fill colours — dark mode (manual override) */
+html[data-theme="dark"] {
+    --map-land-a: rgba(60, 100, 60, 0.4);
+    --map-land-b: rgba(50, 80, 130, 0.4);
+    --map-land-c: rgba(100, 90, 60, 0.4);
+    --map-land-lux: rgba(41, 151, 255, 0.25);
+}
+
+/* Country fill colours — dark mode (system preference) */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --map-land-a: rgba(60, 100, 60, 0.4);
+        --map-land-b: rgba(50, 80, 130, 0.4);
+        --map-land-c: rgba(100, 90, 60, 0.4);
+        --map-land-lux: rgba(41, 151, 255, 0.25);
+    }
+}
+
 .map-card {
     overflow: visible;
 }

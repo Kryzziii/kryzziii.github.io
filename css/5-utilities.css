@@ -442,24 +442,6 @@
     margin-bottom: 18px;
 }
 
-/* 404 Orbs */
-body.error-page .orb-1 {
-    background: #FF9A9E;
-    filter: blur(100px);
-}
-
-body.error-page .orb-2 {
-    background: #FECFEF;
-    filter: blur(100px);
-}
-
-[data-theme="dark"] body.error-page .orb-1 {
-    background: #592E2E;
-}
-
-[data-theme="dark"] body.error-page .orb-2 {
-    background: #4A1C40;
-}
 
 @media (max-width: 900px) {
     .error-showcase {

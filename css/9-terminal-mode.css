@@ -112,12 +112,3 @@ html.terminal-mode :focus-visible {
     outline: 1px solid var(--text-main);
     outline-offset: 2px;
 }
-
-/* --- Aurora hide in terminal mode --- */
-html.terminal-mode .background-orbs::before {
-    display: none;
-}
-
-/* --- Orb tint override for terminal mode --- */
-html.terminal-mode .orb-1 { background: rgba(0, 255, 156, 0.12); }
-html.terminal-mode .orb-2 { background: rgba(88, 166, 255, 0.08); }

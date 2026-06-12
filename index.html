@@ -14,7 +14,6 @@
     <script src="js/main.js" defer></script>
     <script src="js/command-palette.js" defer></script>
     <script src="js/terminal-mode.js" defer></script>
-    <script src="js/ama-widget.js" defer></script>
 
     <script>
         const savedTheme = localStorage.getItem('theme');
@@ -30,10 +29,6 @@
 </head>
 <body class="preload">
 
-<div class="background-orbs">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-</div>
 
 <app-navbar></app-navbar>
 
@@ -76,7 +71,21 @@
             <h3><i class="fa-solid fa-route"></i>Where I'm from &amp; based</h3>
             <div class="map-svg-wrap">
                 <svg viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated map from Luxembourg to Karlsruhe">
-                    <!-- Faint background suggesting European landmass -->
+                    <!-- Country fills -->
+                    <!-- France (NE portion: Alsace-Lorraine) -->
+                    <path d="M 0 130 L 40 90 L 55 110 L 58 130 L 52 155 L 62 185 L 50 240 L 0 240 Z"
+                          fill="var(--map-land-a)" stroke="var(--glass-border)" stroke-width="0.8"/>
+                    <!-- Belgium (above Luxembourg) -->
+                    <path d="M 0 60 L 120 10 L 145 30 L 130 65 L 100 75 L 80 115 L 55 110 L 40 90 L 0 130 Z"
+                          fill="var(--map-land-b)" stroke="var(--glass-border)" stroke-width="0.8"/>
+                    <!-- Luxembourg (small, around dot at 70,140) -->
+                    <path d="M 55 110 L 80 115 L 88 135 L 82 158 L 62 155 L 52 155 L 58 130 Z"
+                          fill="var(--map-land-lux)" stroke="var(--glass-border)" stroke-width="0.8"/>
+                    <!-- Germany (large right area) -->
+                    <path d="M 145 30 L 400 10 L 400 240 L 50 240 L 62 185 L 62 155 L 82 158 L 88 135 L 80 115 L 100 75 L 130 65 Z"
+                          fill="var(--map-land-c)" stroke="var(--glass-border)" stroke-width="0.8"/>
+
+                    <!-- Clip border rect -->
                     <rect x="10" y="10" width="380" height="220" rx="12" stroke="var(--glass-border)" stroke-width="1" fill="none"/>
 
                     <!-- Pulsing ring: Luxembourg -->
@@ -209,11 +218,6 @@
     <p style="text-align: center; color: var(--text-secondary); margin-bottom: 20px;" class="fade-in">
         📍 Luxemburg / Germany
     </p>
-
-    <h2 class="section-title fade-in" style="margin-top: 60px;">Ask me anything</h2>
-    <div class="bento-grid" style="max-width: 680px; margin: 0 auto 60px;">
-        <div id="ama-widget" class="span-3"></div>
-    </div>
 
 </main>
 
