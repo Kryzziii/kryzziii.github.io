@@ -1,13 +1,15 @@
-.snake-card {
-    margin: 0 auto 40px;
-    max-width: 520px;
-    width: 100%;
+.snake-panel {
     text-align: center;
+}
+
+.snake-panel h3 {
+    justify-content: center;
 }
 
 .snake-subline {
     color: var(--text-secondary);
     margin-top: 8px;
+    margin-bottom: 0;
 }
 
 .snake-stats {
@@ -19,7 +21,7 @@
 }
 
 #snake-canvas {
-    width: min(100%, 400px);
+    width: min(100%, 360px);
     max-width: 100%;
     aspect-ratio: 1 / 1;
     height: auto;

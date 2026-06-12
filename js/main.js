@@ -223,7 +223,7 @@ function initCardTilt() {
     }
 
     const cards = [...document.querySelectorAll('.card, .glass-card, .cert-card')]
-        .filter((card) => !card.classList.contains('timeline-item'));
+        .filter((card) => !card.classList.contains('timeline-item') && !card.classList.contains('error-showcase'));
 
     cards.forEach((card) => {
         let pointerX = 50;
@@ -231,12 +231,10 @@ function initCardTilt() {
         let rafId = null;
 
         const render = () => {
-            const rotateX = ((50 - pointerY) / 50) * 6;
-            const rotateY = ((pointerX - 50) / 50) * 6;
+            const translateX = ((pointerX - 50) / 50) * 4;
+            const translateY = ((pointerY - 50) / 50) * 2 - 3;
 
-            card.style.transform = `perspective(900px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale(1.01) translateY(-5px)`;
-            card.style.setProperty('--mx', `${pointerX}%`);
-            card.style.setProperty('--my', `${pointerY}%`);
+            card.style.transform = `translate3d(${translateX.toFixed(2)}px, ${translateY.toFixed(2)}px, 0)`;
             rafId = null;
         };
 
@@ -247,8 +245,8 @@ function initCardTilt() {
         };
 
         card.addEventListener('mouseenter', () => {
-            card.classList.add('tilt-active');
-            card.style.transition = 'transform 0.1s ease-out';
+            card.style.transition = 'transform 0.16s ease-out';
+            scheduleRender();
         });
 
         card.addEventListener('mousemove', (event) => {
@@ -259,11 +257,8 @@ function initCardTilt() {
         });
 
         card.addEventListener('mouseleave', () => {
-            card.classList.remove('tilt-active');
             card.style.transition = 'var(--transition)';
             card.style.transform = '';
-            card.style.removeProperty('--mx');
-            card.style.removeProperty('--my');
         });
     });
 }
