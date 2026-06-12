@@ -12,6 +12,7 @@
 
     <script src="js/components.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/terminal-mode.js" defer></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -20,6 +21,13 @@
         });
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
+
+        const savedTerminalMode = localStorage.getItem('terminal_mode');
+        if (savedTerminalMode === 'on') {
+            document.documentElement.classList.add('terminal-mode');
+            const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+            if (metaThemeColor) { metaThemeColor.setAttribute('content', '#0d1117'); }
+        }
     </script>
 </head>
 <body class="preload">
@@ -163,6 +171,5 @@
 
 <app-footer></app-footer>
 
-<script src="js/main.js"></script>
 </body>
 </html>

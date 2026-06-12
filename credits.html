@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F5F5F7">
+    <title>Credits | Chris Jemming</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="author" href="/humans.txt">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/terminal-mode.js" defer></script>
+
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
+        if (localStorage.getItem('terminal_mode') === 'on') { document.documentElement.classList.add('terminal-mode'); }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('preload');
+            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
+        });
+    </script>
+</head>
+<body class="preload">
+
+<div class="background-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+</div>
+
+<app-navbar></app-navbar>
+
+<main class="container">
+
+    <section class="hero fade-in">
+        <h1>Behind the scenes</h1>
+        <p class="credits-hero-caption">The stack, tools, and inspirations that power this little corner of the internet.</p>
+    </section>
+
+    <h2 class="section-title fade-in">Tech &amp; Tools</h2>
+
+    <div class="bento-grid fade-in">
+        <div class="card fade-in">
+            <h3><i class="fa-brands fa-html5"></i>HTML5 / CSS3 / ES6+</h3>
+            <p style="color:var(--text-secondary);">Zero frameworks. Zero bundlers. Every pixel hand-crafted in vanilla web tech. The way it was meant to be.</p>
+        </div>
+
+        <div class="card fade-in">
+            <h3><i class="fa-solid fa-icons"></i>Font Awesome 6.4</h3>
+            <p style="color:var(--text-secondary);">Icon library powering every little visual glyph on this site. Used via CDN — no npm required.</p>
+            <a href="https://fontawesome.com" target="_blank" rel="noopener noreferrer" class="btn-ghost" style="margin-top:auto;">fontawesome.com <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.7em;"></i></a>
+        </div>
+
+        <div class="card fade-in">
+            <h3><i class="fa-brands fa-github"></i>GitHub Pages</h3>
+            <p style="color:var(--text-secondary);">Hosted for free, directly from this repository. Custom domain via CNAME. No servers to manage.</p>
+        </div>
+
+        <div class="card fade-in">
+            <h3><i class="fa-solid fa-globe"></i>Custom Domain</h3>
+            <p style="color:var(--text-secondary);">portfolio.chris-jemming.lu — served over HTTPS via GitHub Pages + CNAME config.</p>
+        </div>
+
+        <div class="card fade-in">
+            <h3><i class="fa-solid fa-code"></i>IDE</h3>
+            <div class="skill-list" style="margin-top:10px;">
+                <span class="skill-pill">VS Code</span>
+                <span class="skill-pill">JetBrains</span>
+            </div>
+        </div>
+
+        <div class="card fade-in">
+            <h3><i class="fa-solid fa-cube"></i>No Build Step</h3>
+            <p style="color:var(--text-secondary);">No webpack, no Vite, no Rollup. Just <code style="background:var(--glass-bg);padding:2px 6px;border-radius:4px;">open index.html</code> and go.</p>
+        </div>
+    </div>
+
+    <h2 class="section-title fade-in" style="margin-top:60px;">Inspirations</h2>
+
+    <div class="bento-grid fade-in">
+        <div class="card fade-in">
+            <h3><i class="fa-brands fa-apple"></i>Apple HIG</h3>
+            <p style="color:var(--text-secondary);">Human Interface Guidelines — the gold standard for clean, purposeful design language.</p>
+        </div>
+
+        <div class="card fade-in">
+            <h3><i class="fa-solid fa-bolt"></i>Linear</h3>
+            <p style="color:var(--text-secondary);">Speed, precision, keyboard-first UX inspired the interaction choices on this site.</p>
+        </div>
+    </div>
+
+    <h2 class="section-title fade-in" style="margin-top:60px;">Easter Eggs</h2>
+
+    <div class="card fade-in easter-egg-card" style="max-width:720px;margin:0 auto 40px;">
+        <h3><i class="fa-solid fa-egg"></i>Hidden Gems</h3>
+        <p style="color:var(--text-secondary);margin-bottom:24px;">A few little secrets scattered around this site — some you toggle, some you find.</p>
+
+        <div class="easter-egg-grid">
+
+            <div class="easter-egg-item">
+                <div class="easter-egg-icon"><i class="fa-solid fa-terminal"></i></div>
+                <div class="easter-egg-content">
+                    <strong>Terminal Mode</strong>
+                    <span>Switch to a retro hacker aesthetic</span>
+                    <code class="ee-shortcut">⌘ / Ctrl + Shift + T</code>
+                </div>
+                <button class="ee-action-btn" id="ee-terminal-toggle">Toggle</button>
+            </div>
+
+            <div class="easter-egg-item">
+                <div class="easter-egg-icon"><i class="fa-solid fa-file-lines"></i></div>
+                <div class="easter-egg-content">
+                    <strong>humans.txt</strong>
+                    <span>The humans behind this site</span>
+                </div>
+                <a href="humans.txt" target="_blank" class="ee-action-btn">Open</a>
+            </div>
+
+            <div class="easter-egg-item">
+                <div class="easter-egg-icon"><i class="fa-solid fa-house"></i></div>
+                <div class="easter-egg-content">
+                    <strong>Home</strong>
+                    <span>Who is Chris?</span>
+                </div>
+                <a href="index.html" class="ee-action-btn">Visit</a>
+            </div>
+
+            <div class="easter-egg-item">
+                <div class="easter-egg-icon"><i class="fa-solid fa-briefcase"></i></div>
+                <div class="easter-egg-content">
+                    <strong>Experience</strong>
+                    <span>Work & internship history</span>
+                </div>
+                <a href="experience.html" class="ee-action-btn">Visit</a>
+            </div>
+
+            <div class="easter-egg-item">
+                <div class="easter-egg-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <div class="easter-egg-content">
+                    <strong>Projects</strong>
+                    <span>Things I built</span>
+                </div>
+                <a href="projects.html" class="ee-action-btn">Visit</a>
+            </div>
+
+            <div class="easter-egg-item">
+                <div class="easter-egg-icon"><i class="fa-solid fa-award"></i></div>
+                <div class="easter-egg-content">
+                    <strong>Certifications</strong>
+                    <span>Courses & badges earned</span>
+                </div>
+                <a href="certifications.html" class="ee-action-btn">Visit</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+    (function () {
+        const btn = document.getElementById('ee-terminal-toggle');
+        if (!btn) return;
+        const html = document.documentElement;
+        const update = () => {
+            btn.textContent = html.classList.contains('terminal-mode') ? 'Disable' : 'Toggle';
+        };
+        update();
+        btn.addEventListener('click', () => {
+            const isOn = html.classList.toggle('terminal-mode');
+            localStorage.setItem('terminal_mode', isOn ? 'on' : 'off');
+            document.dispatchEvent(new CustomEvent('terminalmodechange', { detail: { active: isOn } }));
+            update();
+        });
+    }());
+    </script>
+
+    <h2 class="section-title fade-in" style="margin-top:60px;">Live Stats</h2>
+
+    <div class="card fade-in" style="max-width:520px;margin:0 auto 40px;text-align:center;" id="credits-stats-card">
+        <h3><i class="fa-brands fa-github"></i>kryzziii.github.io</h3>
+        <div class="credits-stats-grid">
+            <div class="credits-stat">
+                <span class="credits-stat-value" id="stat-stars">—</span>
+                <span class="credits-stat-label">Stars</span>
+            </div>
+            <div class="credits-stat">
+                <span class="credits-stat-value" id="stat-forks">—</span>
+                <span class="credits-stat-label">Forks</span>
+            </div>
+            <div class="credits-stat">
+                <span class="credits-stat-value" id="stat-pushed">—</span>
+                <span class="credits-stat-label">Last push</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card fade-in" style="max-width:480px;margin:0 auto 80px;text-align:center;">
+        <h3><i class="fa-solid fa-heart" style="color:#ff6b6b;"></i>Thanks for digging this deep</h3>
+        <p style="color:var(--text-secondary);margin-bottom:24px;">You've reached the bottom of the rabbit hole. Hope you enjoyed the journey 🐇</p>
+        <a href="index.html" class="btn-action">Back to home <i class="fa-solid fa-house"></i></a>
+    </div>
+
+</main>
+
+<app-footer></app-footer>
+
+<script>
+(function () {
+    const CACHE_KEY = 'credits_gh_stats';
+    const CACHE_TTL = 5 * 60 * 1000;
+
+    function relativeTime(isoDate) {
+        const diff = Date.now() - new Date(isoDate).getTime();
+        const minutes = Math.floor(diff / 60000);
+        const hours = Math.floor(minutes / 60);
+        const days = Math.floor(hours / 24);
+        if (days > 0) return days + 'd ago';
+        if (hours > 0) return hours + 'h ago';
+        return minutes + 'm ago';
+    }
+
+    function render(data) {
+        document.getElementById('stat-stars').textContent = data.stargazers_count;
+        document.getElementById('stat-forks').textContent = data.forks_count;
+        document.getElementById('stat-pushed').textContent = relativeTime(data.pushed_at);
+    }
+
+    try {
+        const cached = JSON.parse(sessionStorage.getItem(CACHE_KEY) || 'null');
+        if (cached && (Date.now() - cached.ts < CACHE_TTL)) {
+            render(cached.data);
+            return;
+        }
+    } catch (_) {}
+
+    fetch('https://api.github.com/repos/Kryzziii/kryzziii.github.io')
+        .then((r) => r.json())
+        .then((data) => {
+            render(data);
+            try {
+                sessionStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data }));
+            } catch (_) {}
+        })
+        .catch(() => {
+        });
+}());
+</script>
+
+</body>
+</html>

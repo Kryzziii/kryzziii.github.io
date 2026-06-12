@@ -1,0 +1,15 @@
+/* TEAM */
+Developer: Chris Jemming
+Location: Luxembourg / Germany
+GitHub: https://github.com/Kryzziii
+Contact: contact [at] chrisjemming.lu
+
+/* TECHNOLOGY COLOPHON */
+Standards: HTML5, CSS3, JavaScript (ES6+)
+Libraries: Font Awesome 6
+Hosting: GitHub Pages
+
+/* SITE */
+Last update: 2026/06
+Language: German / English
+Doctype: HTML5
