@@ -104,7 +104,8 @@ function initCardTilt() {
         return;
     }
 
-    const cards = [...new Set(Array.from(document.querySelectorAll('.card, .glass-card, .cert-card')).filter(card => !card.classList.contains('timeline-item')))];
+    const cards = Array.from(document.querySelectorAll('.card, .glass-card, .cert-card'))
+        .filter(card => !card.classList.contains('timeline-item'));
 
     if (cards.length === 0) {
         return;
