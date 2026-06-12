@@ -2,27 +2,36 @@
 
 /* Country fill colours — light mode */
 :root {
-    --map-land-a: rgba(180, 210, 180, 0.45);   /* France */
-    --map-land-b: rgba(180, 200, 230, 0.45);   /* Belgium */
-    --map-land-c: rgba(210, 200, 170, 0.45);   /* Germany */
-    --map-land-lux: rgba(0, 113, 227, 0.2);    /* Luxembourg */
+    --map-land-a: rgba(180, 210, 180, 0.45);   /* UK/France */
+    --map-land-b: rgba(180, 200, 230, 0.45);   /* Belgium/Netherlands */
+    --map-land-c: rgba(210, 200, 170, 0.5);    /* Germany */
+    --map-land-d: rgba(186, 176, 146, 0.45);   /* Switzerland */
+    --map-land-lux: rgba(0, 113, 227, 0.32);   /* Luxembourg */
+    --map-water-a: rgba(127, 193, 255, 0.22);
+    --map-water-b: rgba(82, 110, 170, 0.16);
 }
 
 /* Country fill colours — dark mode (manual override) */
 html[data-theme="dark"] {
-    --map-land-a: rgba(60, 100, 60, 0.4);
-    --map-land-b: rgba(50, 80, 130, 0.4);
-    --map-land-c: rgba(100, 90, 60, 0.4);
-    --map-land-lux: rgba(41, 151, 255, 0.25);
+    --map-land-a: rgba(60, 100, 60, 0.45);
+    --map-land-b: rgba(50, 80, 130, 0.45);
+    --map-land-c: rgba(100, 90, 60, 0.5);
+    --map-land-d: rgba(89, 81, 58, 0.45);
+    --map-land-lux: rgba(41, 151, 255, 0.35);
+    --map-water-a: rgba(24, 56, 102, 0.55);
+    --map-water-b: rgba(7, 21, 49, 0.58);
 }
 
 /* Country fill colours — dark mode (system preference) */
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
-        --map-land-a: rgba(60, 100, 60, 0.4);
-        --map-land-b: rgba(50, 80, 130, 0.4);
-        --map-land-c: rgba(100, 90, 60, 0.4);
-        --map-land-lux: rgba(41, 151, 255, 0.25);
+        --map-land-a: rgba(60, 100, 60, 0.45);
+        --map-land-b: rgba(50, 80, 130, 0.45);
+        --map-land-c: rgba(100, 90, 60, 0.5);
+        --map-land-d: rgba(89, 81, 58, 0.45);
+        --map-land-lux: rgba(41, 151, 255, 0.35);
+        --map-water-a: rgba(24, 56, 102, 0.55);
+        --map-water-b: rgba(7, 21, 49, 0.58);
     }
 }
 
@@ -36,8 +45,13 @@ html[data-theme="dark"] {
 
 .map-svg-wrap {
     width: 100%;
-    max-width: 400px;
+    max-width: 560px;
     margin: 0 auto;
+}
+
+.map-card-bottom {
+    margin: 10px auto 20px;
+    width: min(100%, 920px);
 }
 
 .map-svg-wrap svg {

@@ -11,6 +11,19 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: -10%;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(40rem 30rem at 15% 20%, var(--bg-aurora-1), transparent 70%),
+        radial-gradient(38rem 28rem at 85% 10%, var(--bg-aurora-2), transparent 70%),
+        radial-gradient(36rem 24rem at 50% 90%, var(--bg-aurora-3), transparent 70%);
 }
 
 /* Anti-Flicker Class */
@@ -19,4 +32,3 @@ body.preload * { transition: none !important; }
 /* Pointer Fixes */
 a, button, .btn, .btn-action, .social-btn, .theme-toggle, .nav-links a { cursor: pointer !important; }
 a > *, button > * { pointer-events: none; }
-

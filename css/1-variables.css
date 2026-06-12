@@ -12,6 +12,9 @@
     --bg-color: #F5F5F7;
     --text-main: #1D1D1F;
     --text-secondary: #86868B;
+    --bg-aurora-1: rgba(0, 113, 227, 0.18);
+    --bg-aurora-2: rgba(144, 78, 255, 0.15);
+    --bg-aurora-3: rgba(0, 184, 148, 0.14);
 
     /* Glas: Hell */
     --glass-bg: rgba(255, 255, 255, 0.25);
@@ -27,6 +30,9 @@
         --bg-color: #000000;
         --text-main: #F5F5F7;
         --text-secondary: #A1A1A6;
+        --bg-aurora-1: rgba(41, 151, 255, 0.25);
+        --bg-aurora-2: rgba(125, 92, 255, 0.2);
+        --bg-aurora-3: rgba(0, 201, 167, 0.16);
 
         --glass-bg: rgba(30, 30, 35, 0.3);
         --glass-border: rgba(255, 255, 255, 0.1);
@@ -44,6 +50,9 @@ html[data-theme="dark"] {
     --bg-color: #000000;
     --text-main: #F5F5F7;
     --text-secondary: #A1A1A6;
+    --bg-aurora-1: rgba(41, 151, 255, 0.25);
+    --bg-aurora-2: rgba(125, 92, 255, 0.2);
+    --bg-aurora-3: rgba(0, 201, 167, 0.16);
 
     --glass-bg: rgba(30, 30, 35, 0.3);
     --glass-border: rgba(255, 255, 255, 0.1);
@@ -59,6 +68,9 @@ html[data-theme="light"] {
     --bg-color: #F5F5F7;
     --text-main: #1D1D1F;
     --text-secondary: #86868B;
+    --bg-aurora-1: rgba(0, 113, 227, 0.18);
+    --bg-aurora-2: rgba(144, 78, 255, 0.15);
+    --bg-aurora-3: rgba(0, 184, 148, 0.14);
 
     --glass-bg: rgba(255, 255, 255, 0.25);
     --glass-border: rgba(255, 255, 255, 0.6);
