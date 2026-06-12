@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const POINTER_SELECTOR = 'a, button, input, textarea, select, label';
     const MS_PER_FRAME = 16.6667;
     const MAX_DELTA_MULTIPLIER = 2.2;
+    const MAX_FRAME_GAP = 250;
 
     let viewportWidth = 0;
     let viewportHeight = 0;
@@ -206,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        if (!lastFrameTime) {
+        if (!lastFrameTime || timestamp - lastFrameTime > MAX_FRAME_GAP) {
             lastFrameTime = timestamp;
         }
 
