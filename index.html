@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WPeE=" crossorigin="" defer></script>
 
     <script src="js/components.js" defer></script>
     <script src="js/main.js" defer></script>
@@ -155,38 +157,16 @@
             </a>
         </div>
 
-        <div class="card span-2 fade-in route-map-card">
-            <h3><i class="fa-solid fa-route"></i>Lux → Karlsruhe</h3>
-            <p>From Luxembourg to Karlsruhe — a short route with a big impact on my studies, work, and daily life.</p>
+        <div class="card span-2 fade-in route-map-card" style="display:none;"></div>
+    </div>
 
-            <svg class="route-map" viewBox="0 0 400 240" role="img" aria-label="Stylized route from Luxembourg to Karlsruhe">
-                <rect x="12" y="12" width="376" height="216" rx="12" fill="none" stroke="var(--glass-border)"></rect>
-
-                <path class="route-trail" d="M80 140 C140 60, 240 70, 300 110"></path>
-                <path class="route-path" d="M80 140 C140 60, 240 70, 300 110"></path>
-
-                <circle class="route-map-pulse" cx="80" cy="140" r="6" fill="var(--accent)" opacity="0.35">
-                    <animate attributeName="r" values="6;16" dur="2s" repeatCount="indefinite"></animate>
-                    <animate attributeName="opacity" values="0.6;0" dur="2s" repeatCount="indefinite"></animate>
-                </circle>
-                <circle class="route-map-pulse" cx="300" cy="110" r="6" fill="var(--accent)" opacity="0.35">
-                    <animate attributeName="r" values="6;16" dur="2s" begin="1s" repeatCount="indefinite"></animate>
-                    <animate attributeName="opacity" values="0.6;0" dur="2s" begin="1s" repeatCount="indefinite"></animate>
-                </circle>
-
-                <circle cx="80" cy="140" r="6" fill="var(--accent)"></circle>
-                <circle cx="300" cy="110" r="6" fill="var(--accent)"></circle>
-
-                <g class="route-traveler">
-                    <circle r="4" fill="var(--text-main)"></circle>
-                    <animateMotion dur="5s" repeatCount="indefinite" rotate="auto" path="M80 140 C140 60, 240 70, 300 110"></animateMotion>
-                </g>
-
-                <text x="52" y="170">Luxembourg</text>
-                <text x="252" y="92">Karlsruhe</text>
-                <text class="route-map-caption" x="118" y="206">studies • work • growth</text>
-            </svg>
+    <div class="card fade-in route-leaflet-outer" style="margin-top:24px;">
+        <div class="route-leaflet-header">
+            <h3 style="margin-bottom:6px;"><i class="fa-solid fa-location-dot"></i>Luxemburg / Germany</h3>
+            <p style="color:var(--text-secondary);font-size:0.95rem;margin:0;">Based between Luxembourg and Karlsruhe — living across borders, studying, working, and growing.</p>
         </div>
+        <div id="route-leaflet-map"></div>
+        <p class="route-leaflet-caption">studies • work • growth</p>
     </div>
 
     <div class="section-title fade-in" style="display:block; text-align: center; margin-top: 60px;">Contact</div>
@@ -196,10 +176,6 @@
         <a href="https://linkedin.com/in/chris-jemming" target="_blank" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
         <a href="https://github.com/Kryzziii" target="_blank" class="social-btn"><i class="fa-brands fa-github"></i></a>
     </div>
-
-    <p style="text-align: center; color: var(--text-secondary); margin-bottom: 20px;" class="fade-in">
-        📍 Luxemburg / Germany
-    </p>
 
 </main>
 

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTypewriter();
     initCardTilt();
     initLightbox();
+    initRouteMap();
 });
 
 function initScrollAnimations() {
@@ -233,3 +234,87 @@ function updateMobileStatusBar() {
 
 updateMobileStatusBar();
 window.addEventListener('resize', updateMobileStatusBar);
+
+function initRouteMap() {
+    const mapEl = document.getElementById('route-leaflet-map');
+    if (!mapEl || typeof L === 'undefined') {
+        return;
+    }
+
+    const LIGHT_TILE = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+    const DARK_TILE  = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+    const TILE_ATTR  = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>';
+
+    const isDark = () =>
+        document.documentElement.classList.contains('terminal-mode') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        (!document.documentElement.getAttribute('data-theme') &&
+         window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+    const map = L.map('route-leaflet-map', {
+        center: [49.35, 7.3],
+        zoom: 8,
+        scrollWheelZoom: false,
+        zoomControl: true,
+        attributionControl: true,
+    });
+
+    let tileLayer = L.tileLayer(isDark() ? DARK_TILE : LIGHT_TILE, {
+        attribution: TILE_ATTR,
+        subdomains: 'abcd',
+        maxZoom: 19,
+    }).addTo(map);
+
+    // Marker icon factory (Font Awesome look-alike via divIcon)
+    const makeIcon = (emoji) => L.divIcon({
+        className: '',
+        html: `<div class="route-map-marker">${emoji}</div>`,
+        iconSize: [36, 36],
+        iconAnchor: [18, 36],
+        popupAnchor: [0, -36],
+    });
+
+    const luxLatLng  = [49.6116, 6.1319];
+    const kaLatLng   = [49.0069, 8.4037];
+
+    L.marker(luxLatLng, { icon: makeIcon('🇱🇺') })
+        .addTo(map)
+        .bindPopup('<strong>Luxembourg City</strong><br>Home Country 🏠');
+
+    L.marker(kaLatLng, { icon: makeIcon('🇩🇪') })
+        .addTo(map)
+        .bindPopup('<strong>Karlsruhe</strong><br>University &amp; Work 🎓');
+
+    // Dashed route line between the two cities
+    L.polyline([luxLatLng, kaLatLng], {
+        color: '#0071E3',
+        weight: 3,
+        dashArray: '10, 8',
+        opacity: 0.9,
+    }).addTo(map);
+
+    // Swap tile layer on theme change
+    const swapTiles = () => {
+        map.removeLayer(tileLayer);
+        tileLayer = L.tileLayer(isDark() ? DARK_TILE : LIGHT_TILE, {
+            attribution: TILE_ATTR,
+            subdomains: 'abcd',
+            maxZoom: 19,
+        }).addTo(map);
+    };
+
+    // Listen for manual theme toggle (button click on .theme-toggle)
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('#theme-toggle')) {
+            setTimeout(swapTiles, 50);
+        }
+    });
+
+    // Listen for terminal mode toggle
+    document.addEventListener('terminalmodechange', () => {
+        setTimeout(swapTiles, 50);
+    });
+
+    // System colour-scheme change
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', swapTiles);
+}
