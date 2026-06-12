@@ -12,6 +12,8 @@
 
     <script src="js/components.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/command-palette.js" defer></script>
+    <script src="js/snake-game.js" defer></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -50,6 +52,29 @@
         </a>
 
     </div>
+
+    <section class="glass-card snake-card fade-in" aria-label="Snake mini-game section">
+        <h3>While you're here… 🐍</h3>
+        <p class="snake-subline">Use arrow keys or WASD. On mobile, swipe.</p>
+
+        <div class="snake-stats">
+            <span>Score: <strong id="snake-score">0</strong></span>
+            <span>High Score: <strong id="snake-highscore">0</strong></span>
+        </div>
+
+        <div class="snake-canvas-wrap">
+            <canvas id="snake-canvas" width="400" height="400" aria-label="Snake mini-game"></canvas>
+            <div id="snake-overlay" class="snake-overlay" hidden>
+                <p id="snake-overlay-text">Game Over — Score: 0</p>
+                <button id="snake-overlay-btn" class="btn-action" type="button">Play again</button>
+            </div>
+        </div>
+
+        <div class="snake-actions">
+            <button id="snake-start-pause" class="btn-action" type="button">Start</button>
+            <button id="snake-restart" class="btn-ghost" type="button">Restart</button>
+        </div>
+    </section>
 
 </main>
 

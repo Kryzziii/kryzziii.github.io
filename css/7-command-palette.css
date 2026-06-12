@@ -1,0 +1,201 @@
+.cmdk-backdrop {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: color-mix(in srgb, var(--bg-color) 55%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 2500;
+}
+
+.cmdk-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.cmdk-panel {
+    width: min(680px, calc(100vw - 48px));
+    max-height: min(560px, calc(100vh - 64px));
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    overflow: hidden;
+}
+
+.cmdk-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.cmdk-search i {
+    color: var(--text-secondary);
+}
+
+.cmdk-input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: var(--text-main);
+    font-size: 1rem;
+    outline: none;
+}
+
+.cmdk-input::placeholder {
+    color: var(--text-secondary);
+}
+
+.cmdk-list {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    overflow: auto;
+}
+
+.cmdk-group {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    padding: 14px 10px 8px;
+}
+
+.cmdk-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 12px;
+    color: var(--text-main);
+    padding: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cmdk-option i {
+    width: 18px;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.cmdk-option.active,
+.cmdk-option:hover {
+    background: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.cmdk-option.active i,
+.cmdk-option:hover i {
+    color: var(--accent);
+}
+
+.cmdk-option:focus-visible,
+.cmdk-hint:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.cmdk-empty {
+    color: var(--text-secondary);
+    padding: 12px;
+}
+
+.cmdk-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    padding: 10px 16px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.cmdk-hint {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1400;
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    padding: 8px 14px;
+    background: var(--glass-bg);
+    color: var(--text-main);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cmdk-hint:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+}
+
+.cmdk-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    transform: translate(-50%, 12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    background: var(--glass-bg);
+    color: var(--text-main);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 8px 14px;
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 2600;
+}
+
+.cmdk-toast.active {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.cmdk-matrix {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2550;
+    overflow: hidden;
+}
+
+.cmdk-matrix-col {
+    position: absolute;
+    top: -120%;
+    white-space: pre;
+    line-height: 1;
+    font-size: 14px;
+    color: color-mix(in srgb, var(--accent) 70%, var(--text-main));
+    opacity: 0.5;
+    animation: cmdk-rain 0.9s linear forwards;
+}
+
+@keyframes cmdk-rain {
+    to {
+        transform: translateY(220vh);
+    }
+}
+
+@media (max-width: 768px) {
+    .cmdk-panel {
+        width: calc(100vw - 24px);
+        max-height: calc(100vh - 24px);
+    }
+
+    .cmdk-hint {
+        display: none;
+    }
+}

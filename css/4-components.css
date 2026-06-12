@@ -10,6 +10,7 @@
     transition: var(--transition);
     overflow: hidden;
     padding: 32px;
+    position: relative;
 }
 
 .glass-card:hover, .card:hover, .timeline-item:hover, .cert-card:hover {
@@ -21,6 +22,25 @@
 .card {
     display: flex;
     flex-direction: column;
+}
+
+.card::after,
+.glass-card::after,
+.cert-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.2), transparent 55%);
+    mix-blend-mode: overlay;
+    transition: opacity 0.2s ease;
+}
+
+.card.tilt-active::after,
+.glass-card.tilt-active::after,
+.cert-card.tilt-active::after {
+    opacity: 1;
 }
 
 
@@ -489,4 +509,23 @@ footer {
     backdrop-filter: blur(20px);
     width: 100%;
     margin-top: auto;
+}
+
+.hero-typewriter {
+    min-height: 1.6em;
+}
+
+.typewriter-cursor {
+    animation: typewriter-blink 1s steps(2, start) infinite;
+}
+
+@keyframes typewriter-blink {
+    50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .typewriter-cursor {
+        animation: none;
+        display: none;
+    }
 }
