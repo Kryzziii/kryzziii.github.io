@@ -148,7 +148,6 @@
 
 .typewriter-text {
     display: inline-block;
-    min-width: var(--typewriter-width, 18ch);
     text-align: left;
 }
 

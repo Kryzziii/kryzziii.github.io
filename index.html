@@ -73,39 +73,6 @@
             </ul>
         </div>
 
-        <div class="card fade-in route-map-card">
-            <h3><i class="fa-solid fa-route"></i>Lux → Karlsruhe</h3>
-            <p>From Luxembourg to Karlsruhe — a short route with a big impact on my studies, work, and daily life.</p>
-
-            <svg class="route-map" viewBox="0 0 400 240" role="img" aria-label="Stylized route from Luxembourg to Karlsruhe">
-                <rect x="12" y="12" width="376" height="216" rx="12" fill="none" stroke="var(--glass-border)"></rect>
-
-                <path class="route-trail" d="M80 140 C140 60, 240 70, 300 110"></path>
-                <path class="route-path" d="M80 140 C140 60, 240 70, 300 110"></path>
-
-                <circle class="route-map-pulse" cx="80" cy="140" r="6" fill="var(--accent)" opacity="0.35">
-                    <animate attributeName="r" values="6;16" dur="2s" repeatCount="indefinite"></animate>
-                    <animate attributeName="opacity" values="0.6;0" dur="2s" repeatCount="indefinite"></animate>
-                </circle>
-                <circle class="route-map-pulse" cx="300" cy="110" r="6" fill="var(--accent)" opacity="0.35">
-                    <animate attributeName="r" values="6;16" dur="2s" begin="1s" repeatCount="indefinite"></animate>
-                    <animate attributeName="opacity" values="0.6;0" dur="2s" begin="1s" repeatCount="indefinite"></animate>
-                </circle>
-
-                <circle cx="80" cy="140" r="6" fill="var(--accent)"></circle>
-                <circle cx="300" cy="110" r="6" fill="var(--accent)"></circle>
-
-                <g class="route-traveler">
-                    <circle r="4" fill="var(--text-main)"></circle>
-                    <animateMotion dur="5s" repeatCount="indefinite" rotate="auto" path="M80 140 C140 60, 240 70, 300 110"></animateMotion>
-                </g>
-
-                <text x="52" y="170">Luxembourg</text>
-                <text x="252" y="92">Karlsruhe</text>
-                <text class="route-map-caption" x="118" y="206">studies • work • growth</text>
-            </svg>
-        </div>
-
         <div class="card fade-in" style="display:flex; flex-direction:column; justify-content:space-between;">
             <h3><i class="fa-solid fa-graduation-cap"></i>Studies</h3>
 
@@ -186,6 +153,39 @@
             <a href="social-engagement.html" class="btn-ghost" style="margin-top: 30px; align-self: center;">
                 Details <i class="fa-solid fa-arrow-right" style="font-size: 0.8em; margin-left: 5px;"></i>
             </a>
+        </div>
+
+        <div class="card span-2 fade-in route-map-card">
+            <h3><i class="fa-solid fa-route"></i>Lux → Karlsruhe</h3>
+            <p>From Luxembourg to Karlsruhe — a short route with a big impact on my studies, work, and daily life.</p>
+
+            <svg class="route-map" viewBox="0 0 400 240" role="img" aria-label="Stylized route from Luxembourg to Karlsruhe">
+                <rect x="12" y="12" width="376" height="216" rx="12" fill="none" stroke="var(--glass-border)"></rect>
+
+                <path class="route-trail" d="M80 140 C140 60, 240 70, 300 110"></path>
+                <path class="route-path" d="M80 140 C140 60, 240 70, 300 110"></path>
+
+                <circle class="route-map-pulse" cx="80" cy="140" r="6" fill="var(--accent)" opacity="0.35">
+                    <animate attributeName="r" values="6;16" dur="2s" repeatCount="indefinite"></animate>
+                    <animate attributeName="opacity" values="0.6;0" dur="2s" repeatCount="indefinite"></animate>
+                </circle>
+                <circle class="route-map-pulse" cx="300" cy="110" r="6" fill="var(--accent)" opacity="0.35">
+                    <animate attributeName="r" values="6;16" dur="2s" begin="1s" repeatCount="indefinite"></animate>
+                    <animate attributeName="opacity" values="0.6;0" dur="2s" begin="1s" repeatCount="indefinite"></animate>
+                </circle>
+
+                <circle cx="80" cy="140" r="6" fill="var(--accent)"></circle>
+                <circle cx="300" cy="110" r="6" fill="var(--accent)"></circle>
+
+                <g class="route-traveler">
+                    <circle r="4" fill="var(--text-main)"></circle>
+                    <animateMotion dur="5s" repeatCount="indefinite" rotate="auto" path="M80 140 C140 60, 240 70, 300 110"></animateMotion>
+                </g>
+
+                <text x="52" y="170">Luxembourg</text>
+                <text x="252" y="92">Karlsruhe</text>
+                <text class="route-map-caption" x="118" y="206">studies • work • growth</text>
+            </svg>
         </div>
     </div>
 

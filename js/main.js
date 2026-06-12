@@ -54,10 +54,7 @@ function initTypewriter() {
     }
 
     const cursorEl = textEl.parentElement.querySelector('.typewriter-cursor');
-    const longestWord = words.reduce((maxLength, word) => Math.max(maxLength, word.length), 0);
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    textEl.style.setProperty('--typewriter-width', `${longestWord}ch`);
 
     if (reducedMotion) {
         textEl.textContent = words[0];

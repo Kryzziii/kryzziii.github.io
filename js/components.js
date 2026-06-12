@@ -33,10 +33,6 @@ class AppNavbar extends HTMLElement {
                     </ul>
 
                     <div class="nav-actions">
-                        <button id="terminal-toggle" class="theme-toggle terminal-toggle" aria-label="Toggle Terminal Mode" aria-pressed="false">
-                            <i class="fa-solid fa-terminal"></i>
-                        </button>
-
                         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
                             <i class="fa-solid fa-moon"></i>
                         </button>

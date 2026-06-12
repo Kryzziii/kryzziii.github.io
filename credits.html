@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F5F5F7">
+    <title>Credits | Chris Jemming</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/terminal-mode.js" defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('preload');
+            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
+        });
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
+
+        const savedTerminalMode = localStorage.getItem('terminal_mode');
+        if (savedTerminalMode === 'on') {
+            document.documentElement.classList.add('terminal-mode');
+            const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+            if (metaThemeColor) { metaThemeColor.setAttribute('content', '#0d1117'); }
+        }
+    </script>
+</head>
+<body class="preload">
+
+<div class="background-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+</div>
+
+<app-navbar></app-navbar>
+
+<main class="container">
+
+    <h1 class="section-title fade-in">Credits</h1>
+
+    <div class="bento-grid">
+
+        <div class="card span-2 fade-in">
+            <h3><i class="fa-solid fa-code"></i>Libraries &amp; Frameworks</h3>
+            <ul style="list-style:none; padding:0; margin:0;">
+                <li style="margin-bottom:12px; padding-left:15px; border-left:2px solid var(--accent);">
+                    <strong>Font Awesome 6</strong> — Icon library<br>
+                    <a href="https://fontawesome.com" target="_blank" style="color:var(--text-secondary); font-size:0.9rem;">fontawesome.com</a>
+                </li>
+                <li style="margin-bottom:12px; padding-left:15px; border-left:2px solid var(--accent);">
+                    <strong>Google Fonts</strong> — Web typography<br>
+                    <a href="https://fonts.google.com" target="_blank" style="color:var(--text-secondary); font-size:0.9rem;">fonts.google.com</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="card fade-in">
+            <h3><i class="fa-solid fa-server"></i>Hosting</h3>
+            <ul style="list-style:none; padding:0; margin:0;">
+                <li style="padding-left:15px; border-left:2px solid var(--accent);">
+                    <strong>GitHub Pages</strong><br>
+                    <a href="https://pages.github.com" target="_blank" style="color:var(--text-secondary); font-size:0.9rem;">pages.github.com</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="card span-3 fade-in">
+            <h3><i class="fa-solid fa-person-digging"></i>Built by</h3>
+            <p>
+                Designed and developed by <strong>Chris Jemming</strong> — a Computer Science student passionate about clean, accessible web experiences.
+            </p>
+            <p style="margin-top:10px;">
+                <a href="https://github.com/Kryzziii" target="_blank" style="color:var(--accent);">
+                    <i class="fa-brands fa-github"></i> github.com/Kryzziii
+                </a>
+            </p>
+        </div>
+
+    </div>
+
+    <p style="text-align:center; color:var(--text-secondary); margin-top:40px;" class="fade-in">
+        See also: <a href="humans.txt" style="color:var(--accent);">humans.txt</a>
+    </p>
+
+</main>
+
+<app-footer></app-footer>
+
+</body>
+</html>
