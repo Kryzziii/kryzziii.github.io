@@ -7,6 +7,7 @@
     <title>Credits | Chris Jemming</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="author" href="/humans.txt">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script src="js/components.js" defer></script>
@@ -14,19 +15,15 @@
     <script src="js/terminal-mode.js" defer></script>
 
     <script>
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
+        if (localStorage.getItem('terminal_mode') === 'on') { document.documentElement.classList.add('terminal-mode'); }
+    </script>
+    <script>
         document.addEventListener("DOMContentLoaded", function() {
             document.body.classList.add('preload');
             setTimeout(() => { document.body.classList.remove('preload'); }, 200);
         });
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
-
-        const savedTerminalMode = localStorage.getItem('terminal_mode');
-        if (savedTerminalMode === 'on') {
-            document.documentElement.classList.add('terminal-mode');
-            const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-            if (metaThemeColor) { metaThemeColor.setAttribute('content', '#0d1117'); }
-        }
     </script>
 </head>
 <body class="preload">
@@ -40,55 +37,155 @@
 
 <main class="container">
 
-    <h1 class="section-title fade-in">Credits</h1>
+    <section class="hero fade-in">
+        <h1>Behind the scenes</h1>
+        <p class="credits-hero-caption">The stack, tools, and inspirations that power this little corner of the internet.</p>
+    </section>
 
-    <div class="bento-grid">
+    <h2 class="section-title fade-in">Tech &amp; Tools</h2>
 
-        <div class="card span-2 fade-in">
-            <h3><i class="fa-solid fa-code"></i>Libraries &amp; Frameworks</h3>
-            <ul style="list-style:none; padding:0; margin:0;">
-                <li style="margin-bottom:12px; padding-left:15px; border-left:2px solid var(--accent);">
-                    <strong>Font Awesome 6</strong> — Icon library<br>
-                    <a href="https://fontawesome.com" target="_blank" style="color:var(--text-secondary); font-size:0.9rem;">fontawesome.com</a>
-                </li>
-                <li style="margin-bottom:12px; padding-left:15px; border-left:2px solid var(--accent);">
-                    <strong>Google Fonts</strong> — Web typography<br>
-                    <a href="https://fonts.google.com" target="_blank" style="color:var(--text-secondary); font-size:0.9rem;">fonts.google.com</a>
-                </li>
-            </ul>
+    <div class="bento-grid fade-in">
+        <div class="card fade-in">
+            <h3><i class="fa-brands fa-html5"></i>HTML5 / CSS3 / ES6+</h3>
+            <p style="color:var(--text-secondary);">Zero frameworks. Zero bundlers. Every pixel hand-crafted in vanilla web tech. The way it was meant to be.</p>
         </div>
 
         <div class="card fade-in">
-            <h3><i class="fa-solid fa-server"></i>Hosting</h3>
-            <ul style="list-style:none; padding:0; margin:0;">
-                <li style="padding-left:15px; border-left:2px solid var(--accent);">
-                    <strong>GitHub Pages</strong><br>
-                    <a href="https://pages.github.com" target="_blank" style="color:var(--text-secondary); font-size:0.9rem;">pages.github.com</a>
-                </li>
-            </ul>
+            <h3><i class="fa-solid fa-icons"></i>Font Awesome 6.4</h3>
+            <p style="color:var(--text-secondary);">Icon library powering every little visual glyph on this site. Used via CDN — no npm required.</p>
+            <a href="https://fontawesome.com" target="_blank" rel="noopener noreferrer" class="btn-ghost" style="margin-top:auto;">fontawesome.com <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.7em;"></i></a>
         </div>
 
-        <div class="card span-3 fade-in">
-            <h3><i class="fa-solid fa-person-digging"></i>Built by</h3>
-            <p>
-                Designed and developed by <strong>Chris Jemming</strong> — a Computer Science student passionate about clean, accessible web experiences.
-            </p>
-            <p style="margin-top:10px;">
-                <a href="https://github.com/Kryzziii" target="_blank" style="color:var(--accent);">
-                    <i class="fa-brands fa-github"></i> github.com/Kryzziii
-                </a>
-            </p>
+        <div class="card fade-in">
+            <h3><i class="fa-brands fa-github"></i>GitHub Pages</h3>
+            <p style="color:var(--text-secondary);">Hosted for free, directly from this repository. Custom domain via CNAME. No servers to manage.</p>
         </div>
 
+        <div class="card fade-in">
+            <h3><i class="fa-solid fa-globe"></i>Custom Domain</h3>
+            <p style="color:var(--text-secondary);">portfolio.chris-jemming.lu — served over HTTPS via GitHub Pages + CNAME config.</p>
+        </div>
+
+        <div class="card fade-in">
+            <h3><i class="fa-solid fa-code"></i>IDE</h3>
+            <div class="skill-list" style="margin-top:10px;">
+                <span class="skill-pill">VS Code</span>
+                <span class="skill-pill">JetBrains</span>
+            </div>
+        </div>
+
+        <div class="card fade-in">
+            <h3><i class="fa-solid fa-cube"></i>No Build Step</h3>
+            <p style="color:var(--text-secondary);">No webpack, no Vite, no Rollup. Just <code style="background:var(--glass-bg);padding:2px 6px;border-radius:4px;">open index.html</code> and go.</p>
+        </div>
     </div>
 
-    <p style="text-align:center; color:var(--text-secondary); margin-top:40px;" class="fade-in">
-        See also: <a href="humans.txt" style="color:var(--accent);">humans.txt</a>
-    </p>
+    <h2 class="section-title fade-in" style="margin-top:60px;">Inspirations</h2>
+
+    <div class="bento-grid fade-in">
+        <div class="card fade-in">
+            <h3><i class="fa-brands fa-apple"></i>Apple HIG</h3>
+            <p style="color:var(--text-secondary);">Human Interface Guidelines — the gold standard for clean, purposeful design language.</p>
+        </div>
+
+        <div class="card fade-in">
+            <h3><i class="fa-solid fa-triangle"></i>Vercel</h3>
+            <p style="color:var(--text-secondary);">Glassmorphism cards draw direct inspiration from Vercel's design system.</p>
+        </div>
+
+        <div class="card fade-in">
+            <h3><i class="fa-solid fa-bolt"></i>Linear</h3>
+            <p style="color:var(--text-secondary);">Speed, precision, keyboard-first UX inspired the interaction choices on this site.</p>
+        </div>
+
+        <div class="card fade-in">
+            <h3><i class="fa-solid fa-magnifying-glass"></i>Raycast</h3>
+            <p style="color:var(--text-secondary);">Interaction details and snappy micro-feedback are inspired by Raycast's launcher UX.</p>
+        </div>
+    </div>
+
+    <h2 class="section-title fade-in" style="margin-top:60px;">Easter Eggs Unlocked</h2>
+
+    <div class="card fade-in" style="max-width:680px;margin:0 auto 40px;">
+        <h3><i class="fa-solid fa-egg"></i>Found them all?</h3>
+        <div class="skill-list" style="margin-top:16px;">
+            <span class="skill-pill">Try <code>⌘ Shift + T</code></span>
+            <span class="skill-pill">Try <code>Ctrl + Shift + T</code></span>
+            <span class="skill-pill"><code>/humans.txt</code> exists</span>
+        </div>
+    </div>
+
+    <h2 class="section-title fade-in" style="margin-top:60px;">Live Stats</h2>
+
+    <div class="card fade-in" style="max-width:520px;margin:0 auto 40px;text-align:center;" id="credits-stats-card">
+        <h3><i class="fa-brands fa-github"></i>kryzziii.github.io</h3>
+        <div class="credits-stats-grid">
+            <div class="credits-stat">
+                <span class="credits-stat-value" id="stat-stars">—</span>
+                <span class="credits-stat-label">Stars</span>
+            </div>
+            <div class="credits-stat">
+                <span class="credits-stat-value" id="stat-forks">—</span>
+                <span class="credits-stat-label">Forks</span>
+            </div>
+            <div class="credits-stat">
+                <span class="credits-stat-value" id="stat-pushed">—</span>
+                <span class="credits-stat-label">Last push</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card fade-in" style="max-width:480px;margin:0 auto 80px;text-align:center;">
+        <h3><i class="fa-solid fa-heart" style="color:#ff6b6b;"></i>Thanks for digging this deep</h3>
+        <p style="color:var(--text-secondary);margin-bottom:24px;">You've reached the bottom of the rabbit hole. Hope you enjoyed the journey 🐇</p>
+        <a href="index.html" class="btn-action">Back to home <i class="fa-solid fa-house"></i></a>
+    </div>
 
 </main>
 
 <app-footer></app-footer>
+
+<script>
+(function () {
+    const CACHE_KEY = 'credits_gh_stats';
+    const CACHE_TTL = 5 * 60 * 1000;
+
+    function relativeTime(isoDate) {
+        const diff = Date.now() - new Date(isoDate).getTime();
+        const minutes = Math.floor(diff / 60000);
+        const hours = Math.floor(minutes / 60);
+        const days = Math.floor(hours / 24);
+        if (days > 0) return days + 'd ago';
+        if (hours > 0) return hours + 'h ago';
+        return minutes + 'm ago';
+    }
+
+    function render(data) {
+        document.getElementById('stat-stars').textContent = data.stargazers_count;
+        document.getElementById('stat-forks').textContent = data.forks_count;
+        document.getElementById('stat-pushed').textContent = relativeTime(data.pushed_at);
+    }
+
+    try {
+        const cached = JSON.parse(sessionStorage.getItem(CACHE_KEY) || 'null');
+        if (cached && (Date.now() - cached.ts < CACHE_TTL)) {
+            render(cached.data);
+            return;
+        }
+    } catch (_) {}
+
+    fetch('https://api.github.com/repos/Kryzziii/kryzziii.github.io')
+        .then((r) => r.json())
+        .then((data) => {
+            render(data);
+            try {
+                sessionStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data }));
+            } catch (_) {}
+        })
+        .catch(() => {
+        });
+}());
+</script>
 
 </body>
 </html>
