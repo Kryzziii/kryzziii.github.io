@@ -1,64 +1,65 @@
-.snake-panel {
-    text-align: center;
+/* Full-screen background canvas */
+#snake-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
 }
 
-.snake-panel h3 {
-    justify-content: center;
-}
-
-.snake-subline {
-    color: var(--text-secondary);
-    margin-top: 8px;
-    margin-bottom: 0;
+/* Floating HUD at bottom-centre */
+.snake-hud {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    background: color-mix(in srgb, var(--bg-color) 72%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    white-space: nowrap;
 }
 
 .snake-stats {
     display: flex;
-    justify-content: center;
     gap: 20px;
-    margin: 20px 0 14px;
     color: var(--text-main);
-}
-
-#snake-canvas {
-    width: min(100%, 360px);
-    max-width: 100%;
-    aspect-ratio: 1 / 1;
-    height: auto;
-    border-radius: 16px;
-    border: 1px solid var(--glass-border);
-    background: var(--glass-bg);
-    touch-action: none;
+    font-size: 0.9rem;
 }
 
 .snake-actions {
     display: flex;
-    justify-content: center;
     gap: 10px;
-    margin-top: 14px;
-    flex-wrap: wrap;
 }
 
-.snake-canvas-wrap {
-    position: relative;
-    width: fit-content;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
+/* Full-screen game-over modal */
 .snake-overlay {
-    position: absolute;
+    position: fixed;
     inset: 0;
+    z-index: 110;
     display: grid;
     place-items: center;
-    gap: 10px;
+    gap: 12px;
     text-align: center;
-    border-radius: 16px;
-    background: color-mix(in srgb, var(--bg-color) 65%, transparent);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    background: color-mix(in srgb, var(--bg-color) 55%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .snake-overlay[hidden] {
     display: none;
+}
+
+/* Single-column layout for error page when snake panel is gone */
+body.error-page .error-showcase {
+    grid-template-columns: 1fr;
+    max-width: 640px;
 }
