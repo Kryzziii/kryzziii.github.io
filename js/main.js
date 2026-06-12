@@ -30,6 +30,11 @@ function initScrollAnimations() {
 }
 
 function initTypewriter() {
+    const typingDelay = 70;
+    const deletingDelay = 40;
+    const wordPauseDelay = 1500;
+    const nextWordDelay = 300;
+
     const textEl = document.querySelector('.typewriter-text');
 
     if (!textEl) {
@@ -79,13 +84,13 @@ function initTypewriter() {
 
         textEl.textContent = currentWord.slice(0, charIndex);
 
-        let delay = isDeleting ? 40 : 70;
+        let delay = isDeleting ? deletingDelay : typingDelay;
 
         if (!isDeleting && charIndex === currentWord.length) {
-            delay = 1500;
+            delay = wordPauseDelay;
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
-            delay = 300;
+            delay = nextWordDelay;
             isDeleting = false;
             wordIndex = (wordIndex + 1) % words.length;
         }
@@ -97,6 +102,8 @@ function initTypewriter() {
 }
 
 function initCardTilt() {
+    const maxTilt = 4;
+
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const noHover = window.matchMedia('(hover: none)').matches;
 
@@ -152,8 +159,8 @@ function initCardTilt() {
                 const { clientX, clientY } = card._tiltEvent;
                 const relativeX = (clientX - rect.left) / rect.width;
                 const relativeY = (clientY - rect.top) / rect.height;
-                const rotateY = (relativeX - 0.5) * 8;
-                const rotateX = (0.5 - relativeY) * 8;
+                const rotateY = (relativeX - 0.5) * (maxTilt * 2);
+                const rotateX = (0.5 - relativeY) * (maxTilt * 2);
 
                 card.style.setProperty('--mx', `${relativeX * 100}%`);
                 card.style.setProperty('--my', `${relativeY * 100}%`);
