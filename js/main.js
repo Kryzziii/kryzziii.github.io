@@ -265,7 +265,7 @@ function initRouteMap() {
         maxZoom: 19,
     }).addTo(map);
 
-    // Marker icon factory (Font Awesome look-alike via divIcon)
+    // Marker icon factory using flag emoji
     const makeIcon = (emoji) => L.divIcon({
         className: '',
         html: `<div class="route-map-marker">${emoji}</div>`,
@@ -303,12 +303,16 @@ function initRouteMap() {
         }).addTo(map);
     };
 
-    // Listen for manual theme toggle (button click on .theme-toggle)
-    document.addEventListener('click', (e) => {
-        if (e.target.closest('#theme-toggle')) {
-            setTimeout(swapTiles, 50);
+    // Listen for manual theme toggle – attach directly to the button when available
+    const attachThemeToggleListener = () => {
+        const toggleBtn = document.getElementById('theme-toggle');
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => setTimeout(swapTiles, 50));
         }
-    });
+    };
+    attachThemeToggleListener();
+    // Fallback: re-try once after a tick in case the custom element renders late
+    setTimeout(attachThemeToggleListener, 200);
 
     // Listen for terminal mode toggle
     document.addEventListener('terminalmodechange', () => {
