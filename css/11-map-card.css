@@ -2,7 +2,7 @@
 
 /* Country fill colours — light mode */
 :root {
-    --map-land-a: rgba(180, 210, 180, 0.45);   /* UK/France */
+    --map-land-a: rgba(180, 210, 180, 0.45);   /* Western Europe land */
     --map-land-b: rgba(180, 200, 230, 0.45);   /* Belgium/Netherlands */
     --map-land-c: rgba(210, 200, 170, 0.5);    /* Germany */
     --map-land-d: rgba(186, 176, 146, 0.45);   /* Switzerland */
