@@ -1,0 +1,23 @@
+/* TEAM */
+  Developer & Designer: Chris Jemming
+  Site:                 https://portfolio.chris-jemming.lu
+  Contact:              contact [at] chrisjemming.lu
+  GitHub:               @Kryzziii
+  LinkedIn:             https://linkedin.com/in/chris-jemming
+  From:                 Luxembourg 🇱🇺
+  Based in:             Karlsruhe, Germany 🇩🇪
+
+/* THANKS */
+  Font Awesome — https://fontawesome.com
+  GitHub Pages — https://pages.github.com
+
+/* SITE */
+  Last update:     2026/06/12
+  Language:        English / Deutsch / Français / Lëtzebuergesch
+  Doctype:         HTML5
+  IDE:             VS Code · JetBrains
+  Standards:       HTML5, CSS3, ES6+
+  Components:      Vanilla custom elements
+  Software:        No frameworks. No bundlers. Just craft.
+
+# "#CodingWhileTrue"
