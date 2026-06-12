@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const GRAVITY = 0.85;
     const JUMP_VELOCITY = -15.5;
     const POINTER_SELECTOR = 'a, button, input, textarea, select, label';
+    const MS_PER_FRAME = 16.6667;
+    const MAX_DELTA_MULTIPLIER = 2.2;
 
     let viewportWidth = 0;
     let viewportHeight = 0;
@@ -208,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
             lastFrameTime = timestamp;
         }
 
-        const delta = Math.min((timestamp - lastFrameTime) / 16.6667, 2.2);
+        const delta = Math.min((timestamp - lastFrameTime) / MS_PER_FRAME, MAX_DELTA_MULTIPLIER);
         lastFrameTime = timestamp;
 
         update(delta);
