@@ -12,6 +12,8 @@
 
     <script src="js/components.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/command-palette.js" defer></script>
+    <script src="js/snake-game.js" defer></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -30,31 +32,50 @@
     <div class="orb orb-2"></div>
 </div>
 
+<!-- Full-page background runner game -->
+<canvas id="snake-canvas" aria-label="Jump and run mini-game"></canvas>
+
+<!-- Floating game HUD -->
+<div id="snake-hud" class="snake-hud">
+    <p class="snake-hint">Jump with Space, ↑, W or tap</p>
+    <div class="snake-stats">
+        <span>Distance: <strong id="snake-score">0</strong></span>
+        <span>Best: <strong id="snake-highscore">0</strong></span>
+    </div>
+    <div class="snake-actions">
+        <button id="snake-start-pause" class="btn-action" type="button">Start</button>
+        <button id="snake-restart" class="btn-ghost" type="button">Restart</button>
+    </div>
+</div>
+
+<!-- Game Over Overlay -->
+<div id="snake-overlay" class="snake-overlay" hidden>
+    <p id="snake-overlay-text">Game Over — Distance: 0</p>
+    <button id="snake-overlay-btn" class="btn-action" type="button">Run again</button>
+</div>
+
 <app-navbar></app-navbar>
 
 <main class="container">
-
-    <div class="error-container fade-in">
-
-        <div class="glass-card" style="padding: 60px 40px; display: inline-block; margin-bottom: 30px;">
+    <section class="glass-card error-showcase fade-in" aria-labelledby="error-title">
+        <div class="error-copy">
+            <p class="error-eyebrow">404 • Wrong turn</p>
             <h1 class="error-code">404</h1>
+            <h2 id="error-title" class="error-title">Oops! Page not found.</h2>
+            <p class="error-desc">
+                The page you are looking for does not exist or has been moved. An endless runner game is playing in the background — jump with Space, W, ↑ or a tap.
+            </p>
+
+            <div class="error-actions">
+                <a href="index.html" class="btn-action">
+                    <i class="fa-solid fa-house"></i> Back to Home
+                </a>
+            </div>
         </div>
-
-        <h2 class="error-title">Oops! Page not found.</h2>
-        <p class="error-desc">
-            The page you are looking for does not exist or has been moved. Maybe you made a typo?
-        </p>
-
-        <a href="index.html" class="btn-action" style="align-self: center;">
-            <i class="fa-solid fa-house"></i> Back to Home
-        </a>
-
-    </div>
+    </section>
 
 </main>
 
 <app-footer></app-footer>
-
-<script src="js/main.js"></script>
 </body>
 </html>
