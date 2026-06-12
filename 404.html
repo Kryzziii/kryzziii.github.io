@@ -32,14 +32,15 @@
     <div class="orb orb-2"></div>
 </div>
 
-<!-- Full-page background snake game -->
-<canvas id="snake-canvas" aria-label="Snake mini-game"></canvas>
+<!-- Full-page background runner game -->
+<canvas id="snake-canvas" aria-label="Jump and run mini-game"></canvas>
 
 <!-- Floating game HUD -->
 <div id="snake-hud" class="snake-hud">
+    <p class="snake-hint">Jump with Space, ↑, W or tap</p>
     <div class="snake-stats">
-        <span>Score: <strong id="snake-score">0</strong></span>
-        <span>High Score: <strong id="snake-highscore">0</strong></span>
+        <span>Distance: <strong id="snake-score">0</strong></span>
+        <span>Best: <strong id="snake-highscore">0</strong></span>
     </div>
     <div class="snake-actions">
         <button id="snake-start-pause" class="btn-action" type="button">Start</button>
@@ -49,8 +50,8 @@
 
 <!-- Game Over Overlay -->
 <div id="snake-overlay" class="snake-overlay" hidden>
-    <p id="snake-overlay-text">Game Over — Score: 0</p>
-    <button id="snake-overlay-btn" class="btn-action" type="button">Play again</button>
+    <p id="snake-overlay-text">Game Over — Distance: 0</p>
+    <button id="snake-overlay-btn" class="btn-action" type="button">Run again</button>
 </div>
 
 <app-navbar></app-navbar>
@@ -62,7 +63,7 @@
             <h1 class="error-code">404</h1>
             <h2 id="error-title" class="error-title">Oops! Page not found.</h2>
             <p class="error-desc">
-                The page you are looking for does not exist or has been moved. A snake is roaming the background — press any arrow key, WASD, or swipe to take over.
+                The page you are looking for does not exist or has been moved. A little jump-and-run is moving through the background — jump with Space, W, ↑ or a tap.
             </p>
 
             <div class="error-actions">

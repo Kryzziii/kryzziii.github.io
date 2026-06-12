@@ -28,6 +28,12 @@
     white-space: nowrap;
 }
 
+.snake-hint {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+}
+
 .snake-stats {
     display: flex;
     gap: 20px;
@@ -62,4 +68,23 @@
 body.error-page .error-showcase {
     grid-template-columns: 1fr;
     max-width: 640px;
+}
+
+@media (max-width: 640px) {
+    .snake-hud {
+        width: min(calc(100vw - 24px), 420px);
+        padding: 12px 16px;
+        white-space: normal;
+    }
+
+    .snake-stats,
+    .snake-actions {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .snake-hint {
+        text-align: center;
+    }
 }
