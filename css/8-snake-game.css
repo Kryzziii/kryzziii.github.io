@@ -58,3 +58,7 @@
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
 }
+
+.snake-overlay[hidden] {
+    display: none;
+}
