@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const isMac = /Mac|iPhone|iPad|iPod/.test(navigator.platform);
+    const matrixColumnRows = 24;
     const email = 'contact@chrisjemming.lu';
     let previousFocus = null;
     let selectedIndex = 0;
@@ -309,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
             col.className = 'cmdk-matrix-col';
             col.style.left = `${(i / 36) * 100}%`;
             col.style.animationDelay = `${Math.random() * 0.8}s`;
-            col.textContent = Array.from({ length: 24 }, () => chars[Math.floor(Math.random() * chars.length)]).join('');
+            col.textContent = Array.from({ length: matrixColumnRows }, () => chars[Math.floor(Math.random() * chars.length)]).join('');
             overlay.appendChild(col);
         }
 

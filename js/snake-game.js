@@ -280,6 +280,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (color.startsWith('rgb')) {
             return color.replace('rgb', 'rgba').replace(')', `, ${alpha})`);
         }
+        if (color.startsWith('#')) {
+            const hex = color.slice(1);
+            const validHex = hex.length === 3 || hex.length === 6;
+            if (validHex) {
+                const fullHex = hex.length === 3 ? hex.split('').map((char) => char + char).join('') : hex;
+                const intValue = Number.parseInt(fullHex, 16);
+                const r = (intValue >> 16) & 255;
+                const g = (intValue >> 8) & 255;
+                const b = intValue & 255;
+                return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+            }
+        }
         return `rgba(128, 128, 128, ${alpha})`;
     }
 

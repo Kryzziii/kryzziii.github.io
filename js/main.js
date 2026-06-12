@@ -1,5 +1,8 @@
-if (!window.__portfolioMainInitialized) {
-    window.__portfolioMainInitialized = true;
+const isTouchHoverNone = window.matchMedia('(hover: none)');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+if (!window.portfolioMainInitialized) {
+    window.portfolioMainInitialized = true;
 
     document.addEventListener('DOMContentLoaded', () => {
 
@@ -108,7 +111,7 @@ function initHeroTypewriter() {
         return;
     }
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (prefersReducedMotion.matches) {
         typewriter.textContent = words[0];
         return;
     }
@@ -151,7 +154,7 @@ function initHeroTypewriter() {
 }
 
 function initOrbParallax() {
-    if (window.matchMedia('(hover: none)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (isTouchHoverNone.matches || prefersReducedMotion.matches) {
         return;
     }
 
@@ -215,7 +218,7 @@ function initOrbParallax() {
 }
 
 function initCardTilt() {
-    if (window.matchMedia('(hover: none)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (isTouchHoverNone.matches || prefersReducedMotion.matches) {
         return;
     }
 
