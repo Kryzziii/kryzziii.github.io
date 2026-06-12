@@ -16,6 +16,7 @@ html.terminal-mode {
 /* --- Monospace font stack --- */
 html.terminal-mode body {
     font-family: "JetBrains Mono", "Fira Code", "SF Mono", Menlo, Consolas, monospace;
+    letter-spacing: -0.02em;
 }
 
 /* --- Sharp/tty look: reduce border-radius on cards and buttons --- */
