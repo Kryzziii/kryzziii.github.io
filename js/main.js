@@ -252,7 +252,7 @@ function initRouteMap() {
          window.matchMedia('(prefers-color-scheme: dark)').matches);
 
     const map = L.map('route-leaflet-map', {
-        center: [49.55, 7.25],
+        center: [49.45, 7.25],
         zoom: 8,
         scrollWheelZoom: false,
         zoomControl: false,
