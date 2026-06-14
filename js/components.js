@@ -130,8 +130,7 @@ class AppFooter extends HTMLElement {
         const year = new Date().getFullYear();
         this.innerHTML = `
             <footer>
-                &copy; ${year} Chris Jemming.
-                <a href="credits.html" class="footer-credits-link">Credits</a>
+                <a href="credits.html" class="footer-credits-link" aria-label="Open credits">&copy; ${year} Chris Jemming.</a>
             </footer>
         `;
     }

@@ -187,8 +187,18 @@
     padding: 28px;
 }
 
+.route-leaflet-contact {
+    max-width: 760px;
+    margin: 28px auto 0;
+    padding: 22px;
+}
+
 .route-leaflet-header {
     margin-bottom: 16px;
+}
+
+.route-leaflet-contact #route-leaflet-map {
+    height: 320px;
 }
 
 #route-leaflet-map {
@@ -715,8 +725,7 @@ footer {
 .footer-credits-link {
     color: var(--text-secondary);
     text-decoration: none;
-    margin-left: 12px;
-    opacity: 0.7;
+    opacity: 0.58;
     transition: opacity 0.2s;
 }
 
@@ -724,26 +733,31 @@ footer {
     opacity: 1;
 }
 /* --- Easter Egg Card --- */
+.hidden-gems-card {
+    border-color: rgba(0, 113, 227, 0.22);
+}
+
 .easter-egg-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
 }
 
 .easter-egg-item {
     display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 14px 18px;
-    border-radius: 16px;
-    background: var(--glass-bg);
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(128, 128, 128, 0.08), rgba(128, 128, 128, 0.02));
     border: 1px solid var(--glass-border);
     transition: var(--transition);
+    min-height: 120px;
 }
 
 .easter-egg-item:hover {
     border-color: var(--accent);
-    transform: translateX(4px);
+    transform: translateY(-3px);
 }
 
 .easter-egg-icon {
@@ -772,13 +786,14 @@ footer {
 }
 
 .easter-egg-content strong {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--text-main);
 }
 
 .easter-egg-content span {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     color: var(--text-secondary);
+    line-height: 1.45;
 }
 
 .ee-shortcut {
@@ -807,10 +822,26 @@ footer {
     transition: var(--transition);
     white-space: nowrap;
     flex-shrink: 0;
+    margin-top: auto;
 }
 
 .ee-action-btn:hover {
     background: var(--accent);
     color: #fff;
     border-color: var(--accent);
+}
+
+.credits-thanks-card .credits-home-btn {
+    align-self: center;
+}
+
+@media (max-width: 768px) {
+    .route-leaflet-contact {
+        margin-top: 22px;
+        padding: 18px;
+    }
+
+    .route-leaflet-contact #route-leaflet-map {
+        height: 300px;
+    }
 }

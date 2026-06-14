@@ -12,6 +12,7 @@ html.terminal-mode {
 
 html.terminal-mode body {
     font-family: "JetBrains Mono", "Fira Code", "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.96rem;
     animation: terminal-flicker 4s infinite;
 }
 
