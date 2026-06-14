@@ -55,6 +55,76 @@ html.terminal-mode .glass-card h3 {
     font-size: 1.2rem;
 }
 
+html.terminal-mode .hidden-gems-card {
+    border-color: rgba(0, 255, 156, 0.35);
+    background:
+        linear-gradient(180deg, rgba(0, 255, 156, 0.08), rgba(88, 166, 255, 0.03)),
+        rgba(13, 17, 23, 0.92);
+    box-shadow: 0 0 0 1px rgba(0, 255, 156, 0.12), var(--glass-shadow);
+}
+
+html.terminal-mode .hidden-gems-card::before {
+    background: linear-gradient(135deg, rgba(0, 255, 156, 0.12), transparent 46%);
+}
+
+html.terminal-mode .hidden-gems-badge {
+    border-color: rgba(0, 255, 156, 0.35);
+    background: rgba(0, 255, 156, 0.08);
+    color: var(--text-main);
+    letter-spacing: 0.18em;
+}
+
+html.terminal-mode .easter-egg-item {
+    background: linear-gradient(180deg, rgba(0, 255, 156, 0.05), rgba(88, 166, 255, 0.02));
+    border-color: rgba(0, 255, 156, 0.22);
+    box-shadow: inset 0 0 0 1px rgba(0, 255, 156, 0.05);
+}
+
+html.terminal-mode .easter-egg-item:hover {
+    border-color: var(--text-main);
+}
+
+html.terminal-mode .easter-egg-icon {
+    background: rgba(13, 17, 23, 0.96);
+    border: 1px solid rgba(0, 255, 156, 0.35);
+    color: var(--text-main);
+}
+
+html.terminal-mode .easter-egg-icon i {
+    color: var(--text-main) !important;
+    -webkit-text-fill-color: var(--text-main) !important;
+}
+
+html.terminal-mode .ee-shortcut,
+html.terminal-mode .ee-action-btn {
+    border-radius: 4px;
+}
+
+html.terminal-mode .ee-shortcut {
+    background: rgba(13, 17, 23, 0.92);
+    border-color: rgba(0, 255, 156, 0.25);
+    color: var(--text-main);
+}
+
+html.terminal-mode .ee-action-btn {
+    background: rgba(13, 17, 23, 0.96);
+    border-color: rgba(0, 255, 156, 0.25);
+    color: var(--text-main);
+}
+
+html.terminal-mode .ee-action-btn:hover {
+    background: rgba(0, 255, 156, 0.12);
+    border-color: var(--text-main);
+    color: var(--text-main);
+}
+
+html.terminal-mode .ee-action-btn-static,
+html.terminal-mode .ee-action-btn-static:hover {
+    color: var(--text-secondary);
+    border-color: rgba(0, 255, 156, 0.18);
+    background: rgba(13, 17, 23, 0.9);
+}
+
 html.terminal-mode main.container h1::before,
 html.terminal-mode main.container h2::before,
 html.terminal-mode main.container h3::before {

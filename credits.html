@@ -96,59 +96,101 @@
 
     <h2 class="section-title fade-in" style="margin-top:60px;">Easter Eggs</h2>
 
-    <div class="card fade-in easter-egg-card hidden-gems-card" style="max-width:720px;margin:0 auto 40px;">
+    <div class="card fade-in easter-egg-card hidden-gems-card" style="max-width:840px;margin:0 auto 40px;">
         <h3><i class="fa-solid fa-egg"></i>Hidden Gems</h3>
-        <p style="color:var(--text-secondary);margin-bottom:24px;">A curated set of subtle extras for curious visitors.</p>
+        <div class="hidden-gems-intro">
+            <span class="hidden-gems-badge">curious://visitor</span>
+            <p style="color:var(--text-secondary);margin:0;">A curated set of subtle extras for curious visitors — from neon terminal vibes to text-file lore and a quiet console wink.</p>
+        </div>
 
         <div class="easter-egg-grid">
 
             <div class="easter-egg-item">
-                <div class="easter-egg-icon"><i class="fa-solid fa-terminal"></i></div>
-                <div class="easter-egg-content">
-                    <strong>Terminal Mode</strong>
-                    <span>Switch to a retro hacker aesthetic</span>
+                <div class="easter-egg-item-top">
+                    <div class="easter-egg-icon"><i class="fa-solid fa-terminal"></i></div>
+                    <div class="easter-egg-content">
+                        <strong>Terminal Mode</strong>
+                        <span>Flip the site into a retro command-line skin with scanlines, monospace typography, and neon accents.</span>
+                    </div>
+                </div>
+                <div class="easter-egg-meta">
                     <code class="ee-shortcut">⌘ / Ctrl + Shift + T</code>
+                    <button class="ee-action-btn" id="ee-terminal-toggle">Toggle</button>
                 </div>
-                <button class="ee-action-btn" id="ee-terminal-toggle">Toggle</button>
             </div>
 
             <div class="easter-egg-item">
-                <div class="easter-egg-icon"><i class="fa-solid fa-file-lines"></i></div>
-                <div class="easter-egg-content">
-                    <strong>humans.txt</strong>
-                    <span>A tiny signature file with project metadata and authorship details.</span>
+                <div class="easter-egg-item-top">
+                    <div class="easter-egg-icon"><i class="fa-solid fa-user-group"></i></div>
+                    <div class="easter-egg-content">
+                        <strong>humans.txt</strong>
+                        <span>A tiny signature file with authorship details, project metadata, and a nod to the people behind the pixels.</span>
+                    </div>
                 </div>
-                <a href="humans.txt" target="_blank" class="ee-action-btn">Open</a>
+                <div class="easter-egg-meta">
+                    <code class="ee-shortcut">/humans.txt</code>
+                    <a href="humans.txt" target="_blank" rel="noopener noreferrer" class="ee-action-btn">Open</a>
+                </div>
             </div>
 
             <div class="easter-egg-item">
-                <div class="easter-egg-icon"><i class="fa-solid fa-map-location-dot"></i></div>
-                <div class="easter-egg-content">
-                    <strong>Live Route Map</strong>
-                    <span>Animated Luxembourg ↔ Karlsruhe path with adaptive day/night tiles.</span>
+                <div class="easter-egg-item-top">
+                    <div class="easter-egg-icon"><i class="fa-solid fa-file-code"></i></div>
+                    <div class="easter-egg-content">
+                        <strong>credits.txt</strong>
+                        <span>A small plaintext backstage pass with a concise build note, credits roll, and a few favorite details from this site.</span>
+                    </div>
                 </div>
-                <span class="ee-action-btn" aria-hidden="true">Auto</span>
+                <div class="easter-egg-meta">
+                    <code class="ee-shortcut">/credits.txt</code>
+                    <a href="credits.txt" target="_blank" rel="noopener noreferrer" class="ee-action-btn">Open</a>
+                </div>
+            </div>
+
+            <div class="easter-egg-item">
+                <div class="easter-egg-item-top">
+                    <div class="easter-egg-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <div class="easter-egg-content">
+                        <strong>Console Whisper</strong>
+                        <span>Open DevTools and the site quietly leaves a secret log message for anyone curious enough to inspect behind the curtain.</span>
+                    </div>
+                </div>
+                <div class="easter-egg-meta">
+                    <code class="ee-shortcut">F12 / ⌥⌘I</code>
+                    <span class="ee-action-btn ee-action-btn-static" aria-hidden="true">Passive</span>
+                </div>
             </div>
 
         </div>
     </div>
 
     <script>
-    (function () {
+    document.addEventListener('DOMContentLoaded', () => {
         const btn = document.getElementById('ee-terminal-toggle');
         if (!btn) return;
+
         const html = document.documentElement;
         const update = () => {
             btn.textContent = html.classList.contains('terminal-mode') ? 'Disable' : 'Enable';
         };
+
         update();
+        document.addEventListener('terminalmodechange', update);
+
         btn.addEventListener('click', () => {
-            const isOn = html.classList.toggle('terminal-mode');
-            localStorage.setItem('terminal_mode', isOn ? 'on' : 'off');
-            document.dispatchEvent(new CustomEvent('terminalmodechange', { detail: { active: isOn } }));
+            const nextState = !html.classList.contains('terminal-mode');
+
+            if (typeof window.setTerminalMode === 'function') {
+                window.setTerminalMode(nextState);
+            } else {
+                html.classList.toggle('terminal-mode', nextState);
+                localStorage.setItem('terminal_mode', nextState ? 'on' : 'off');
+                document.dispatchEvent(new CustomEvent('terminalmodechange', { detail: { isEnabled: nextState } }));
+            }
+
             update();
         });
-    }());
+    });
     </script>
 
     <h2 class="section-title fade-in" style="margin-top:60px;">Live Stats</h2>

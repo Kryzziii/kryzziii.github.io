@@ -1,4 +1,5 @@
 const terminalModeKey = 'terminal_mode';
+const consoleEasterEggKey = 'console_easter_egg_seen';
 
 function isTerminalModeEnabled() {
     return document.documentElement.classList.contains('terminal-mode');
@@ -42,6 +43,28 @@ function showTerminalToast(isEnabled) {
     }, 1600);
 }
 
+function logConsoleEasterEgg() {
+    try {
+        if (sessionStorage.getItem(consoleEasterEggKey) === 'seen') {
+            return;
+        }
+    } catch (_) {}
+
+    console.log(
+        '%c> curious human detected',
+        'color:#00ff9c;background:#0d1117;padding:6px 10px;border:1px solid #00ff9c;border-radius:4px;font-family:"JetBrains Mono","Fira Code","SF Mono",monospace;font-weight:700;'
+    );
+    console.log(
+        '%cWelcome behind the curtain.%c Try Terminal Mode with Ctrl/⌘ + Shift + T, then peek at /humans.txt and /credits.txt for a few extra breadcrumbs.',
+        'color:#58a6ff;font-weight:700;font-family:"JetBrains Mono","Fira Code","SF Mono",monospace;',
+        'color:#9ecbff;font-family:"JetBrains Mono","Fira Code","SF Mono",monospace;'
+    );
+
+    try {
+        sessionStorage.setItem(consoleEasterEggKey, 'seen');
+    } catch (_) {}
+}
+
 function setTerminalMode(isEnabled, showToast = true) {
     document.documentElement.classList.toggle('terminal-mode', isEnabled);
     localStorage.setItem(terminalModeKey, isEnabled ? 'on' : 'off');
@@ -62,6 +85,7 @@ function toggleTerminalMode() {
 }
 
 function initTerminalMode() {
+    logConsoleEasterEgg();
     updateTerminalToggleButton();
     updateMobileStatusBar();
 
@@ -83,4 +107,5 @@ function initTerminalMode() {
     });
 }
 
+window.setTerminalMode = setTerminalMode;
 document.addEventListener('DOMContentLoaded', initTerminalMode);

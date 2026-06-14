@@ -1,0 +1,23 @@
+credits.txt — kryzziii.github.io
+================================
+
+Built by:
+- Chris Jemming
+
+Stack:
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Font Awesome 6
+- GitHub Pages
+
+Hidden gems:
+- Terminal Mode        -> Ctrl/⌘ + Shift + T
+- humans.txt           -> authorship + metadata
+- browser console      -> a small secret greeting
+
+Design notes:
+- no framework
+- no bundler
+- no build step
+- just handcrafted web files
