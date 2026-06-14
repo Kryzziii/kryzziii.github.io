@@ -322,15 +322,15 @@ function initRouteMap() {
     }, 100);
 
     // Breathing dot markers at each endpoint (placed at the coordinate, centered on the dot)
-    const makeDotIcon = () => L.divIcon({
+    const makeDotIcon = (anchor) => L.divIcon({
         className: '',
         html: '<span class="route-marker-dot" aria-hidden="true"></span>',
         iconSize: [16, 16],
-        iconAnchor: [8, 8],
+        iconAnchor: anchor,
     });
 
-    L.marker(luxLatLng, { icon: makeDotIcon(), interactive: false }).addTo(map);
-    L.marker(kaLatLng,  { icon: makeDotIcon(), interactive: false }).addTo(map);
+    L.marker(luxLatLng, { icon: makeDotIcon([8, 5]), interactive: false }).addTo(map);
+    L.marker(kaLatLng,  { icon: makeDotIcon([8, 8]), interactive: false }).addTo(map);
 
     // Swap tile layer on theme change
     const swapTiles = () => {
