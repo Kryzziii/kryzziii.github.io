@@ -139,7 +139,7 @@
         if (!btn) return;
         const html = document.documentElement;
         const update = () => {
-            btn.textContent = html.classList.contains('terminal-mode') ? 'Disable' : 'Toggle';
+            btn.textContent = html.classList.contains('terminal-mode') ? 'Disable' : 'Enable';
         };
         update();
         btn.addEventListener('click', () => {
