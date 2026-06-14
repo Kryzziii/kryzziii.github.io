@@ -252,8 +252,8 @@ function initRouteMap() {
          window.matchMedia('(prefers-color-scheme: dark)').matches);
 
     const map = L.map('route-leaflet-map', {
-        center: [49.35, 7.25],
-        zoom: 7,
+        center: [49.55, 7.25],
+        zoom: 8,
         scrollWheelZoom: false,
         zoomControl: true,
         attributionControl: false,
@@ -268,10 +268,10 @@ function initRouteMap() {
     // Marker icon factory using flag emoji
     const makeIcon = (emoji) => L.divIcon({
         className: '',
-        html: `<div class="route-map-marker">${emoji}</div>`,
-        iconSize: [36, 36],
-        iconAnchor: [18, 36],
-        popupAnchor: [0, -36],
+        html: `<div class="route-map-marker"><span class="route-marker-flag">${emoji}</span><span class="route-marker-dot" aria-hidden="true"></span></div>`,
+        iconSize: [36, 44],
+        iconAnchor: [18, 44],
+        popupAnchor: [0, -44],
     });
 
     const luxLatLng  = [49.6116, 6.1319];
