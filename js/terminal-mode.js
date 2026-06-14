@@ -50,14 +50,23 @@ function logConsoleEasterEgg() {
         }
     } catch (_) {}
 
+    const bannerStyle = 'color:#00ff9c;background:#0d1117;padding:4px 12px;border-left:1px solid #00ff9c;border-right:1px solid #00ff9c;font-family:"JetBrains Mono","Fira Code","SF Mono",monospace;font-weight:700;line-height:1.45;';
+
+    console.log('%c+---------------------------------------------+', `${bannerStyle}border-top:1px solid #00ff9c;border-radius:6px 6px 0 0;`);
+    console.log('%c|   PORTFOLIO // CONSOLE ACCESS GRANTED      |', bannerStyle);
+    console.log('%c+---------------------------------------------+', `${bannerStyle}border-bottom:1px solid #00ff9c;border-radius:0 0 6px 6px;`);
+
     console.log(
-        '%c> curious human detected',
-        'color:#00ff9c;background:#0d1117;padding:6px 10px;border:1px solid #00ff9c;border-radius:4px;font-family:"JetBrains Mono","Fira Code","SF Mono",monospace;font-weight:700;'
-    );
-    console.log(
-        '%cWelcome behind the curtain.%c Try Terminal Mode with Ctrl/⌘ + Shift + T, then peek at /humans.txt and /credits.txt for a few extra breadcrumbs.',
+        '%c>> welcome behind the curtain%c\nType %csetTerminalMode(true)%c to force terminal mode.\nShortcut: %cCtrl/⌘ + Shift + T%c\nClues: %c/humans.txt%c and %c/credits.txt',
         'color:#58a6ff;font-weight:700;font-family:"JetBrains Mono","Fira Code","SF Mono",monospace;',
-        'color:#9ecbff;font-family:"JetBrains Mono","Fira Code","SF Mono",monospace;'
+        'color:#9ecbff;font-family:"JetBrains Mono","Fira Code","SF Mono",monospace;',
+        'color:#00ff9c;font-weight:700;font-family:"JetBrains Mono","Fira Code","SF Mono",monospace;',
+        'color:#9ecbff;font-family:"JetBrains Mono","Fira Code","SF Mono",monospace;',
+        'color:#ffa657;font-weight:700;font-family:"JetBrains Mono","Fira Code","SF Mono",monospace;',
+        'color:#9ecbff;font-family:"JetBrains Mono","Fira Code","SF Mono",monospace;',
+        'color:#7ee787;font-weight:700;font-family:"JetBrains Mono","Fira Code","SF Mono",monospace;',
+        'color:#9ecbff;font-family:"JetBrains Mono","Fira Code","SF Mono",monospace;',
+        'color:#7ee787;font-weight:700;font-family:"JetBrains Mono","Fira Code","SF Mono",monospace;'
     );
 
     try {
