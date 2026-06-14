@@ -255,8 +255,13 @@ function initRouteMap() {
         center: [49.55, 7.25],
         zoom: 8,
         scrollWheelZoom: false,
-        zoomControl: true,
+        zoomControl: false,
         attributionControl: false,
+        dragging: false,
+        doubleClickZoom: false,
+        touchZoom: false,
+        keyboard: false,
+        boxZoom: false,
     });
 
     let tileLayer = L.tileLayer(isDark() ? DARK_TILE : LIGHT_TILE, {
@@ -268,10 +273,10 @@ function initRouteMap() {
     // Marker icon factory using flag emoji
     const makeIcon = (emoji) => L.divIcon({
         className: '',
-        html: `<div class="route-map-marker"><span class="route-marker-flag">${emoji}</span><span class="route-marker-dot" aria-hidden="true"></span></div>`,
-        iconSize: [36, 44],
-        iconAnchor: [18, 44],
-        popupAnchor: [0, -44],
+        html: `<div class="route-map-marker"><span class="route-marker-flag">${emoji}</span></div>`,
+        iconSize: [36, 36],
+        iconAnchor: [18, 36],
+        popupAnchor: [0, -36],
     });
 
     const luxLatLng  = [49.6116, 6.1319];
@@ -315,6 +320,17 @@ function initRouteMap() {
             pathEl.classList.add('route-animated-path');
         }
     }, 100);
+
+    // Breathing dot markers at each endpoint (placed at the coordinate, centered on the dot)
+    const makeDotIcon = () => L.divIcon({
+        className: '',
+        html: '<span class="route-marker-dot" aria-hidden="true"></span>',
+        iconSize: [16, 16],
+        iconAnchor: [8, 8],
+    });
+
+    L.marker(luxLatLng, { icon: makeDotIcon(), interactive: false }).addTo(map);
+    L.marker(kaLatLng,  { icon: makeDotIcon(), interactive: false }).addTo(map);
 
     // Swap tile layer on theme change
     const swapTiles = () => {

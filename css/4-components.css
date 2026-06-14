@@ -213,8 +213,9 @@
 }
 
 .route-marker-dot {
-    width: 8px;
-    height: 8px;
+    display: block;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: #0071E3;
     box-shadow: 0 0 0 0 rgba(0, 113, 227, 0.45);
