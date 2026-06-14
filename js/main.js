@@ -252,11 +252,11 @@ function initRouteMap() {
          window.matchMedia('(prefers-color-scheme: dark)').matches);
 
     const map = L.map('route-leaflet-map', {
-        center: [50.5, 7.5],
-        zoom: 5,
+        center: [49.35, 7.25],
+        zoom: 7,
         scrollWheelZoom: false,
         zoomControl: true,
-        attributionControl: true,
+        attributionControl: false,
     });
 
     let tileLayer = L.tileLayer(isDark() ? DARK_TILE : LIGHT_TILE, {
@@ -285,13 +285,36 @@ function initRouteMap() {
         .addTo(map)
         .bindPopup('<strong>Karlsruhe</strong><br>University &amp; Work 🎓');
 
-    // Dashed route line between the two cities
-    L.polyline([luxLatLng, kaLatLng], {
+    // Curved route line using quadratic bezier interpolation
+    const ctrl = [
+        (luxLatLng[0] + kaLatLng[0]) / 2 + 0.6,
+        (luxLatLng[1] + kaLatLng[1]) / 2,
+    ];
+    const bezierPoints = [];
+    const steps = 60;
+    for (let i = 0; i <= steps; i++) {
+        const t = i / steps;
+        const lat = (1 - t) * (1 - t) * luxLatLng[0] + 2 * (1 - t) * t * ctrl[0] + t * t * kaLatLng[0];
+        const lng = (1 - t) * (1 - t) * luxLatLng[1] + 2 * (1 - t) * t * ctrl[1] + t * t * kaLatLng[1];
+        bezierPoints.push([lat, lng]);
+    }
+
+    const routeLine = L.polyline(bezierPoints, {
         color: '#0071E3',
         weight: 3,
         dashArray: '10, 8',
         opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round',
     }).addTo(map);
+
+    // Animate the dashes along the route
+    setTimeout(() => {
+        const pathEl = routeLine.getElement();
+        if (pathEl) {
+            pathEl.classList.add('route-animated-path');
+        }
+    }, 100);
 
     // Swap tile layer on theme change
     const swapTiles = () => {

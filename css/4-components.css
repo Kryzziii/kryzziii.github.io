@@ -215,6 +215,16 @@
     letter-spacing: 0.05em;
 }
 
+/* Animated dashes on the route polyline */
+@keyframes route-dash-move {
+    from { stroke-dashoffset: 18; }
+    to   { stroke-dashoffset: 0; }
+}
+
+.route-animated-path {
+    animation: route-dash-move 1.2s linear infinite;
+}
+
 /* Keep old SVG route-map classes so nothing else breaks */
 .route-map {
     width: 100%;
