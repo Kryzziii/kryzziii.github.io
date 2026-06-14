@@ -50,12 +50,9 @@ html.terminal-mode .cert-card::after {
     opacity: 0 !important;
 }
 
-html.terminal-mode .hero h1 {
-    font-size: 3.2rem;
-}
-
-html.terminal-mode .section-title {
-    font-size: 2rem;
+html.terminal-mode .card h3,
+html.terminal-mode .glass-card h3 {
+    font-size: 1.2rem;
 }
 
 html.terminal-mode main.container h1::before,
