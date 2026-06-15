@@ -728,24 +728,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .route-leaflet-outer {
-        padding: 20px;
-    }
-
-    .route-leaflet-contact {
-        margin-top: 20px;
-        padding: 18px;
-    }
-
-    .route-leaflet-contact #route-leaflet-map,
-    #route-leaflet-map {
-        height: 260px;
-    }
-
-    .route-marker-flag {
-        font-size: 20px;
-    }
-
     footer {
         padding: 32px 20px 140px;
     }
@@ -1009,5 +991,9 @@ footer {
 
     .route-leaflet-contact #route-leaflet-map {
         height: 260px;
+    }
+
+    .route-marker-flag {
+        font-size: 20px;
     }
 }
