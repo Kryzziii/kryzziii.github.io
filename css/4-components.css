@@ -622,6 +622,11 @@
     width: 100%;
 }
 
+.job-header > div {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
 /* --- Clean Description List (Agile) --- */
 .description-list {
     list-style: disc;
