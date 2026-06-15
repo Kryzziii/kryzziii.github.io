@@ -485,3 +485,31 @@ body.error-page .orb-2 {
 .lightbox-modal.active .lightbox-img {
     transform: scale(1);
 }
+/* =========================================
+   SEMANTIC HELPERS
+   Small, reusable building blocks shared across pages.
+   Declared last so they reliably override component defaults
+   (replacing the former one-off inline styles).
+   ========================================= */
+
+/* Text colours */
+.text-main { color: var(--text-main); }
+.text-secondary { color: var(--text-secondary); }
+.text-accent { color: var(--accent); }
+
+/* Flex helpers */
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-center-y { display: flex; align-items: center; }
+.flex-between { display: flex; justify-content: space-between; }
+.flex-between-center { display: flex; justify-content: space-between; align-items: center; }
+.flex-col { display: flex; flex-direction: column; }
+
+/* Detail-page heading (certifications & project detail pages) */
+.detail-title { font-size: 2.5rem; margin-bottom: 10px; }
+
+/* Breathing dot animation (project roadmap "current" marker) */
+@keyframes pulse {
+    0% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(0, 113, 227, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 5px rgba(0, 113, 227, 0); }
+    100% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(0, 113, 227, 0); }
+}

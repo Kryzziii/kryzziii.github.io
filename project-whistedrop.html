@@ -5,29 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#F5F5F7">
     <title>Project Details | Chris Jemming</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="assets/favicon.avif">
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <script src="js/page-init.js"></script>
     <script src="js/components.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/terminal-mode.js" defer></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('preload');
-            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
-        });
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
-    </script>
 </head>
 <body class="preload">
-
-<div class="background-orbs">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-</div>
+<app-background></app-background>
 
 <app-navbar></app-navbar>
 
@@ -38,8 +28,8 @@
     </div>
 
     <section class="fade-in" style="margin-bottom: 30px;">
-        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">WhistleDrop – Secure Reporting Platform</h1>
-        <p style="color: var(--text-secondary); font-size: 1.2rem;">A web-based whistleblower platform with a strong focus on confidentiality, anonymity, and cryptographic security.</p>
+        <h1 class="detail-title">WhistleDrop – Secure Reporting Platform</h1>
+        <p class="text-secondary" style="font-size: 1.2rem;">A web-based whistleblower platform with a strong focus on confidentiality, anonymity, and cryptographic security.</p>
     </section>
 
     <div class="project-hero-frame fade-in">
@@ -78,7 +68,7 @@
                 </li>
             </ul>
 
-            <h4 style="margin-top: 30px; margin-bottom: 15px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary);">Tech Stack</h4>
+            <h4 class="text-secondary" style="margin-top: 30px; margin-bottom: 15px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Tech Stack</h4>
             <div class="skill-cloud">
                 <span class="skill-tag">Flask</span>
                 <span class="skill-tag">React</span>
@@ -96,9 +86,9 @@
                     WhistleDrop is a secure gateway for anonymous whistleblowing developed in <strong>Python</strong>. It utilizes advanced cryptographic methods to ensure that the identity of the user remains hidden from both the platform and the recipient. The architecture is designed to be resilient against traffic analysis and metadata leaks by operating exclusively as a <strong>Tor Hidden Service</strong>.
                 </p>
 
-                <h4 style="color: var(--text-main); margin-bottom: 10px;">Core Engineering Concepts:</h4>
+                <h4 class="text-main" style="margin-bottom: 10px;">Core Engineering Concepts:</h4>
 
-                <ul style="list-style-type: disc; padding-left: 20px; margin-bottom: 20px; color: var(--text-secondary);">
+                <ul class="text-secondary" style="list-style-type: disc; padding-left: 20px; margin-bottom: 20px;">
                     <li style="margin-bottom: 8px;">
                         <strong>Trustless Server Architecture:</strong>
                         The server acts as a blind drop-box. It never possesses the private keys required to decrypt the data, ensuring that even a server seizure yields no readable intelligence.
@@ -117,7 +107,7 @@
                     </li>
                 </ul>
 
-                <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                <p class="text-secondary" style="font-size: 0.9rem;">
                     <em>Key Challenge:</em> Designing a "One-Time-Use" public key infrastructure to prevent key reuse attacks and ensure that each submission session is cryptographically isolated.
                 </p>
             </div>
@@ -125,7 +115,7 @@
 
         <div class="glass-card span-3 fade-in" style="padding: 32px;">
             <h3><i class="fa-solid fa-images"></i> Insights</h3>
-            <p style="color: var(--text-secondary);">Screenshots from the WebUI.</p>
+            <p class="text-secondary">Screenshots from the WebUI.</p>
 
             <div class="gallery-grid">
                 <div class="gallery-item">

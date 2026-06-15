@@ -7,27 +7,17 @@
     <title>CSI Linux Certified Investigator | Chris Jemming</title>
     <link rel="stylesheet" href="css/main.css">
 
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="assets/favicon.avif">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <script src="js/page-init.js"></script>
     <script src="js/components.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/terminal-mode.js" defer></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('preload');
-            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
-        });
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
-    </script>
 </head>
 <body class="preload">
-
-<div class="background-orbs">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-</div>
+<app-background></app-background>
 
 <app-navbar></app-navbar>
 
@@ -37,19 +27,19 @@
     </div>
 
     <section class="fade-in" style="margin-bottom: 40px;">
-        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">CSI Linux Certified Investigator</h1>
-        <div style="display: flex; gap: 15px; align-items: center;">
+        <h1 class="detail-title">CSI Linux Certified Investigator</h1>
+        <div class="flex-center-y" style="gap: 15px;">
             <span class="date-pill" style="font-size: 0.9rem;">Certified Investigator</span>
-            <span style="color: var(--text-secondary);">Linux Academy</span>
+            <span class="text-secondary">Linux Academy</span>
         </div>
     </section>
 
     <div class="bento-grid">
 
-        <div class="glass-card span-2 fade-in" style="padding: 24px; display: flex; flex-direction: column;">
+        <div class="glass-card span-2 fade-in flex-col" style="padding: 24px;">
             <h3><i class="fa-solid fa-circle-info"></i>Description</h3>
 
-            <ul class="description-list" style="color: var(--text-secondary);">
+            <ul class="description-list text-secondary">
                 <li>Downloading, installing, setting up CSI Linux, troubleshooting, and case management.</li>
                 <li>OSINT, connecting to Tor, website/video collection, geolocation, and importance of anonymity.</li>
                 <li>Computer forensics, data recovery, encryption, and data hiding.</li>
@@ -62,13 +52,13 @@
             </a>
         </div>
 
-        <div class="glass-card fade-in" style="padding: 0px; display: flex; flex-direction: column;">
-            <div style="height: 200px; background: linear-gradient(135deg, #000428 0%, #004e92 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
+        <div class="glass-card fade-in flex-col" style="padding: 0px;">
+            <div class="flex-center" style="height: 200px; background: linear-gradient(135deg, #000428 0%, #004e92 100%); color: white; font-size: 4rem;">
                 <i class="fa-solid fa-award"></i>
             </div>
-            <div style="padding: 24px; flex-grow: 1; display: flex; flex-direction: column;">
+            <div class="flex-col" style="padding: 24px; flex-grow: 1;">
                 <h3 style="margin-bottom: 5px;">Certified Investigator</h3>
-                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6;">
+                <p class="text-secondary" style="font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6;">
                     Certifies the ability to leverage CSI Linux tools for comprehensive computer forensics, OSINT gathering, and secure case management.
                 </p>
 
@@ -83,6 +73,5 @@
 
 <app-footer></app-footer>
 
-<script src="js/main.js"></script>
 </body>
 </html>

@@ -5,29 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#F5F5F7">
     <title>Project Details | Chris Jemming</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="assets/favicon.avif">
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <script src="js/page-init.js"></script>
     <script src="js/components.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/terminal-mode.js" defer></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('preload');
-            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
-        });
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
-    </script>
 </head>
 <body class="preload">
-
-<div class="background-orbs">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-</div>
+<app-background></app-background>
 
 <app-navbar></app-navbar>
 
@@ -38,8 +28,8 @@
     </div>
 
     <section class="fade-in" style="margin-bottom: 30px;">
-        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Online Form - IFEN / MENJE</h1>
-        <p style="color: var(--text-secondary); font-size: 1.2rem;">Forms available throughout the MENJE with specific permissions per user</p>
+        <h1 class="detail-title">Online Form - IFEN / MENJE</h1>
+        <p class="text-secondary" style="font-size: 1.2rem;">Forms available throughout the MENJE with specific permissions per user</p>
     </section>
 
     <div class="project-hero-frame fade-in">
@@ -70,7 +60,7 @@
                 </li>
             </ul>
 
-            <h4 style="margin-top: 30px; margin-bottom: 15px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary);">Tech Stack</h4>
+            <h4 class="text-secondary" style="margin-top: 30px; margin-bottom: 15px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Tech Stack</h4>
             <div class="skill-cloud">
                 <span class="skill-tag">Visual Basic</span>
                 <span class="skill-tag">Access</span>
@@ -83,7 +73,7 @@
 
             <div class="rich-text">
                 <p>
-                    I developed a prototype of a multilingual dynamic online form with specific permissions per user. This prototype has been transferred to the systems of <i>CGIE</i>. <a href="https://portal.education.lu/cgie/ABOUT-US" style="font-style: italic; color: var(--text-secondary)">CGIE</a> is the IT department of the Luxembourgish Ministry of Education.
+                    I developed a prototype of a multilingual dynamic online form with specific permissions per user. This prototype has been transferred to the systems of <i>CGIE</i>. <a href="https://portal.education.lu/cgie/ABOUT-US" class="text-secondary" style="font-style: italic;">CGIE</a> is the IT department of the Luxembourgish Ministry of Education.
                 </p>
 
                 <h3>Architecture</h3>
@@ -103,7 +93,7 @@
 
         <div class="glass-card span-3 fade-in" style="padding: 32px;">
             <h3><i class="fa-solid fa-images"></i> Insights</h3>
-            <p style="color: var(--text-secondary);">Screenshots from forms and dashboard (with test data).</p>
+            <p class="text-secondary">Screenshots from forms and dashboard (with test data).</p>
 
             <div class="gallery-grid">
                 <div class="gallery-item">

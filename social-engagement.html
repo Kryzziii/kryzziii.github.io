@@ -7,20 +7,14 @@
     <title>Social Engagement | Chris Jemming</title>
 
     <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="assets/favicon.avif">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <script src="js/page-init.js"></script>
     <script src="js/components.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/terminal-mode.js" defer></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('preload');
-            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
-        });
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
-    </script>
 </head>
 <body class="preload">
 
@@ -41,7 +35,7 @@
         <h1>University Commitment</h1>
         <div class="social-header-meta">
             <span class="date-pill">Since 2023</span>
-            <span style="color: var(--text-secondary);">Shaping the campus environment</span>
+            <span class="text-secondary">Shaping the campus environment</span>
         </div>
     </section>
 
@@ -72,7 +66,7 @@
                             <h4 style="margin-bottom: 5px;">Deputy Chairman (stv. Vorsitz)</h4>
                             <span class="date-pill" style="font-size: 0.75rem; margin-bottom: 8px; display: inline-block;">2025 - Present</span>
 
-                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                            <p class="text-secondary" style="font-size: 0.9rem; margin: 0;">
                                 As Vice Chair, I guide the strategic vision of the council and represent the student body in negotiations with the faculty administration. My role involves coordinating the executive board and ensuring the successful execution of our long-term objectives.
                             </p>
                         </div>
@@ -85,7 +79,7 @@
                             <h4 style="margin-bottom: 5px;">Infrastructure & Systems</h4>
                             <span class="date-pill" style="font-size: 0.75rem; margin-bottom: 8px; display: inline-block;">2023 - Present</span>
 
-                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                            <p class="text-secondary" style="font-size: 0.9rem; margin: 0;">
                                 Taking ownership of the technical direction, I coordinated the team's workload and spearheaded the modernization of our systems, ensuring a robust digital foundation for the student body.
                             </p>
                         </div>
@@ -98,7 +92,7 @@
                             <h4 style="margin-bottom: 5px;">Community Management</h4>
                             <span class="date-pill" style="font-size: 0.75rem; margin-bottom: 8px; display: inline-block;">2023 - 2025</span>
 
-                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                            <p class="text-secondary" style="font-size: 0.9rem; margin: 0;">
                                 Responsible for curating and distributing vital updates to the student body. I ensure transparency regarding academic changes and faculty announcements.
                             </p>
                         </div>
@@ -125,10 +119,10 @@
 
             <div class="card-content compact">
                 <div style="margin-bottom: 15px;">
-                    <h4 style="margin: 0; font-size: 1.1rem; color: var(--text-main);">Elected Representative</h4>
+                    <h4 class="text-main" style="margin: 0; font-size: 1.1rem;">Elected Representative</h4>
                 </div>
 
-                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+                <p class="text-secondary" style="font-size: 0.95rem; line-height: 1.6;">
                     As an elected member of the student community's <strong>legislative body</strong>, I participate in making university-wide decisions regarding the student body. A central responsibility is electing and overseeing the Executive Committee (AStA).
                 </p>
 
@@ -143,7 +137,7 @@
             </div>
         </div>
 
-        <div class="span-1 fade-in" style="display: flex; flex-direction: column; gap: 15px;">
+        <div class="span-1 fade-in flex-col" style="gap: 15px;">
             <div class="credentials-title">
                 <h3>Credentials</h3>
             </div>
@@ -153,8 +147,8 @@
                     <i class="fa-solid fa-file-pdf"></i>
                 </div>
                 <div>
-                    <div style="font-weight: 600; font-size: 0.85rem; color: var(--text-main);">Student Council Mandate</div>
-                    <div style="font-size: 0.7rem; color: var(--accent);">View Certificate <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.6rem;"></i></div>
+                    <div class="text-main" style="font-weight: 600; font-size: 0.85rem;">Student Council Mandate</div>
+                    <div class="text-accent" style="font-size: 0.7rem;">View Certificate <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.6rem;"></i></div>
                 </div>
             </a>
 
@@ -163,8 +157,8 @@
                     <i class="fa-solid fa-file-shield"></i>
                 </div>
                 <div>
-                    <div style="font-weight: 600; font-size: 0.85rem; color: var(--text-secondary);">StuPa Election</div>
-                    <div style="font-size: 0.7rem; color: var(--text-secondary);">Available upon request</div>
+                    <div class="text-secondary" style="font-weight: 600; font-size: 0.85rem;">StuPa Election</div>
+                    <div class="text-secondary" style="font-size: 0.7rem;">Available upon request</div>
                 </div>
             </div>
 
@@ -173,8 +167,8 @@
                     <i class="fa-solid fa-file-shield"></i>
                 </div>
                 <div>
-                    <div style="font-weight: 600; font-size: 0.85rem; color: var(--text-secondary);">FFIWI Board Membership</div>
-                    <div style="font-size: 0.7rem; color: var(--text-secondary);">Available upon request</div>
+                    <div class="text-secondary" style="font-weight: 600; font-size: 0.85rem;">FFIWI Board Membership</div>
+                    <div class="text-secondary" style="font-size: 0.7rem;">Available upon request</div>
                 </div>
             </div>
 
@@ -209,7 +203,7 @@
                             <h4 style="margin-bottom: 5px;">Deputy Chairman (Board Member)</h4>
                             <span class="date-pill" style="font-size: 0.75rem; margin-bottom: 8px; display: inline-block;">2025 - Present</span>
 
-                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                            <p class="text-secondary" style="font-size: 0.9rem; margin: 0;">
                                 Steering the strategic direction of the alumni network. My responsibilities include organizing networking events, maintaining relations with industry partners, and leading board meetings.
                             </p>
                         </div>
@@ -223,7 +217,7 @@
                             <h4 style="margin-bottom: 5px;">Deputy Treasurer (Board Member)</h4>
                             <span class="date-pill" style="font-size: 0.75rem; margin-bottom: 8px; display: inline-block;">2024 - 2025</span>
 
-                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                            <p class="text-secondary" style="font-size: 0.9rem; margin: 0;">
                                 Managed the association's finances and accounting. This included preparing the annual tax report, and allocating sponsorship funds for student projects.
                             </p>
                         </div>
@@ -237,7 +231,7 @@
 
         <div class="span-3 fade-in section-header-small">
             <h2>Beyond Campus</h2>
-            <span style="font-size: 0.9rem; color: var(--text-secondary);">Civil Engagement & Volunteering</span>
+            <span class="text-secondary" style="font-size: 0.9rem;">Civil Engagement & Volunteering</span>
         </div>
 
         <div class="glass-card span-2 fade-in social-card-layout horizontal">
@@ -252,19 +246,19 @@
             <div class="card-content">
 
                 <div class="tutor-header-row">
-                    <h4 style="margin: 0; font-size: 1.1rem; color: var(--text-main);">Program "E=MJC²"</h4>
+                    <h4 class="text-main" style="margin: 0; font-size: 1.1rem;">Program "E=MJC²"</h4>
                     <span class="location-text">
                         <i class="fa-solid fa-location-dot" style="margin-right: 4px;"></i> Bettembourg, LU
                     </span>
                 </div>
 
                 <div style="margin-bottom: 15px;">
-                    <span class="date-pill" style="background: rgba(128,128,128,0.15); color: var(--text-main); font-size: 0.7rem;">
+                    <span class="date-pill text-main" style="background: rgba(128,128,128,0.15); font-size: 0.7rem;">
                         2021
                     </span>
-                    <span style="font-size: 0.8rem; color: var(--text-secondary); margin-left: 8px;">Extracurricular Accompaniment</span>
+                    <span class="text-secondary" style="font-size: 0.8rem; margin-left: 8px;">Extracurricular Accompaniment</span>
                 </div>
-                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                <p class="text-secondary" style="font-size: 0.95rem; line-height: 1.6; margin: 0;">
                     I volunteered as a tutor for the <i>E=MJC²</i> initiative. During this time, I provided academic support to students, helping them overcome learning hurdles and fostering a positive approach to education outside the classroom.
                 </p>
             </div>
@@ -272,7 +266,7 @@
 
         <div class="glass-card span-1 fade-in social-card-layout">
             <div class="bg-volunteer" style="padding: 20px; flex-grow: 0;">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="flex-between-center">
                     <h3 style="margin: 0; font-size: 1.1rem;">Community Support</h3>
                     <i class="fa-solid fa-hand-holding-heart" style="font-size: 1.2rem; opacity: 0.8;"></i>
                 </div>
@@ -287,8 +281,8 @@
                             <i class="fa-solid fa-fire-extinguisher"></i>
                         </div>
                         <div>
-                            <strong style="display: block; font-size: 0.85rem; color: var(--text-main);">Volunteer Fire Dept.</strong>
-                            <span style="font-size: 0.75rem; color: var(--text-secondary);">Hesperange • Event Support</span>
+                            <strong class="text-main" style="display: block; font-size: 0.85rem;">Volunteer Fire Dept.</strong>
+                            <span class="text-secondary" style="font-size: 0.75rem;">Hesperange • Event Support</span>
                         </div>
                     </div>
 
@@ -297,8 +291,8 @@
                             <i class="fa-solid fa-paw"></i>
                         </div>
                         <div>
-                            <strong style="display: block; font-size: 0.85rem; color: var(--text-main);">Dog Sports Club</strong>
-                            <span style="font-size: 0.75rem; color: var(--text-secondary);">Bettembourg • Voluntary Helper</span>
+                            <strong class="text-main" style="display: block; font-size: 0.85rem;">Dog Sports Club</strong>
+                            <span class="text-secondary" style="font-size: 0.75rem;">Bettembourg • Voluntary Helper</span>
                         </div>
                     </div>
 

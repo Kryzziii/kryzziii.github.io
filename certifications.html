@@ -5,36 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#F5F5F7">
     <title>Certifications | Chris Jemming</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="assets/favicon.avif">
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <script src="js/page-init.js"></script>
     <script src="js/components.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/terminal-mode.js" defer></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('preload');
-            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
-        });
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
-    </script>
 </head>
 <body class="preload">
-
-<div class="background-orbs">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-</div>
+<app-background></app-background>
 
 <app-navbar></app-navbar>
 
 <main class="container">
     <h1 class="section-title fade-in">Certifications & Achievements</h1>
 
-    <h3 class="fade-in" style="margin-bottom: 20px; color: var(--text-secondary);">Awards & Honors</h3>
+    <h3 class="fade-in text-secondary" style="margin-bottom: 20px;">Awards & Honors</h3>
     <div class="bento-grid" style="margin-bottom: 60px;">
 
         <div class="glass-card award-card span-2 fade-in" style="padding: 32px;">
@@ -43,8 +33,8 @@
                     <i class="fa-solid fa-trophy award-icon"></i>
                 </div>
                 <div>
-                    <h3 style="margin-bottom: 5px; color: var(--text-main);">DAAD-Prize</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 10px;">Awarded by: <strong>Karlsruhe University of Applied Sciences</strong> • 2025</p>
+                    <h3 class="text-main" style="margin-bottom: 5px;">DAAD-Prize</h3>
+                    <p class="text-secondary" style="font-size: 0.9rem; margin-bottom: 10px;">Awarded by: <strong>Karlsruhe University of Applied Sciences</strong> • 2025</p>
                     <p>A Prize for outstanding achievements by international students at German universities</p>
                 </div>
             </div>
@@ -52,17 +42,17 @@
 
     </div>
 
-    <h3 class="fade-in" style="margin-bottom: 20px; color: var(--text-secondary);">Courses & Licenses</h3>
+    <h3 class="fade-in text-secondary" style="margin-bottom: 20px;">Courses & Licenses</h3>
     <div class="cert-grid">
 
         <div class="glass-card cert-card fade-in">
-            <div style="height: 200px; background: linear-gradient(135deg, #111827 0%, #450a0a 50%, #991b1b 100%); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.9); font-size: 4.5rem; text-shadow: 0 8px 20px rgba(0,0,0,0.5);">
+            <div class="flex-center" style="height: 200px; background: linear-gradient(135deg, #111827 0%, #450a0a 50%, #991b1b 100%); color: rgba(255,255,255,0.9); font-size: 4.5rem; text-shadow: 0 8px 20px rgba(0,0,0,0.5);">
                 <i class="fa-solid fa-user-secret"></i>
             </div>
             <div class="cert-content">
                 <div class="cert-title">Ethical Hacking</div>
                 <div class="cert-issuer">HKA</div>
-                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px;">
+                <p class="text-secondary" style="font-size: 0.9rem; margin-bottom: 20px;">
                     Ethical Hacking and Penetration Testing at University Level.
                 </p>
                 <a href="cert-ethical-hacking.html" class="btn-action">
@@ -72,13 +62,13 @@
         </div>
 
         <div class="glass-card cert-card fade-in">
-            <div style="height: 200px; background: linear-gradient(135deg, #000428 0%, #004e92 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
+            <div class="flex-center" style="height: 200px; background: linear-gradient(135deg, #000428 0%, #004e92 100%); color: white; font-size: 4rem;">
                 <i class="fa-solid fa-user-shield"></i>
             </div>
             <div class="cert-content">
                 <div class="cert-title">CSI Linux</div>
                 <div class="cert-issuer">Linux Academy</div>
-                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px;">
+                <p class="text-secondary" style="font-size: 0.9rem; margin-bottom: 20px;">
                     Hands-on certification for conducting effective cyber investigations and forensic analysis with CSI Linux.
                 </p>
                 <a href="cert-csi-linux.html" class="btn-action">
@@ -95,7 +85,7 @@
             <div class="cert-content">
                 <div class="cert-title">Agile Project Management</div>
                 <div class="cert-issuer">USMx and UMD</div>
-                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px;">
+                <p class="text-secondary" style="font-size: 0.9rem; margin-bottom: 20px;">
                     Comprehensive course on agile methods, Scrum frameworks, and effective project management.
                 </p>
                 <a href="cert-agile.html" class="btn-action">
@@ -111,7 +101,7 @@
             <div class="cert-content">
                 <div class="cert-title">HTML5 & CSS3</div>
                 <div class="cert-issuer">Jannis Seeman</div>
-                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 20px;">
+                <p class="text-secondary" style="font-size: 0.9rem; margin-bottom: 20px;">
                     Intensive course for advanced layouts, Flexbox, Grid, and responsive design.
                 </p>
                 <a href="cert-html-css.html" class="btn-action">

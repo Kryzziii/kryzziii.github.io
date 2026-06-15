@@ -4,28 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seminar Paper: Tor Network | Chris Jemming</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="assets/favicon.avif">
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/page-init.js"></script>
     <script src="js/components.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/terminal-mode.js" defer></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('preload');
-            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
-        });
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
-    </script>
 </head>
 <body class="preload">
-
-<div class="background-orbs">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-</div>
+<app-background></app-background>
 
 <app-navbar></app-navbar>
 
@@ -36,12 +26,12 @@
     </div>
 
     <section class="fade-in" style="margin-bottom: 30px;">
-        <div style="display:flex; gap:10px; align-items:center; margin-bottom:10px;">
+        <div class="flex-center-y" style="gap: 10px; margin-bottom: 10px;">
             <span class="paper-tag">Seminar Paper</span>
-            <span class="date-pill" style="background:var(--text-secondary);">2025</span>
+            <span class="date-pill" style="background: var(--text-secondary);">2025</span>
         </div>
-        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Tor-Network</h1>
-        <p style="color: var(--text-secondary); font-size: 1.2rem;">Analysis of the technical architecture and its features</p>
+        <h1 class="detail-title">Tor-Network</h1>
+        <p class="text-secondary" style="font-size: 1.2rem;">Analysis of the technical architecture and its features</p>
     </section>
 
     <div class="bento-grid">
@@ -64,11 +54,11 @@
                 </li>
                 <li class="meta-item">
                     <span class="meta-label">Grade</span>
-                    <span class="meta-value" style="color: var(--accent);">1.0</span>
+                    <span class="meta-value text-accent">1.0</span>
                 </li>
             </ul>
 
-            <div style="margin-top: 30px; padding: 15px; background: rgba(128,128,128,0.05); border-radius: 12px; font-size: 0.85rem; color: var(--text-secondary);">
+            <div class="text-secondary" style="margin-top: 30px; padding: 15px; background: rgba(128,128,128,0.05); border-radius: 12px; font-size: 0.85rem;">
                 <i class="fa-solid fa-lock" style="margin-right: 5px;"></i>
                 Not publicly available.
             </div>
@@ -81,7 +71,7 @@
                 <p>
                     This paper explores the technical architecture and societal significance of the Tor network as a central tool for digital anonymity. Particular focus is placed on the mechanics of Onion Routing and Onion Services, which distinguish the system from alternatives like VPNs or I2P through its decentralized design. The analysis further evaluates security limitations, such as traffic correlation attacks, identifying them as a deliberate compromise between latency and protection. Ultimately, the study highlights the network's dualistic nature, balancing its misuse for criminal activities against its indispensable value for freedom of expression and censorship circumvention.
                 </p>
-                <h4 style="margin-top: 30px; color: var(--text-main);">Result & conclusion</h4>
+                <h4 class="text-main" style="margin-top: 30px;">Result & conclusion</h4>
                 <p>
                     The analysis confirms that Tor provides superior anonymity compared to VPNs through its decentralized architecture, despite inherent vulnerabilities to high-level traffic analysis. These limitations represent a deliberate design trade-off to balance security with network speed and usability. Ultimately, the paper concludes that Tor is a neutral but essential tool, indispensable for digital self-defense and free speech despite its concurrent misuse for criminal activities.
                 </p>
@@ -90,7 +80,7 @@
 
         <div class="glass-card span-3 fade-in" style="padding: 32px;">
             <h3><i class="fa-solid fa-network-wired"></i> Key Concepts & Architecture</h3>
-            <p style="color: var(--text-secondary); margin-bottom: 20px;">
+            <p class="text-secondary" style="margin-bottom: 20px;">
                 The following technical components and theoretical concepts were central to the analysis.
             </p>
 

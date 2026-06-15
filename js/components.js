@@ -1,3 +1,14 @@
+class AppBackground extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+            <div class="background-orbs">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+            </div>
+        `;
+    }
+}
+
 class AppNavbar extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
@@ -32,9 +43,11 @@ class AppNavbar extends HTMLElement {
                         </li>
                     </ul>
 
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
-                        <i class="fa-solid fa-moon"></i>
-                    </button>
+                    <div class="nav-actions">
+                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                            <i class="fa-solid fa-moon"></i>
+                        </button>
+                    </div>
                 </div>
             </nav>
         `;
@@ -79,15 +92,22 @@ class AppNavbar extends HTMLElement {
             const currentTheme = html.getAttribute('data-theme');
             const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             const isDark = currentTheme === 'dark' || (!currentTheme && systemDark);
+            const isTerminalMode = html.classList.contains('terminal-mode');
 
             icon.classList.remove('fa-sun', 'fa-moon');
 
             if (isDark) {
                 icon.classList.add('fa-sun');
+            } else {
+                icon.classList.add('fa-moon');
+            }
+
+            if (isTerminalMode) {
+                metaThemeColor.setAttribute('content', '#0d1117');
+            } else if (isDark) {
                 // Safari Bar auf Schwarz setzen
                 metaThemeColor.setAttribute('content', '#000000');
             } else {
-                icon.classList.add('fa-moon');
                 // Safari Bar auf dein Hellgrau (#F5F5F7) setzen
                 metaThemeColor.setAttribute('content', '#F5F5F7');
             }
@@ -121,11 +141,12 @@ class AppFooter extends HTMLElement {
         const year = new Date().getFullYear();
         this.innerHTML = `
             <footer>
-                &copy; ${year} Chris Jemming.
+                <a href="credits.html" class="footer-credits-link" aria-label="Open credits">&copy; ${year} Chris Jemming.</a>
             </footer>
         `;
     }
 }
 
+customElements.define('app-background', AppBackground);
 customElements.define('app-navbar', AppNavbar);
 customElements.define('app-footer', AppFooter);
