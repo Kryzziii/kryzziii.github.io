@@ -944,6 +944,7 @@ footer {
     transition: var(--transition);
     white-space: nowrap;
     flex-shrink: 0;
+    margin-left: auto;
 }
 
 .ee-action-btn:hover {
