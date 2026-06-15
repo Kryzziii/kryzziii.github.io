@@ -917,11 +917,12 @@ footer {
 
 .easter-egg-meta {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
     padding-top: 8px;
     margin-top: auto;
+    width: 100%;
 }
 
 .ee-shortcut {
@@ -951,6 +952,7 @@ footer {
     white-space: nowrap;
     flex-shrink: 0;
     margin-top: auto;
+    align-self: flex-end;
 }
 
 .ee-action-btn:hover {
@@ -987,13 +989,11 @@ footer {
     }
 
     .easter-egg-meta {
-        flex-direction: column;
         align-items: flex-start;
         gap: 10px;
     }
 
     .ee-shortcut {
-        font-size: 0.7rem;
         padding: 1px 5px;
         white-space: nowrap;
     }
