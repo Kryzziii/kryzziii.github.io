@@ -1,5 +1,12 @@
 const terminalModeKey = 'terminal_mode';
 const consoleEasterEggKey = 'console_easter_egg_seen';
+const terminalAchievementCookie = 'ee_terminal_discovered';
+
+function setTerminalAchievementCookie() {
+    try {
+        document.cookie = `${terminalAchievementCookie}=1;path=/;max-age=${60 * 60 * 24 * 365};SameSite=Lax`;
+    } catch (_) {}
+}
 
 function isTerminalModeEnabled() {
     return document.documentElement.classList.contains('terminal-mode');
@@ -77,6 +84,7 @@ function logConsoleEasterEgg() {
 function setTerminalMode(isEnabled, showToast = true) {
     document.documentElement.classList.toggle('terminal-mode', isEnabled);
     localStorage.setItem(terminalModeKey, isEnabled ? 'on' : 'off');
+    setTerminalAchievementCookie();
 
     updateTerminalToggleButton();
     updateMobileStatusBar();

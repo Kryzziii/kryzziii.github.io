@@ -84,6 +84,13 @@ html.terminal-mode .easter-egg-item:hover {
     border-color: var(--text-main);
 }
 
+html.terminal-mode .easter-egg-item.is-discovered::after {
+    background: rgba(0, 255, 156, 0.16);
+    color: var(--text-main);
+    border: 1px solid rgba(0, 255, 156, 0.42);
+    box-shadow: 0 0 0 1px rgba(0, 255, 156, 0.12);
+}
+
 html.terminal-mode .easter-egg-icon {
     background: rgba(13, 17, 23, 0.96);
     border: 1px solid rgba(0, 255, 156, 0.35);

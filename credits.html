@@ -13,18 +13,7 @@
     <script src="js/components.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/terminal-mode.js" defer></script>
-
-    <script>
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
-        if (localStorage.getItem('terminal_mode') === 'on') { document.documentElement.classList.add('terminal-mode'); }
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('preload');
-            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
-        });
-    </script>
+    <script src="js/credits.js"></script>
 </head>
 <body class="preload">
 
@@ -53,12 +42,12 @@
         <div class="card fade-in">
             <h3><i class="fa-solid fa-icons"></i>Font Awesome 6.4</h3>
             <p style="color:var(--text-secondary);">Icon library powering every little visual glyph on this site. Used via CDN — no npm required.</p>
-            <a href="https://fontawesome.com" target="_blank" rel="noopener noreferrer" class="btn-ghost" style="margin-top:auto;">fontawesome.com <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.7em;"></i></a>
+            <a href="https://fontawesome.com" target="_blank" rel="noopener noreferrer" class="btn-ghost credits-card-link">fontawesome.com <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.7em;"></i></a>
         </div>
 
         <div class="card fade-in">
             <h3><i class="fa-brands fa-github"></i>GitHub Pages</h3>
-            <p style="color:var(--text-secondary);">Hosted for free, directly from this repository. Custom domain via CNAME. No servers to manage.</p>
+            <p style="color:var(--text-secondary);">Hosted for free, directly from this repository. No servers to manage.</p>
         </div>
 
         <div class="card fade-in">
@@ -67,10 +56,11 @@
         </div>
 
         <div class="card fade-in">
-            <h3><i class="fa-solid fa-code"></i>IDE</h3>
+            <h3><i class="fa-solid fa-code"></i>Daily Driver</h3>
             <div class="skill-list" style="margin-top:10px;">
-                <span class="skill-pill">VS Code</span>
-                <span class="skill-pill">JetBrains</span>
+                <span class="skill-pill">IntelliJ</span>
+                <span class="skill-pill">Git</span>
+                <span class="skill-pill">Ghostty</span>
             </div>
         </div>
 
@@ -97,7 +87,10 @@
     <h2 class="section-title fade-in" style="margin-top:60px;">Easter Eggs</h2>
 
     <div class="card fade-in easter-egg-card hidden-gems-card" style="max-width:840px;margin:0 auto 40px;">
-        <h3><i class="fa-solid fa-egg"></i>Hidden Gems</h3>
+        <div class="hidden-gems-head">
+            <h3><i class="fa-solid fa-egg"></i>Hidden Gems</h3>
+            <span class="hidden-gems-badge hidden-gems-progress" id="ee-progress-counter" aria-live="polite">0/3 discovered</span>
+        </div>
         <div class="hidden-gems-intro">
             <span class="hidden-gems-badge">curious://visitor</span>
             <p style="color:var(--text-secondary);margin:0;">A curated set of subtle extras for curious visitors — from neon terminal vibes to text-file lore and a quiet console wink.</p>
@@ -105,7 +98,7 @@
 
         <div class="easter-egg-grid">
 
-            <div class="easter-egg-item">
+            <div class="easter-egg-item" id="egg-terminal">
                 <div class="easter-egg-item-top">
                     <div class="easter-egg-icon"><i class="fa-solid fa-terminal"></i></div>
                     <div class="easter-egg-content">
@@ -119,7 +112,7 @@
                 </div>
             </div>
 
-            <div class="easter-egg-item">
+            <div class="easter-egg-item" id="egg-humans">
                 <div class="easter-egg-item-top">
                     <div class="easter-egg-icon"><i class="fa-solid fa-user-group"></i></div>
                     <div class="easter-egg-content">
@@ -129,25 +122,25 @@
                 </div>
                 <div class="easter-egg-meta">
                     <code class="ee-shortcut">/humans.txt</code>
-                    <a href="humans.txt" target="_blank" rel="noopener noreferrer" class="ee-action-btn">Open</a>
+                    <a href="humans.txt" target="_blank" rel="noopener noreferrer" class="ee-action-btn" id="ee-humans-open">Open</a>
                 </div>
             </div>
 
-            <div class="easter-egg-item">
+            <div class="easter-egg-item" id="egg-credits">
                 <div class="easter-egg-item-top">
                     <div class="easter-egg-icon"><i class="fa-solid fa-file-code"></i></div>
                     <div class="easter-egg-content">
-                        <strong>credits.txt</strong>
+                        <strong>Credits</strong>
                         <span>A small plaintext backstage pass with a concise build note, credits roll, and a few favorite details from this site.</span>
                     </div>
                 </div>
                 <div class="easter-egg-meta">
-                    <code class="ee-shortcut">/credits.txt</code>
-                    <a href="credits.txt" target="_blank" rel="noopener noreferrer" class="ee-action-btn">Open</a>
+                    <code class="ee-shortcut">/credits</code>
+                    <button class="ee-action-btn" id="ee-credits-open" type="button">Open</button>
                 </div>
             </div>
 
-            <div class="easter-egg-item">
+            <div class="easter-egg-item" id="egg-console">
                 <div class="easter-egg-item-top">
                     <div class="easter-egg-icon"><i class="fa-solid fa-laptop-code"></i></div>
                     <div class="easter-egg-content">
@@ -164,34 +157,6 @@
         </div>
     </div>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const btn = document.getElementById('ee-terminal-toggle');
-        if (!btn) return;
-
-        const html = document.documentElement;
-        const update = () => {
-            btn.textContent = html.classList.contains('terminal-mode') ? 'Disable' : 'Enable';
-        };
-
-        update();
-        document.addEventListener('terminalmodechange', update);
-
-        btn.addEventListener('click', () => {
-            const nextState = !html.classList.contains('terminal-mode');
-
-            if (typeof window.setTerminalMode === 'function') {
-                window.setTerminalMode(nextState);
-            } else {
-                html.classList.toggle('terminal-mode', nextState);
-                localStorage.setItem('terminal_mode', nextState ? 'on' : 'off');
-                document.dispatchEvent(new CustomEvent('terminalmodechange', { detail: { isEnabled: nextState } }));
-            }
-
-            update();
-        });
-    });
-    </script>
 
     <h2 class="section-title fade-in" style="margin-top:60px;">Live Stats</h2>
 
@@ -223,47 +188,6 @@
 
 <app-footer></app-footer>
 
-<script>
-(function () {
-    const CACHE_KEY = 'credits_gh_stats';
-    const CACHE_TTL = 5 * 60 * 1000;
-
-    function relativeTime(isoDate) {
-        const diff = Date.now() - new Date(isoDate).getTime();
-        const minutes = Math.floor(diff / 60000);
-        const hours = Math.floor(minutes / 60);
-        const days = Math.floor(hours / 24);
-        if (days > 0) return days + 'd ago';
-        if (hours > 0) return hours + 'h ago';
-        return minutes + 'm ago';
-    }
-
-    function render(data) {
-        document.getElementById('stat-stars').textContent = data.stargazers_count;
-        document.getElementById('stat-forks').textContent = data.forks_count;
-        document.getElementById('stat-pushed').textContent = relativeTime(data.pushed_at);
-    }
-
-    try {
-        const cached = JSON.parse(sessionStorage.getItem(CACHE_KEY) || 'null');
-        if (cached && (Date.now() - cached.ts < CACHE_TTL)) {
-            render(cached.data);
-            return;
-        }
-    } catch (_) {}
-
-    fetch('https://api.github.com/repos/Kryzziii/kryzziii.github.io')
-        .then((r) => r.json())
-        .then((data) => {
-            render(data);
-            try {
-                sessionStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data }));
-            } catch (_) {}
-        })
-        .catch(() => {
-        });
-}());
-</script>
 
 </body>
 </html>
