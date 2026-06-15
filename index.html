@@ -11,32 +11,14 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
 
+    <script src="js/page-init.js"></script>
     <script src="js/components.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/terminal-mode.js" defer></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('preload');
-            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
-        });
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
-
-        const savedTerminalMode = localStorage.getItem('terminal_mode');
-        if (savedTerminalMode === 'on') {
-            document.documentElement.classList.add('terminal-mode');
-            const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-            if (metaThemeColor) { metaThemeColor.setAttribute('content', '#0d1117'); }
-        }
-    </script>
 </head>
 <body class="preload">
-
-<div class="background-orbs">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-</div>
+<app-background></app-background>
 
 <app-navbar></app-navbar>
 
@@ -67,40 +49,40 @@
 
         <div class="card fade-in">
             <h3><i class="fa-solid fa-globe"></i>Languages</h3>
-            <ul style="padding:0; list-style:none;">
-                <li style="display:flex; justify-content:space-between; margin-bottom:5px;"><span>Luxemburgish</span> <span>🇱🇺</span></li>
-                <li style="display:flex; justify-content:space-between; margin-bottom:5px;"><span>English</span> <span>🇬🇧</span></li>
-                <li style="display:flex; justify-content:space-between; margin-bottom:5px;"><span>German</span> <span>🇩🇪</span></li>
-                <li style="display:flex; justify-content:space-between;"><span>French</span> <span>🇫🇷</span></li>
+            <ul class="extracted-style-068">
+                <li class="extracted-style-069"><span>Luxemburgish</span> <span>🇱🇺</span></li>
+                <li class="extracted-style-069"><span>English</span> <span>🇬🇧</span></li>
+                <li class="extracted-style-069"><span>German</span> <span>🇩🇪</span></li>
+                <li class="extracted-style-070"><span>French</span> <span>🇫🇷</span></li>
             </ul>
         </div>
 
-        <div class="card fade-in" style="display:flex; flex-direction:column; justify-content:space-between;">
+        <div class="card fade-in extracted-style-071">
             <h3><i class="fa-solid fa-graduation-cap"></i>Studies</h3>
 
-            <div style="margin-bottom:auto;">
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-                    <span style="font-weight:700; font-size:1.05rem; color:var(--text-main);">B.Sc. Computer Science</span>
-                    <span class="date-pill" style="font-size:0.7rem; padding:2px 8px;">now</span>
+            <div class="extracted-style-072">
+                <div class="extracted-style-073">
+                    <span class="extracted-style-074">B.Sc. Computer Science</span>
+                    <span class="date-pill extracted-style-075">now</span>
                 </div>
-                <span style="color:var(--accent); font-weight:500; display:block;">University of Applied Sciences</span>
-                <span style="font-size:0.85rem; color:var(--text-secondary);">Germany • Karlsruhe</span>
+                <span class="extracted-style-076">University of Applied Sciences</span>
+                <span class="extracted-style-077">Germany • Karlsruhe</span>
             </div>
 
-            <div style="height:1px; background:var(--glass-border); width:100%; margin:20px 0;"></div>
+            <div class="extracted-style-078"></div>
 
             <div>
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-                    <span style="font-weight:700; font-size:1.05rem; color:var(--text-main);">Diploma (A-Level)</span>
-                    <span class="date-pill" style="background:var(--text-secondary); font-size:0.7rem; padding:2px 8px;">2022</span>
+                <div class="extracted-style-073">
+                    <span class="extracted-style-074">Diploma (A-Level)</span>
+                    <span class="date-pill extracted-style-079">2022</span>
                 </div>
-                <span style="color:var(--text-main); font-weight:500; display:block;">Lycée des Arts et Métiers</span>
-                <span style="font-size:0.85rem; display:block; color:var(--text-secondary);">Informatik & Mathematik</span>
-                <span style="font-size:0.85rem; color:var(--text-secondary);">Luxemburg</span>
+                <span class="extracted-style-080">Lycée des Arts et Métiers</span>
+                <span class="extracted-style-081">Informatik & Mathematik</span>
+                <span class="extracted-style-077">Luxemburg</span>
             </div>
         </div>
 
-        <div class="card span-2 fade-in" style="padding: 32px;">
+        <div class="card span-2 fade-in extracted-style-040">
             <h3><i class="fa-solid fa-microchip"></i>Tech Stack</h3>
 
             <div class="tech-grid">
@@ -133,34 +115,34 @@
 
         <div class="card span-3 fade-in">
             <h3><i class="fa-solid fa-hand-holding-heart"></i>Social Engagement</h3>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:30px;">
+            <div class="extracted-style-082">
                 <div>
-                    <strong style="display:block; margin-bottom:10px; color:var(--accent); font-size:1.1rem;">University</strong>
-                    <ul style="list-style:none; padding:0;">
-                        <li style="margin-bottom:8px; padding-left:15px; border-left:2px solid var(--text-secondary);">Representative of the student parliament (StuPa) @HKA</li>
-                        <li style="margin-bottom:8px; padding-left:15px; border-left:2px solid var(--text-secondary);">Deputy Chair @Förderverein der Fachschaft IWI e.V.</li>
-                        <li style="margin-bottom:8px; padding-left:15px; border-left:2px solid var(--text-secondary);">Deputy Chair @IWI student council</li>
-                        <li style="margin-bottom:8px; padding-left:15px; border-left:2px solid var(--text-secondary);">Member of IWI student council (Infrastructure)</li>
+                    <strong class="extracted-style-083">University</strong>
+                    <ul class="extracted-style-084">
+                        <li class="extracted-style-085">Representative of the student parliament (StuPa) @HKA</li>
+                        <li class="extracted-style-085">Deputy Chair @Förderverein der Fachschaft IWI e.V.</li>
+                        <li class="extracted-style-085">Deputy Chair @IWI student council</li>
+                        <li class="extracted-style-085">Member of IWI student council (Infrastructure)</li>
                     </ul>
                 </div>
                 <div>
-                    <strong style="display:block; margin-bottom:10px; color:var(--accent); font-size:1.1rem;">Private</strong>
-                    <ul style="list-style:none; padding:0;">
-                        <li style="margin-bottom:8px; padding-left:15px; border-left:2px solid var(--text-secondary);">Event helper for the voluntary fire brigade Hesperange</li>
-                        <li style="margin-bottom:8px; padding-left:15px; border-left:2px solid var(--text-secondary);">Event helper for the Agility Bettembourg</li>
-                        <li style="margin-bottom:8px; padding-left:15px; border-left:2px solid var(--text-secondary);">Volunteer commitment to the extracurricular accompaniment program "E=MJC2" (2021)</li>
+                    <strong class="extracted-style-083">Private</strong>
+                    <ul class="extracted-style-084">
+                        <li class="extracted-style-085">Event helper for the voluntary fire brigade Hesperange</li>
+                        <li class="extracted-style-085">Event helper for the Agility Bettembourg</li>
+                        <li class="extracted-style-085">Volunteer commitment to the extracurricular accompaniment program "E=MJC2" (2021)</li>
                     </ul>
                 </div>
             </div>
-            <a href="social-engagement.html" class="btn-ghost" style="margin-top: 30px; align-self: center;">
-                Details <i class="fa-solid fa-arrow-right" style="font-size: 0.8em; margin-left: 5px;"></i>
+            <a href="social-engagement.html" class="btn-ghost extracted-style-086">
+                Details <i class="fa-solid fa-arrow-right extracted-style-087"></i>
             </a>
         </div>
 
-        <div class="card span-2 fade-in route-map-card" style="display:none;"></div>
+        <div class="card span-2 fade-in route-map-card extracted-style-088"></div>
     </div>
 
-    <div class="section-title fade-in" style="display:block; text-align: center; margin-top: 60px;">Contact</div>
+    <div class="section-title fade-in extracted-style-089">Contact</div>
 
     <div class="social-container fade-in">
         <a href="mailto:contact@chrisjemming.lu" class="social-btn"><i class="fa-solid fa-envelope"></i></a>
@@ -170,8 +152,8 @@
 
     <div class="card fade-in route-leaflet-outer route-leaflet-contact">
         <div class="route-leaflet-header">
-            <h3 style="margin-bottom:6px;"><i class="fa-solid fa-location-dot"></i>Luxembourg / Germany</h3>
-            <p style="color:var(--text-secondary);font-size:0.95rem;margin:0;">Based between Luxembourg and Karlsruhe — living across borders, studying, working, and growing.</p>
+            <h3 class="extracted-style-090"><i class="fa-solid fa-location-dot"></i>Luxembourg / Germany</h3>
+            <p class="extracted-style-091">Based between Luxembourg and Karlsruhe — living across borders, studying, working, and growing.</p>
         </div>
         <div id="route-leaflet-map"></div>
         <p class="route-leaflet-caption">studies • work • growth</p>

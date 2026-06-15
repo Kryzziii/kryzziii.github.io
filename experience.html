@@ -10,43 +10,25 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <script src="js/page-init.js"></script>
     <script src="js/components.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/terminal-mode.js" defer></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('preload');
-            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
-        });
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
-
-        const savedTerminalMode = localStorage.getItem('terminal_mode');
-        if (savedTerminalMode === 'on') {
-            document.documentElement.classList.add('terminal-mode');
-            const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-            if (metaThemeColor) { metaThemeColor.setAttribute('content', '#0d1117'); }
-        }
-    </script>
 </head>
 <body class="preload">
-
-<div class="background-orbs">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-</div>
+<app-background></app-background>
 
 <app-navbar></app-navbar>
 
-<main class="container" style="padding-top: 120px;">
+<main class="container extracted-style-059">
     <h1 class="section-title fade-in">Professional Experience</h1>
 
     <div class="timeline-item fade-in">
         <div class="job-header">
             <div>
-                <h3 style="margin:0;">Working Student</h3>
-                <span style="color:var(--accent); font-weight: 500;">Nitrado - marbisGmbH (Karlsruhe)</span>
+                <h3 class="extracted-style-060">Working Student</h3>
+                <span class="extracted-style-061">Nitrado - marbisGmbH (Karlsruhe)</span>
             </div>
             <span class="date-pill">08/2024 - present</span>
         </div>
@@ -56,13 +38,13 @@
     <div class="timeline-item fade-in">
         <div class="job-header">
             <div>
-                <h3 style="margin:0;">Internship</h3>
-                <span style="color:var(--text-secondary); font-weight: 500;">Nitrado - marbisGmbH (Karlsruhe)</span>
+                <h3 class="extracted-style-060">Internship</h3>
+                <span class="extracted-style-062">Nitrado - marbisGmbH (Karlsruhe)</span>
             </div>
-            <span class="date-pill" style="background:var(--text-secondary);">03/2024 - 08/2024</span>
+            <span class="date-pill extracted-style-063">03/2024 - 08/2024</span>
         </div>
-        <p style="margin-bottom: 10px;">Mandatory internship as part of my studies.</p>
-        <ul style="margin-left:20px; color:var(--text-secondary);">
+        <p class="extracted-style-026">Mandatory internship as part of my studies.</p>
+        <ul class="extracted-style-064">
             <li>Conception and initial setup of an automation solution.</li>
             <li>Creation of programs to carry out daily tasks.</li>
             <li>Creation of evaluations.</li>
@@ -73,19 +55,19 @@
     <div class="timeline-item fade-in">
         <div class="job-header">
             <div>
-                <h3 style="margin:0;">Web App Development</h3>
-                <span style="color:var(--text-secondary); font-weight: 500;">IFEN (Luxemburg)</span>
+                <h3 class="extracted-style-060">Web App Development</h3>
+                <span class="extracted-style-062">IFEN (Luxemburg)</span>
             </div>
-            <span class="date-pill" style="background:var(--text-secondary);">06/2022 - 07/2022</span>
+            <span class="date-pill extracted-style-063">06/2022 - 07/2022</span>
         </div>
-        <p style="margin-bottom:10px;">(Local) application for the management of IFEN's audiovisual productions</p>
-        <p style="color:var(--text-secondary);">Analysis:</p>
-        <ul style="margin-left:20px; color:var(--text-secondary);">
+        <p class="extracted-style-026">(Local) application for the management of IFEN's audiovisual productions</p>
+        <p class="extracted-style-007">Analysis:</p>
+        <ul class="extracted-style-064">
             <li>Established functional and technical analyses based on the requirements specification collected.</li>
             <li>Test the applications according to the defined test plans and deal with malfunctions.</li>
         </ul>
-        <p style="margin-top:10px; color:var(--text-secondary);">Development:</p>
-        <ul style="margin-left:20px; color:var(--text-secondary);">
+        <p class="extracted-style-065">Development:</p>
+        <ul class="extracted-style-064">
             <li>UML modeling of the database</li>
             <li>Creation, implementation and interfacing of the database in MySQL</li>
             <li>Realization of the functional models of the website</li>
@@ -93,30 +75,30 @@
             <li>Programming of scripts in JavaScript</li>
             <li>Connection of the back-end and the front-end via PHP</li>
         </ul>
-        <p style="margin-top:10px; color:var(--text-secondary);">Assurance of second level application support</p>
-        <!--<div style="margin-top:15px; display:flex; gap:8px; flex-wrap:wrap;">
-            <span class="date-pill" style="background:rgba(128,128,128,0.2); color:var(--text-main);">MySQL</span>
-            <span class="date-pill" style="background:rgba(128,128,128,0.2); color:var(--text-main);">PHP</span>
-            <span class="date-pill" style="background:rgba(128,128,128,0.2); color:var(--text-main);">JS</span>
-            <span class="date-pill" style="background:rgba(128,128,128,0.2); color:var(--text-main);">HTML/CSS</span>
+        <p class="extracted-style-065">Assurance of second level application support</p>
+        <!--<div class="extracted-style-066">
+            <span class="date-pill extracted-style-067">MySQL</span>
+            <span class="date-pill extracted-style-067">PHP</span>
+            <span class="date-pill extracted-style-067">JS</span>
+            <span class="date-pill extracted-style-067">HTML/CSS</span>
         </div>-->
     </div>
 
     <div class="timeline-item fade-in">
         <div class="job-header">
             <div>
-                <h3 style="margin:0;">Promotional Campaign</h3>
-                <span style="color:var(--text-secondary); font-weight: 500;">IFEN (Luxemburg)</span>
+                <h3 class="extracted-style-060">Promotional Campaign</h3>
+                <span class="extracted-style-062">IFEN (Luxemburg)</span>
             </div>
-            <span class="date-pill" style="background:var(--text-secondary);">11/2021</span>
+            <span class="date-pill extracted-style-063">11/2021</span>
         </div>
-        <p style="color:var(--text-secondary);">Promotional campaign "internships/holiday jobs"</p>
-        <ul style="margin-left:20px; color:var(--text-secondary);">
+        <p class="extracted-style-007">Promotional campaign "internships/holiday jobs"</p>
+        <ul class="extracted-style-064">
             <li>Creation of a "responsive" Newsletter according to the graphic charter.</li>
             <li>Sending and follow-up strategy of the promotional campaign.</li>
         </ul>
-        <p style="margin-top:10px; color:var(--text-secondary);">Creation of a form</p>
-        <ul style="margin-left:20px; color:var(--text-secondary);">
+        <p class="extracted-style-065">Creation of a form</p>
+        <ul class="extracted-style-064">
             <li> Contact form "student" in accordance with the GDPR law</li>
         </ul>
     </div>
@@ -124,21 +106,21 @@
     <div class="timeline-item fade-in">
         <div class="job-header">
             <div>
-                <h3 style="margin:0;">IT & Digitalisierung</h3>
-                <span style="color:var(--text-secondary); font-weight: 500;">IFEN (Luxemburg)</span>
+                <h3 class="extracted-style-060">IT & Digitalisierung</h3>
+                <span class="extracted-style-062">IFEN (Luxemburg)</span>
             </div>
-            <span class="date-pill" style="background:var(--text-secondary);">07/2021 - 08/2021</span>
+            <span class="date-pill extracted-style-063">07/2021 - 08/2021</span>
         </div>
-        <p style="color:var(--text-secondary);">Digitization Project</p>
-        <ul style="margin-left:20px; color:var(--text-secondary);">
+        <p class="extracted-style-007">Digitization Project</p>
+        <ul class="extracted-style-064">
             <li>Programming on ACCESS & Visual Basic of forms available throughout the MENJE with specific permissions per user</li>
         </ul>
-        <p style="margin-top:10px; color:var(--text-secondary);">Project Management</p>
-        <ul style="margin-left:20px; color:var(--text-secondary);">
+        <p class="extracted-style-065">Project Management</p>
+        <ul class="extracted-style-064">
             <li>  Needs analysis, modeling and documentation of procedures related to the project "inventory management at IFEN" as well as issues related to the projects (impact analysis)</li>
         </ul>
-        <p style="margin-top:10px; color:var(--text-secondary);">Staff training (Creation of a flipped classroom course on Moodle)</p>
-        <ul style="margin-left:20px; color:var(--text-secondary);">
+        <p class="extracted-style-065">Staff training (Creation of a flipped classroom course on Moodle)</p>
+        <ul class="extracted-style-064">
             <li>Multimedia support (videos tutorials)</li>
             <li>Evaluation (quizzes)</li>
             <li>Face-to-face training using the PBL method (Project Based Learning)</li>
@@ -148,19 +130,19 @@
     <div class="timeline-item fade-in">
         <div class="job-header">
             <div>
-                <h3 style="margin:0;">Logistics</h3>
-                <span style="color:var(--text-secondary); font-weight: 500;">Centre de Tri - Post Luxembourg</span>
+                <h3 class="extracted-style-060">Logistics</h3>
+                <span class="extracted-style-062">Centre de Tri - Post Luxembourg</span>
             </div>
-            <span class="date-pill" style="background:var(--text-secondary);">2019 & 2020</span>
+            <span class="date-pill extracted-style-063">2019 & 2020</span>
         </div>
-        <ul style="margin-left:20px; color:var(--text-secondary);">
+        <ul class="extracted-style-064">
             <li>Resignation of emergency roads</li>
             <li>Elaboration of the signposting</li>
             <li>Assistance to the service "retour et envoie réponse"</li>
             <li>Assistance to the technical department</li>
         </ul>
         <br>
-        <ul style="margin-left:20px; color:var(--text-secondary);">
+        <ul class="extracted-style-064">
             <li>Filling in and evaluating data from an Excel file (analysis)</li>
             <li>Setting up the service "avant tri"</li>
             <li>Processing of periodic pots</li>

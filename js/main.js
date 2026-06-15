@@ -1,8 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        document.body.classList.remove('preload');
-    }, 100);
-
     initScrollAnimations();
     initTypewriter();
     initCardTilt();

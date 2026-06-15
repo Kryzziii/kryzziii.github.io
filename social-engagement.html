@@ -10,31 +10,17 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <script src="js/page-init.js"></script>
     <script src="js/components.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/terminal-mode.js" defer></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('preload');
-            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
-        });
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
-
-        const savedTerminalMode = localStorage.getItem('terminal_mode');
-        if (savedTerminalMode === 'on') {
-            document.documentElement.classList.add('terminal-mode');
-            const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-            if (metaThemeColor) { metaThemeColor.setAttribute('content', '#0d1117'); }
-        }
-    </script>
 </head>
 <body class="preload">
 
 <div class="background-orbs">
-    <div class="orb orb-1" style="background: #a855f7; opacity: 0.2;"></div>
-    <div class="orb orb-2" style="background: #3b82f6; opacity: 0.2;"></div>
+    <div class="orb orb-1 extracted-style-133"></div>
+    <div class="orb orb-2 extracted-style-134"></div>
 </div>
 
 <app-navbar></app-navbar>
@@ -49,7 +35,7 @@
         <h1>University Commitment</h1>
         <div class="social-header-meta">
             <span class="date-pill">Since 2023</span>
-            <span style="color: var(--text-secondary);">Shaping the campus environment</span>
+            <span class="extracted-style-007">Shaping the campus environment</span>
         </div>
     </section>
 
@@ -73,14 +59,14 @@
 
                 <div class="role-list">
                     <div class="role-item">
-                        <div class="role-icon" style="color: #f59e0b; background: rgba(245, 158, 11, 0.1);">
+                        <div class="role-icon extracted-style-135">
                             <i class="fa-solid fa-gavel"></i>
                         </div>
                         <div>
-                            <h4 style="margin-bottom: 5px;">Deputy Chairman (stv. Vorsitz)</h4>
-                            <span class="date-pill" style="font-size: 0.75rem; margin-bottom: 8px; display: inline-block;">2025 - Present</span>
+                            <h4 class="extracted-style-013">Deputy Chairman (stv. Vorsitz)</h4>
+                            <span class="date-pill extracted-style-136">2025 - Present</span>
 
-                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                            <p class="extracted-style-137">
                                 As Vice Chair, I guide the strategic vision of the council and represent the student body in negotiations with the faculty administration. My role involves coordinating the executive board and ensuring the successful execution of our long-term objectives.
                             </p>
                         </div>
@@ -90,10 +76,10 @@
                             <i class="fa-solid fa-server"></i>
                         </div>
                         <div>
-                            <h4 style="margin-bottom: 5px;">Infrastructure & Systems</h4>
-                            <span class="date-pill" style="font-size: 0.75rem; margin-bottom: 8px; display: inline-block;">2023 - Present</span>
+                            <h4 class="extracted-style-013">Infrastructure & Systems</h4>
+                            <span class="date-pill extracted-style-136">2023 - Present</span>
 
-                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                            <p class="extracted-style-137">
                                 Taking ownership of the technical direction, I coordinated the team's workload and spearheaded the modernization of our systems, ensuring a robust digital foundation for the student body.
                             </p>
                         </div>
@@ -103,10 +89,10 @@
                             <i class="fa-solid fa-bullhorn"></i>
                         </div>
                         <div>
-                            <h4 style="margin-bottom: 5px;">Community Management</h4>
-                            <span class="date-pill" style="font-size: 0.75rem; margin-bottom: 8px; display: inline-block;">2023 - 2025</span>
+                            <h4 class="extracted-style-013">Community Management</h4>
+                            <span class="date-pill extracted-style-136">2023 - 2025</span>
 
-                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                            <p class="extracted-style-137">
                                 Responsible for curating and distributing vital updates to the student body. I ensure transparency regarding academic changes and faculty announcements.
                             </p>
                         </div>
@@ -119,7 +105,7 @@
             <div class="bg-stupa card-header-box compact">
                 <div class="card-header-flex">
                     <div class="header-group-left">
-                        <i class="fa-solid fa-landmark header-icon" style="font-size: 2.2rem; opacity: 0.9;"></i>
+                        <i class="fa-solid fa-landmark header-icon extracted-style-138"></i>
                         <div>
                             <h3 class="header-title small">Student Parliament</h3>
                             <span class="header-subtitle small">Legislative Body (StuPa)</span>
@@ -132,16 +118,16 @@
             </div>
 
             <div class="card-content compact">
-                <div style="margin-bottom: 15px;">
-                    <h4 style="margin: 0; font-size: 1.1rem; color: var(--text-main);">Elected Representative</h4>
+                <div class="extracted-style-027">
+                    <h4 class="extracted-style-139">Elected Representative</h4>
                 </div>
 
-                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+                <p class="extracted-style-140">
                     As an elected member of the student community's <strong>legislative body</strong>, I participate in making university-wide decisions regarding the student body. A central responsibility is electing and overseeing the Executive Committee (AStA).
                 </p>
 
-                <div style="margin-top: auto; padding-top: 20px;">
-                    <strong style="display: block; font-size: 0.9rem; margin-bottom: 10px;">Key Initiatives:</strong>
+                <div class="extracted-style-141">
+                    <strong class="extracted-style-142">Key Initiatives:</strong>
                     <div class="skill-cloud">
                         <span class="skill-tag">Personnel Committee</span>
                         <span class="skill-tag">Legal & Statutes</span>
@@ -151,7 +137,7 @@
             </div>
         </div>
 
-        <div class="span-1 fade-in" style="display: flex; flex-direction: column; gap: 15px;">
+        <div class="span-1 fade-in extracted-style-143">
             <div class="credentials-title">
                 <h3>Credentials</h3>
             </div>
@@ -161,8 +147,8 @@
                     <i class="fa-solid fa-file-pdf"></i>
                 </div>
                 <div>
-                    <div style="font-weight: 600; font-size: 0.85rem; color: var(--text-main);">Student Council Mandate</div>
-                    <div style="font-size: 0.7rem; color: var(--accent);">View Certificate <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.6rem;"></i></div>
+                    <div class="extracted-style-144">Student Council Mandate</div>
+                    <div class="extracted-style-145">View Certificate <i class="fa-solid fa-arrow-up-right-from-square extracted-style-146"></i></div>
                 </div>
             </a>
 
@@ -171,8 +157,8 @@
                     <i class="fa-solid fa-file-shield"></i>
                 </div>
                 <div>
-                    <div style="font-weight: 600; font-size: 0.85rem; color: var(--text-secondary);">StuPa Election</div>
-                    <div style="font-size: 0.7rem; color: var(--text-secondary);">Available upon request</div>
+                    <div class="extracted-style-147">StuPa Election</div>
+                    <div class="extracted-style-148">Available upon request</div>
                 </div>
             </div>
 
@@ -181,8 +167,8 @@
                     <i class="fa-solid fa-file-shield"></i>
                 </div>
                 <div>
-                    <div style="font-weight: 600; font-size: 0.85rem; color: var(--text-secondary);">FFIWI Board Membership</div>
-                    <div style="font-size: 0.7rem; color: var(--text-secondary);">Available upon request</div>
+                    <div class="extracted-style-147">FFIWI Board Membership</div>
+                    <div class="extracted-style-148">Available upon request</div>
                 </div>
             </div>
 
@@ -210,28 +196,28 @@
                 <div class="role-list">
 
                     <div class="role-item">
-                        <div class="role-icon" style="color: #0f766e; background: rgba(15, 118, 110, 0.1);">
+                        <div class="role-icon extracted-style-149">
                             <i class="fa-solid fa-user-tie"></i>
                         </div>
                         <div>
-                            <h4 style="margin-bottom: 5px;">Deputy Chairman (Board Member)</h4>
-                            <span class="date-pill" style="font-size: 0.75rem; margin-bottom: 8px; display: inline-block;">2025 - Present</span>
+                            <h4 class="extracted-style-013">Deputy Chairman (Board Member)</h4>
+                            <span class="date-pill extracted-style-136">2025 - Present</span>
 
-                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                            <p class="extracted-style-137">
                                 Steering the strategic direction of the alumni network. My responsibilities include organizing networking events, maintaining relations with industry partners, and leading board meetings.
                             </p>
                         </div>
                     </div>
 
                     <div class="role-item">
-                        <div class="role-icon" style="color: #0d9488; background: rgba(13, 148, 136, 0.1);">
+                        <div class="role-icon extracted-style-150">
                             <i class="fa-solid fa-file-invoice-dollar"></i>
                         </div>
                         <div>
-                            <h4 style="margin-bottom: 5px;">Deputy Treasurer (Board Member)</h4>
-                            <span class="date-pill" style="font-size: 0.75rem; margin-bottom: 8px; display: inline-block;">2024 - 2025</span>
+                            <h4 class="extracted-style-013">Deputy Treasurer (Board Member)</h4>
+                            <span class="date-pill extracted-style-136">2024 - 2025</span>
 
-                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                            <p class="extracted-style-137">
                                 Managed the association's finances and accounting. This included preparing the annual tax report, and allocating sponsorship funds for student projects.
                             </p>
                         </div>
@@ -245,68 +231,68 @@
 
         <div class="span-3 fade-in section-header-small">
             <h2>Beyond Campus</h2>
-            <span style="font-size: 0.9rem; color: var(--text-secondary);">Civil Engagement & Volunteering</span>
+            <span class="extracted-style-109">Civil Engagement & Volunteering</span>
         </div>
 
         <div class="glass-card span-2 fade-in social-card-layout horizontal">
 
             <div class="bg-tutor side-header-box">
-                <i class="fa-solid fa-graduation-cap" style="font-size: 2.5rem; margin-bottom: 15px; opacity: 0.9;"></i>
-                <div> <h3 style="margin: 0; font-size: 1.4rem; line-height: 1.2;">Educational Mentor</h3>
-                    <span style="font-size: 0.9rem; opacity: 0.9; margin-top: 5px; display: block;">Maison des Jeunes et de la Culture</span>
+                <i class="fa-solid fa-graduation-cap extracted-style-151"></i>
+                <div> <h3 class="extracted-style-152">Educational Mentor</h3>
+                    <span class="extracted-style-153">Maison des Jeunes et de la Culture</span>
                 </div>
             </div>
 
             <div class="card-content">
 
                 <div class="tutor-header-row">
-                    <h4 style="margin: 0; font-size: 1.1rem; color: var(--text-main);">Program "E=MJC²"</h4>
+                    <h4 class="extracted-style-139">Program "E=MJC²"</h4>
                     <span class="location-text">
-                        <i class="fa-solid fa-location-dot" style="margin-right: 4px;"></i> Bettembourg, LU
+                        <i class="fa-solid fa-location-dot extracted-style-154"></i> Bettembourg, LU
                     </span>
                 </div>
 
-                <div style="margin-bottom: 15px;">
-                    <span class="date-pill" style="background: rgba(128,128,128,0.15); color: var(--text-main); font-size: 0.7rem;">
+                <div class="extracted-style-027">
+                    <span class="date-pill extracted-style-155">
                         2021
                     </span>
-                    <span style="font-size: 0.8rem; color: var(--text-secondary); margin-left: 8px;">Extracurricular Accompaniment</span>
+                    <span class="extracted-style-156">Extracurricular Accompaniment</span>
                 </div>
-                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                <p class="extracted-style-157">
                     I volunteered as a tutor for the <i>E=MJC²</i> initiative. During this time, I provided academic support to students, helping them overcome learning hurdles and fostering a positive approach to education outside the classroom.
                 </p>
             </div>
         </div>
 
         <div class="glass-card span-1 fade-in social-card-layout">
-            <div class="bg-volunteer" style="padding: 20px; flex-grow: 0;">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <h3 style="margin: 0; font-size: 1.1rem;">Community Support</h3>
-                    <i class="fa-solid fa-hand-holding-heart" style="font-size: 1.2rem; opacity: 0.8;"></i>
+            <div class="bg-volunteer extracted-style-158">
+                <div class="extracted-style-159">
+                    <h3 class="extracted-style-160">Community Support</h3>
+                    <i class="fa-solid fa-hand-holding-heart extracted-style-161"></i>
                 </div>
-                <span style="font-size: 0.8rem; opacity: 0.8;">Active Helper & Organizer</span>
+                <span class="extracted-style-162">Active Helper & Organizer</span>
             </div>
 
-            <div class="card-content" style="padding: 20px;">
+            <div class="card-content extracted-style-163">
                 <div class="vol-list">
 
                     <div class="vol-item">
-                        <div class="vol-icon" style="background: rgba(220, 38, 38, 0.1); color: #dc2626;">
+                        <div class="vol-icon extracted-style-164">
                             <i class="fa-solid fa-fire-extinguisher"></i>
                         </div>
                         <div>
-                            <strong style="display: block; font-size: 0.85rem; color: var(--text-main);">Volunteer Fire Dept.</strong>
-                            <span style="font-size: 0.75rem; color: var(--text-secondary);">Hesperange • Event Support</span>
+                            <strong class="extracted-style-165">Volunteer Fire Dept.</strong>
+                            <span class="extracted-style-166">Hesperange • Event Support</span>
                         </div>
                     </div>
 
                     <div class="vol-item">
-                        <div class="vol-icon" style="background: rgba(180, 83, 9, 0.1); color: #b45309;">
+                        <div class="vol-icon extracted-style-167">
                             <i class="fa-solid fa-paw"></i>
                         </div>
                         <div>
-                            <strong style="display: block; font-size: 0.85rem; color: var(--text-main);">Dog Sports Club</strong>
-                            <span style="font-size: 0.75rem; color: var(--text-secondary);">Bettembourg • Voluntary Helper</span>
+                            <strong class="extracted-style-165">Dog Sports Club</strong>
+                            <span class="extracted-style-166">Bettembourg • Voluntary Helper</span>
                         </div>
                     </div>
 

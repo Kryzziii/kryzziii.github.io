@@ -10,32 +10,14 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <script src="js/page-init.js"></script>
     <script src="js/components.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/terminal-mode.js" defer></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('preload');
-            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
-        });
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
-
-        const savedTerminalMode = localStorage.getItem('terminal_mode');
-        if (savedTerminalMode === 'on') {
-            document.documentElement.classList.add('terminal-mode');
-            const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-            if (metaThemeColor) { metaThemeColor.setAttribute('content', '#0d1117'); }
-        }
-    </script>
 </head>
 <body class="preload">
-
-<div class="background-orbs">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-</div>
+<app-background></app-background>
 
 <app-navbar></app-navbar>
 
@@ -45,9 +27,9 @@
         <a href="projects.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
     </div>
 
-    <section class="fade-in" style="margin-bottom: 30px;">
-        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Studio Database - IFEN</h1>
-        <p style="color: var(--text-secondary); font-size: 1.2rem;">Management software for IFEN's audiovisual productions</p>
+    <section class="fade-in extracted-style-092">
+        <h1 class="extracted-style-004">Studio Database - IFEN</h1>
+        <p class="extracted-style-094">Management software for IFEN's audiovisual productions</p>
     </section>
 
     <div class="project-hero-frame fade-in">
@@ -56,8 +38,8 @@
 
     <div class="bento-grid">
 
-        <div class="glass-card fade-in" style="padding: 32px; align-self: start;">
-            <h3 style="margin-bottom: 20px;"><i class="fa-solid fa-circle-info"></i> Key Facts</h3>
+        <div class="glass-card fade-in extracted-style-095">
+            <h3 class="extracted-style-023"><i class="fa-solid fa-circle-info"></i> Key Facts</h3>
 
             <ul class="meta-list">
                 <li class="meta-item">
@@ -78,7 +60,7 @@
                 </li>
             </ul>
 
-            <h4 style="margin-top: 30px; margin-bottom: 15px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary);">Tech Stack</h4>
+            <h4 class="extracted-style-102">Tech Stack</h4>
             <div class="skill-cloud">
                 <span class="skill-tag">PHP</span>
                 <span class="skill-tag">MySQL</span>
@@ -88,8 +70,8 @@
             </div>
         </div>
 
-        <div class="glass-card span-2 fade-in" style="padding: 40px;">
-            <h3 style="margin-bottom: 20px;"><i class="fa-solid fa-pen-nib"></i> Project description</h3>
+        <div class="glass-card span-2 fade-in extracted-style-103">
+            <h3 class="extracted-style-023"><i class="fa-solid fa-pen-nib"></i> Project description</h3>
 
             <div class="rich-text">
                 <p>
@@ -111,9 +93,9 @@
             </div>
         </div>
 
-        <div class="glass-card span-3 fade-in" style="padding: 32px;">
+        <div class="glass-card span-3 fade-in extracted-style-040">
             <h3><i class="fa-solid fa-images"></i> Insights</h3>
-            <p style="color: var(--text-secondary);">Screenshots from the webinterface (without any data).</p>
+            <p class="extracted-style-007">Screenshots from the webinterface (without any data).</p>
 
             <div class="gallery-grid">
                 <div class="gallery-item">

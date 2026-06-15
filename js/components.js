@@ -1,3 +1,14 @@
+class AppBackground extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+            <div class="background-orbs">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+            </div>
+        `;
+    }
+}
+
 class AppNavbar extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
@@ -136,5 +147,6 @@ class AppFooter extends HTMLElement {
     }
 }
 
+customElements.define('app-background', AppBackground);
 customElements.define('app-navbar', AppNavbar);
 customElements.define('app-footer', AppFooter);

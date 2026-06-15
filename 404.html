@@ -10,33 +10,15 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <script src="js/page-init.js"></script>
     <script src="js/components.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/terminal-mode.js" defer></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('preload');
-            setTimeout(() => { document.body.classList.remove('preload'); }, 200);
-        });
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) { document.documentElement.setAttribute('data-theme', savedTheme); }
-
-        const savedTerminalMode = localStorage.getItem('terminal_mode');
-        if (savedTerminalMode === 'on') {
-            document.documentElement.classList.add('terminal-mode');
-            const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-            if (metaThemeColor) { metaThemeColor.setAttribute('content', '#0d1117'); }
-        }
-    </script>
 </head>
 
 <body class="preload error-page">
-
-<div class="background-orbs">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-</div>
+<app-background></app-background>
 
 <app-navbar></app-navbar>
 
@@ -44,7 +26,7 @@
 
     <div class="error-container fade-in">
 
-        <div class="glass-card" style="padding: 60px 40px; display: inline-block; margin-bottom: 30px;">
+        <div class="glass-card extracted-style-001">
             <h1 class="error-code">404</h1>
         </div>
 
@@ -53,7 +35,7 @@
             The page you are looking for does not exist or has been moved. Maybe you made a typo?
         </p>
 
-        <a href="index.html" class="btn-action" style="align-self: center;">
+        <a href="index.html" class="btn-action extracted-style-002">
             <i class="fa-solid fa-house"></i> Back to Home
         </a>
 
