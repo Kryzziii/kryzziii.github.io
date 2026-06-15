@@ -27,9 +27,9 @@
         <a href="projects.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
     </div>
 
-    <section class="fade-in extracted-style-092">
-        <h1 class="extracted-style-004">WhistleDrop – Secure Reporting Platform</h1>
-        <p class="extracted-style-094">A web-based whistleblower platform with a strong focus on confidentiality, anonymity, and cryptographic security.</p>
+    <section class="fade-in" style="margin-bottom: 30px;">
+        <h1 class="detail-title">WhistleDrop – Secure Reporting Platform</h1>
+        <p class="text-secondary" style="font-size: 1.2rem;">A web-based whistleblower platform with a strong focus on confidentiality, anonymity, and cryptographic security.</p>
     </section>
 
     <div class="project-hero-frame fade-in">
@@ -38,8 +38,8 @@
 
     <div class="bento-grid">
 
-        <div class="glass-card fade-in extracted-style-095">
-            <h3 class="extracted-style-023"><i class="fa-solid fa-circle-info"></i> Key Facts</h3>
+        <div class="glass-card fade-in" style="padding: 32px; align-self: start;">
+            <h3 style="margin-bottom: 20px;"><i class="fa-solid fa-circle-info"></i> Key Facts</h3>
 
             <ul class="meta-list">
                 <li class="meta-item">
@@ -62,13 +62,13 @@
                     <span class="meta-label">Contributors</span>
                     <span class="meta-value">
                         <a href="https://k1nggrim.github.io/Portfolio/" target="_blank" class="collab-link">
-                            Florian K. <i class="fa-solid fa-arrow-up-right-from-square extracted-style-105"></i>
+                            Florian K. <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8em;"></i>
                         </a>
                     </span>
                 </li>
             </ul>
 
-            <h4 class="extracted-style-102">Tech Stack</h4>
+            <h4 class="text-secondary" style="margin-top: 30px; margin-bottom: 15px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Tech Stack</h4>
             <div class="skill-cloud">
                 <span class="skill-tag">Flask</span>
                 <span class="skill-tag">React</span>
@@ -78,44 +78,44 @@
             </div>
         </div>
 
-        <div class="glass-card span-2 fade-in extracted-style-103">
-            <h3 class="extracted-style-023"><i class="fa-solid fa-pen-nib"></i> Project description</h3>
+        <div class="glass-card span-2 fade-in" style="padding: 40px;">
+            <h3 style="margin-bottom: 20px;"><i class="fa-solid fa-pen-nib"></i> Project description</h3>
 
             <div class="rich-text">
-                <p class="extracted-style-027">
+                <p style="margin-bottom: 15px;">
                     WhistleDrop is a secure gateway for anonymous whistleblowing developed in <strong>Python</strong>. It utilizes advanced cryptographic methods to ensure that the identity of the user remains hidden from both the platform and the recipient. The architecture is designed to be resilient against traffic analysis and metadata leaks by operating exclusively as a <strong>Tor Hidden Service</strong>.
                 </p>
 
-                <h4 class="extracted-style-106">Core Engineering Concepts:</h4>
+                <h4 class="text-main" style="margin-bottom: 10px;">Core Engineering Concepts:</h4>
 
-                <ul class="extracted-style-107">
-                    <li class="extracted-style-108">
+                <ul class="text-secondary" style="list-style-type: disc; padding-left: 20px; margin-bottom: 20px;">
+                    <li style="margin-bottom: 8px;">
                         <strong>Trustless Server Architecture:</strong>
                         The server acts as a blind drop-box. It never possesses the private keys required to decrypt the data, ensuring that even a server seizure yields no readable intelligence.
                     </li>
-                    <li class="extracted-style-108">
+                    <li style="margin-bottom: 8px;">
                         <strong>Hybrid Encryption Scheme:</strong>
                         Implemented a dual-layer cryptographic process where files are encrypted in-memory using ephemeral symmetric keys (AES), which are then immediately encapsulated using the journalist's public RSA 4096-bit key.
                     </li>
-                    <li class="extracted-style-108">
+                    <li style="margin-bottom: 8px;">
                         <strong>Mnemonic Identity Protection:</strong>
                         Replaced traditional user accounts with an 8-word passphrase system, allowing whistleblowers to authenticate without leaving database traces or requiring physical documentation.
                     </li>
-                    <li class="extracted-style-108">
+                    <li style="margin-bottom: 8px;">
                         <strong>Anti-Forensic Data Handling:</strong>
                         Designed strictly to prevent unencrypted data from ever touching the persistent storage (HDD/SSD). All sensitive operations occur in volatile memory (RAM).
                     </li>
                 </ul>
 
-                <p class="extracted-style-109">
+                <p class="text-secondary" style="font-size: 0.9rem;">
                     <em>Key Challenge:</em> Designing a "One-Time-Use" public key infrastructure to prevent key reuse attacks and ensure that each submission session is cryptographically isolated.
                 </p>
             </div>
         </div>
 
-        <div class="glass-card span-3 fade-in extracted-style-040">
+        <div class="glass-card span-3 fade-in" style="padding: 32px;">
             <h3><i class="fa-solid fa-images"></i> Insights</h3>
-            <p class="extracted-style-007">Screenshots from the WebUI.</p>
+            <p class="text-secondary">Screenshots from the WebUI.</p>
 
             <div class="gallery-grid">
                 <div class="gallery-item">
