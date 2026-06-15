@@ -240,6 +240,7 @@ function initRouteMap() {
     const LIGHT_TILE = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
     const DARK_TILE  = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
     const TILE_ATTR  = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>';
+    const mobileViewport = window.matchMedia('(max-width: 768px)');
 
     const isDark = () =>
         document.documentElement.classList.contains('terminal-mode') ||
@@ -328,6 +329,24 @@ function initRouteMap() {
     L.marker(luxLatLng, { icon: makeDotIcon([8, 5]), interactive: false }).addTo(map);
     L.marker(kaLatLng,  { icon: makeDotIcon([8, 8]), interactive: false }).addTo(map);
 
+    const routeBounds = L.latLngBounds(bezierPoints);
+    routeBounds.extend(luxLatLng);
+    routeBounds.extend(kaLatLng);
+
+    const applyRouteViewport = () => {
+        if (mobileViewport.matches) {
+            map.fitBounds(routeBounds, {
+                padding: [30, 18],
+                maxZoom: 7,
+            });
+            return;
+        }
+
+        map.setView([49.45, 7.25], 8);
+    };
+
+    applyRouteViewport();
+
     // Swap tile layer on theme change
     const swapTiles = () => {
         map.removeLayer(tileLayer);
@@ -356,4 +375,8 @@ function initRouteMap() {
 
     // System colour-scheme change
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', swapTiles);
+    window.addEventListener('resize', () => {
+        map.invalidateSize();
+        applyRouteViewport();
+    });
 }
