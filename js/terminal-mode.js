@@ -44,7 +44,7 @@ function logConsoleEasterEgg() {
     console.log('%c+---------------------------------------------+', `${bannerStyle}border-bottom:1px solid #00ff9c;border-radius:0 0 6px 6px;`);
 
     console.log(
-        '%c>> welcome behind the curtain%c\nType %csetTerminalMode(true)%c to force terminal mode.\nShortcut: %cCtrl/⌘ + Shift + T%c\nClues: %c/humans.txt%c and %c/credits.txt',
+        '%c>> welcome behind the curtain%c\nType %csetTerminalMode(true)%c to force terminal mode.\nShortcut: %cCtrl/⌘ + Shift + T%c\nClues: %c/humans.txt%c and %c/credits.html',
         'color:#58a6ff;font-weight:700;font-family:"JetBrains Mono","Fira Code","SF Mono",monospace;',
         'color:#9ecbff;font-family:"JetBrains Mono","Fira Code","SF Mono",monospace;',
         'color:#00ff9c;font-weight:700;font-family:"JetBrains Mono","Fira Code","SF Mono",monospace;',
