@@ -85,24 +85,6 @@
         lastDiscoveredCount = discoveredCount;
     }
 
-    function restoreInitialState() {
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        }
-
-        if (localStorage.getItem('terminal_mode') === 'on') {
-            document.documentElement.classList.add('terminal-mode');
-        }
-    }
-
-    function initPreload() {
-        document.body.classList.add('preload');
-        window.setTimeout(() => {
-            document.body.classList.remove('preload');
-        }, 200);
-    }
-
     function initEasterEggButtons() {
         const terminalButton = document.getElementById('ee-terminal-toggle');
         const creditsButton = document.getElementById('ee-credits-open');
@@ -208,9 +190,14 @@
         }
 
         function render(data) {
+            if (!data || typeof data.stargazers_count !== 'number') {
+                return false;
+            }
+
             stars.textContent = data.stargazers_count;
             forks.textContent = data.forks_count;
             pushed.textContent = relativeTime(data.pushed_at);
+            return true;
         }
 
         try {
@@ -224,7 +211,9 @@
         fetch('https://api.github.com/repos/Kryzziii/kryzziii.github.io')
             .then((response) => response.json())
             .then((data) => {
-                render(data);
+                if (!render(data)) {
+                    return;
+                }
                 try {
                     sessionStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data }));
                 } catch (_) {}
@@ -232,10 +221,7 @@
             .catch(() => {});
     }
 
-    restoreInitialState();
-
     document.addEventListener('DOMContentLoaded', function () {
-        initPreload();
         markAchievement('credits');
         initEasterEggButtons();
         renderAchievementState();

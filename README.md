@@ -81,10 +81,15 @@ You can clone this repository to check out the code or use it as a template.
 │   ├── 2-base.css        # Resets, typography, and global defaults
 │   ├── 3-layout.css      # Structure (Navbar, Grid, Footer)
 │   ├── 4-components.css  # Reusable UI elements (Cards, Buttons, Pills)
-│   └── 5-utilities.css   # Specific mobile overrides & fixes
+│   ├── 5-utilities.css   # Shared component styles + semantic helpers (text/flex)
+│   ├── 6-specific-social-engagement.css # Styles scoped to the social engagement page
+│   └── 7-terminal-mode.css # Terminal ("hacker") theme overrides
 ├── js/
-│   ├── main.js           # Core logic (Event listeners, Initialization)
-│   └── components.js     # UI helpers (Dark mode toggle, Scroll logic)
+│   ├── page-init.js      # Early theme/terminal/preload bootstrap (runs before render)
+│   ├── components.js     # Shared chrome web components (navbar, footer, background) + theme toggle
+│   ├── main.js           # Core logic (scroll animations, typewriter, tilt, lightbox, route map)
+│   ├── terminal-mode.js  # Terminal mode toggle, shortcut and console easter egg
+│   └── credits.js        # Credits page achievements and GitHub stats
 ├── 404.html              # Custom 404 error page
 ├── certifications.html   # Certifications and courses
 ├── experience.html       # Professional experience

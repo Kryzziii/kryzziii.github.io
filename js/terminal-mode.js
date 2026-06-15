@@ -12,26 +12,6 @@ function isTerminalModeEnabled() {
     return document.documentElement.classList.contains('terminal-mode');
 }
 
-function updateTerminalToggleButton() {
-    const button = document.querySelector('#terminal-toggle');
-
-    if (!button) {
-        return;
-    }
-
-    const icon = button.querySelector('i');
-    const isEnabled = isTerminalModeEnabled();
-
-    button.setAttribute('aria-pressed', isEnabled ? 'true' : 'false');
-
-    if (!icon) {
-        return;
-    }
-
-    icon.classList.remove('fa-terminal', 'fa-circle-xmark');
-    icon.classList.add(isEnabled ? 'fa-circle-xmark' : 'fa-terminal');
-}
-
 function showTerminalToast(isEnabled) {
     let toast = document.querySelector('.terminal-toast');
 
@@ -86,7 +66,6 @@ function setTerminalMode(isEnabled, showToast = true) {
     localStorage.setItem(terminalModeKey, isEnabled ? 'on' : 'off');
     setTerminalAchievementCookie();
 
-    updateTerminalToggleButton();
     updateMobileStatusBar();
     document.dispatchEvent(new CustomEvent('terminalmodechange', {
         detail: { isEnabled }
@@ -103,18 +82,7 @@ function toggleTerminalMode() {
 
 function initTerminalMode() {
     logConsoleEasterEgg();
-    updateTerminalToggleButton();
     updateMobileStatusBar();
-
-    const toggleButton = document.querySelector('#terminal-toggle');
-
-    if (toggleButton) {
-        toggleButton.addEventListener('click', (event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            toggleTerminalMode();
-        });
-    }
 
     document.addEventListener('keydown', (event) => {
         if ((event.metaKey || event.ctrlKey) && event.shiftKey && event.key.toLowerCase() === 't') {

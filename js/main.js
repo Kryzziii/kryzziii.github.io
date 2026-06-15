@@ -362,11 +362,15 @@ function initRouteMap() {
         const toggleBtn = document.getElementById('theme-toggle');
         if (toggleBtn) {
             toggleBtn.addEventListener('click', () => setTimeout(swapTiles, 50));
+            return true;
         }
+        return false;
     };
-    attachThemeToggleListener();
-    // Fallback: re-try once after a tick in case the custom element renders late
-    setTimeout(attachThemeToggleListener, 200);
+    // The navbar is rendered by a custom element; if it hasn't upgraded yet,
+    // retry once after a tick so the listener is only ever attached a single time.
+    if (!attachThemeToggleListener()) {
+        setTimeout(attachThemeToggleListener, 200);
+    }
 
     // Listen for terminal mode toggle
     document.addEventListener('terminalmodechange', () => {
