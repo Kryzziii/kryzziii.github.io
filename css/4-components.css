@@ -616,24 +616,10 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 5px 16px;
     margin-bottom: 15px;
     width: 100%;
-}
-
-.job-title-wrapper {
-    flex: 1;
-    padding-right: 20px;
-}
-
-@media (max-width: 768px) {
-    .job-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .date-pill {
-        margin-top: 5px;
-    }
 }
 
 /* --- Clean Description List (Agile) --- */
