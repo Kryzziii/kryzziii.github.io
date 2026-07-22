@@ -25,13 +25,13 @@
         <a href="projects.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
     </div>
 
-    <section class="fade-in" style="margin-bottom: 30px;">
-        <div class="flex-center-y" style="gap: 10px; margin-bottom: 10px;">
+    <section class="fade-in detail-page-header">
+        <div class="flex-center-y detail-page-meta">
             <span class="paper-tag">Bachelor Thesis</span>
             <span class="date-pill" style="background: var(--text-secondary);">2026</span>
         </div>
-        <h1 class="detail-title">Titel</h1>
-        <p class="text-secondary" style="font-size: 1.2rem;">Subtitle</p>
+        <h1 class="detail-title detail-title--compact">Development of a daemon for proactive host system state monitoring<br>to enable adaptive service provisioning</h1>
+        <p class="detail-subtitle detail-subtitle--compact">Daemon architecture for proactive host state monitoring and adaptive service provisioning.</p>
     </section>
 
     <div class="bento-grid">
@@ -54,7 +54,7 @@
                 </li>
                 <li class="meta-item">
                     <span class="meta-label">Grade</span>
-                    <span class="meta-value text-accent">X.X</span>
+                    <span class="meta-value text-accent">1.0</span>
                 </li>
             </ul>
 
@@ -69,11 +69,13 @@
 
             <div class="rich-text academic">
                 <p>
-                    X
+                    The growing popularity of online games increases the demand for reliable, low-latency game servers. At Nitrado, monitoring is still mainly passive and pull-based, which can miss short load spikes and delays automated countermeasures.
+
+                    This thesis therefore designs and prototypes a proactive push-based monitoring architecture. On the host side, osquery performs local analysis with scheduled SQL queries, while critical states are sent asynchronously to Apache Kafka. The Go-based consumer processes these events and triggers responses through the company's proprietary API.
                 </p>
                 <h4 class="text-main" style="margin-top: 30px;">Result & conclusion</h4>
                 <p>
-                    X
+                    The local proof-of-concept confirms that the functional requirements were met and that the core components remain highly resource-efficient. Overall, the work shows that proactive monitoring can reduce response times and form a solid basis for automated mitigation in scalable server environments.
                 </p>
             </div>
         </div>
@@ -87,32 +89,32 @@
             <div class="tech-grid">
 
                 <div class="tech-category">
-                    <h4>XXX</h4>
+                    <h4>Monitoring</h4>
                     <div class="skill-list">
-                        <div class="skill-pill">X</div>
-                        <div class="skill-pill">X</div>
-                        <div class="skill-pill">X</div>
-                        <div class="skill-pill">X</div>
+                        <div class="skill-pill">Architectures</div>
+                        <div class="skill-pill">Push vs. Pull Principle</div>
+                        <div class="skill-pill">Proactive vs. Reactive</div>
+                        <div class="skill-pill">Telemetry Data Collection</div>
                     </div>
                 </div>
 
                 <div class="tech-category">
-                    <h4>XXX</h4>
+                    <h4>Event Pipeline</h4>
                     <div class="skill-list">
-                        <div class="skill-pill">X</div>
-                        <div class="skill-pill">X</div>
-                        <div class="skill-pill">X</div>
-                        <div class="skill-pill">X</div>
+                        <div class="skill-pill">Message Brokers</div>
+                        <div class="skill-pill">Apache Kafka</div>
+                        <div class="skill-pill">Topic-based Streaming</div>
+                        <div class="skill-pill">Message Serialization</div>
                     </div>
                 </div>
 
                 <div class="tech-category">
-                    <h4>XXX</h4>
+                    <h4>Backend Processing</h4>
                     <div class="skill-list">
-                        <div class="skill-pill">X</div>
-                        <div class="skill-pill">X</div>
-                        <div class="skill-pill">X</div>
-                        <div class="skill-pill">X</div>
+                        <div class="skill-pill">Go</div>
+                        <div class="skill-pill">Consumer Service</div>
+                        <div class="skill-pill">(REST) API</div>
+                        <div class="skill-pill">Automated Countermeasures</div>
                     </div>
                 </div>
 
